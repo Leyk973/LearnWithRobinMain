@@ -17,10 +17,12 @@ public:
 
 signals:
     void clickedCalcul(void);
+    void clickedSimon(void);
 
 public slots:
     /// \note on va garder la syntaxe goFor, c'est bien :)
     void goForCalcul(void);
+    void goForSimon(void);
 
 private:
     Ui::MainMenu *ui;
