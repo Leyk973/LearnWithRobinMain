@@ -2,6 +2,7 @@
 #include "ui_robinmainwindow.h"
 #include "mainmenu.h"
 #include "calculmental.h"
+#include "supersimon.h"
 
 /// \todo bien penser a connecter les boutons nécessaires quand on charge un widget
 /// quand le bouton menu sera passé dans chaque widget notamment
@@ -22,7 +23,7 @@ RobinMainWindow::RobinMainWindow(QWidget *parent) :
     /// \test changer la fenetre
     /// on peut tenter vu que QWidget hérite de QObject
     QObject::connect(menuPrincipal,&MainMenu::clickedCalcul,this,&RobinMainWindow::openCalcul);
-    //QObject::connect(menuPrincipal,&MainMenu::cli)
+    QObject::connect(menuPrincipal,&MainMenu::clickedSimon,this,&RobinMainWindow::openSimon);
 }
 
 RobinMainWindow::~RobinMainWindow()
@@ -40,6 +41,16 @@ void RobinMainWindow::openCalcul()
     deleteCentralWidget();
     CalculMental * calcul = new CalculMental();
     RobinMainWindow::setCentralWidget(calcul);
+}
+
+void RobinMainWindow::openSimon()
+{
+    /// \todo completer
+    std::cout << "On a cliqué sur calcul" << std::endl;
+    this->atMenu=false;
+    deleteCentralWidget();
+    SuperSimon * simon = new SuperSimon();
+    RobinMainWindow::setCentralWidget(simon);
 
 }
 
@@ -74,6 +85,7 @@ void RobinMainWindow::backToMenu()
         MainMenu *menuPrincipal = new MainMenu();
         RobinMainWindow::setCentralWidget(menuPrincipal);
         QObject::connect(menuPrincipal,&MainMenu::clickedCalcul,this,&RobinMainWindow::openCalcul);
+        QObject::connect(menuPrincipal,&MainMenu::clickedSimon,this,&RobinMainWindow::openSimon);
         this->atMenu=true;
     }
     else

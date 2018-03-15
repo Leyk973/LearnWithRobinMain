@@ -22,6 +22,7 @@ public:
 public slots:
     void backToMenu(void);
     void openCalcul(void);
+    void openSimon(void);
 
 private:
     Ui::RobinMainWindow *ui;
@@ -30,6 +31,7 @@ private:
     /// \warning a manipuler avec precaution
     /// supprime le widget central (le pointeur)
     void deleteCentralWidget(void);
+
 
 };
 
