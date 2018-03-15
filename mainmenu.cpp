@@ -13,10 +13,12 @@ MainMenu::MainMenu(QWidget *parent) :
 
 MainMenu::~MainMenu()
 {
+    std::cout<<"Destruction MainMenu"<<std::endl;
     delete ui;
 }
 
 void MainMenu::goForCalcul()
 {
+    std::cout<<"MainMenu::goForCalcul()"<<std::endl;
     emit clickedCalcul();
 }

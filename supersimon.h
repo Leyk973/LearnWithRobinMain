@@ -1,11 +1,23 @@
 #ifndef SUPERSIMON_H
 #define SUPERSIMON_H
 
+#include "includeviews.h"
+#include "modsimon.h"
 
-class SuperSimon
+namespace Ui {
+class SuperSimon;
+}
+
+class SuperSimon : public QWidget
 {
+    Q_OBJECT
 public:
-    SuperSimon();
+    explicit SuperSimon(QWidget *parent = nullptr);
+    ~SuperSimon();
+
+private:
+    Ui::SuperSimon *ui;
+    ModSimon *modele;
 };
 
 #endif // SUPERSIMON_H

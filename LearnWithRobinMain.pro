@@ -29,7 +29,8 @@ SOURCES += \
     mainmenu.cpp \
     calculmental.cpp \
     supersimon.cpp \
-    modcalcul.cpp
+    modcalcul.cpp \
+    modsimon.cpp
 
 HEADERS += \
         robinmainwindow.h \
@@ -38,9 +39,11 @@ HEADERS += \
     supersimon.h \
     includeviews.h \
     commonlibs.h \
-    modcalcul.h
+    modcalcul.h \
+    modsimon.h
 
 FORMS += \
         robinmainwindow.ui \
     mainmenu.ui \
-    calculmental.ui
+    calculmental.ui \
+    supersimon.ui

@@ -16,6 +16,7 @@ CalculMental::CalculMental(QWidget *parent) :
 
 CalculMental::~CalculMental()
 {
+    std::cout<<"Destruction CalculMental"<<std::endl;
     delete ui;
 }
 
