@@ -30,7 +30,15 @@ SOURCES += \
     calculmental.cpp \
     supersimon.cpp \
     modcalcul.cpp \
-    modsimon.cpp
+    modsimon.cpp \
+    memory.cpp \
+    flags.cpp \
+    puzzle.cpp \
+    pointandclick.cpp \
+    modpuzzle.cpp \
+    modmemory.cpp \
+    modflags.cpp \
+    modpointandclick.cpp
 
 HEADERS += \
         robinmainwindow.h \
@@ -40,10 +48,22 @@ HEADERS += \
     includeviews.h \
     commonlibs.h \
     modcalcul.h \
-    modsimon.h
+    modsimon.h \
+    memory.h \
+    flags.h \
+    puzzle.h \
+    pointandclick.h \
+    modpuzzle.h \
+    modmemory.h \
+    modflags.h \
+    modpointandclick.h
 
 FORMS += \
         robinmainwindow.ui \
     mainmenu.ui \
     calculmental.ui \
-    supersimon.ui
+    supersimon.ui \
+    memory.ui \
+    flags.ui \
+    puzzle.ui \
+    pointandclick.ui
