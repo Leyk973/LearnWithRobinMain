@@ -140,6 +140,13 @@
              </property>
             </widget>
            </item>
+           <item>
+            <widget class="QLabel" name="labObjective">
+             <property name="text">
+              <string>Obective --- 10</string>
+             </property>
+            </widget>
+           </item>
           </layout>
          </widget>
         </item>
@@ -219,12 +226,12 @@
          </widget>
         </item>
         <item row="1" column="1">
-         <widget class="QLabel" name="labelQuiDitSimon">
+         <widget class="QLabel" name="labSeqNumber">
           <property name="text">
-           <string/>
+           <string>SIMON --- 1</string>
           </property>
-          <property name="pixmap">
-           <pixmap>files/simonTransparent.png</pixmap>
+          <property name="scaledContents">
+           <bool>false</bool>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
