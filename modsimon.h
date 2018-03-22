@@ -8,7 +8,7 @@ public:
 
     /// Constructeur destructeur
     ModSimon();
-    ~ModCalcul(void);
+    ~ModSimon(void);
 
     /// difficulte (de 1 facile à 3 difficile)
     //void setDifficulte(int);
