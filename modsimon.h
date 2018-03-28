@@ -29,16 +29,21 @@ public:
     void setSequence(std::string);
     std::string getSequence(void);
 
+    void setSeqNum(int);
+    int getSeqNum(void);
+
     /// verifier séquence entrée
     bool checkSequence (std::string);
 
     /// definir la séquence des couleurs
     /// le parametre est le nombre de clignotements
-    void createSequence(int);
+    void createSequence();
 
     /// set le scoreToReach selon la difficulté
     /// \todo implémenter difficulté
     void iniScoreToReach(void);
+
+    int giveRandom(int,int);
 
 private:
 

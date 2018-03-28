@@ -12,6 +12,8 @@ CalculMental::CalculMental(QWidget *parent) :
     QObject::connect(ui->ButtonSubmit, SIGNAL(clicked(bool)),this,SLOT(submitRes()));
     QObject::connect(ui->ButtonNewOpe, SIGNAL(clicked(bool)),this,SLOT(dispNewCalc()));
     QObject::connect(ui->ButtonResetScore, SIGNAL(clicked(bool)),this,SLOT(resetScore()));
+
+    this->dispNewCalc();
 }
 
 CalculMental::~CalculMental()

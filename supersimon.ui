@@ -60,7 +60,7 @@
           <item>
            <widget class="QLabel" name="labLireSeq">
             <property name="text">
-             <string>TextLabel</string>
+             <string>Sequence (affichée)</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -143,7 +143,14 @@
            <item>
             <widget class="QLabel" name="labObjective">
              <property name="text">
-              <string>Obective --- 10</string>
+              <string>Obective --- 5</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="butResScore">
+             <property name="text">
+              <string>Reset Score</string>
              </property>
             </widget>
            </item>
@@ -211,7 +218,7 @@
            <item row="2" column="0">
             <widget class="QPushButton" name="butSeqEdit">
              <property name="text">
-              <string>PushButton</string>
+              <string>Edit Sequence</string>
              </property>
             </widget>
            </item>
