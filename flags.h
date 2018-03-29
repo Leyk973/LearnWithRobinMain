@@ -2,6 +2,7 @@
 #define FLAGS_H
 
 #include <QWidget>
+#include "includeviews.h"
 
 namespace Ui {
 class Flags;

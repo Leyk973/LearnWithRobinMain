@@ -1,0 +1,4 @@
+Trucs à faire
+
+- Utiliser QStackedWidget et tout charger, QMainWindows a du mal avec le changement de CentralWidget.
+- Faudra penser à gérer une petite latence entre un clic sur le menu et le lancement, ne pas être trop brusque.

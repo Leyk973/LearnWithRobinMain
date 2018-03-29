@@ -5,6 +5,7 @@ CalculMental::CalculMental(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::CalculMental)
 {
+    std::cout << "Creation CalculMental" << std::endl;
     ui->setupUi(this);
     modele=new ModCalcul;
 
@@ -14,6 +15,7 @@ CalculMental::CalculMental(QWidget *parent) :
     QObject::connect(ui->ButtonResetScore, SIGNAL(clicked(bool)),this,SLOT(resetScore()));
 
     this->dispNewCalc();
+    std::cout << "Fin Creation CalculMental" << std::endl;
 }
 
 CalculMental::~CalculMental()
