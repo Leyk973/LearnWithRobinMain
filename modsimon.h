@@ -57,7 +57,7 @@ private:
     /// current sequence
     std::string sequence;
 
-    /// current sequence number
+    /// current sequence length
     int seqNum;
 
     /// score
