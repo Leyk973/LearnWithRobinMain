@@ -1,4 +1,33 @@
-Trucs à faire
+Trucs à faire (pas encore triés en ordre de priorité)
 
+- Faire hériter les jeux d'une superclasse Jeu avec les méthodes et attributs de base (notamement à propos du score)
+- Voir si on peut mettre le bouton Menu dans le widget de chaque jeu, pour que ceux-ci signalent au stackedWidget qui change l'affichage
+- Se mettre au multithreading, pour l'audio, l'affichage en décalé du Simon, le chargement de l'application pour afficher les crédits et potentiellement de l'optimisation
 - Utiliser QStackedWidget et tout charger, QMainWindows a du mal avec le changement de CentralWidget.
 - Faudra penser à gérer une petite latence entre un clic sur le menu et le lancement, ne pas être trop brusque.
+- Penser à créer une doc logicielle à partir des commentaires
+- Gérer les tailles de fenêtre disponibles, via des options (genre, plein écran et une ou deux résolutions classiques)
+- On va probablement ne plus passer par le QtDesigner pour créer les widgets
+- Faire en sorte qu'on ne puisse ouvrir qu'une instance de l'application
+- Gérer un fichier et une application de paramètres
+- Ajouter une classe paramètresActuels actualisée à chaque démarrage de l'application via le chargement du fichier de paramètre
+- Gérer un installateur
+- Gérer les designs, l'icône, la mascotte
+- Gérer le bouton de consigne, peut-être dans le même layout que le bouton de menu
+- Peut-être mettre les infos sur le joueur en cours dans le même layout que celui des boutons de menu et consigne
+
+Trucs spécifiques à un jeu / une fonction
+
+- Faire un widget particulier pour les cartes du Memory
+- Pour les cartes du Memory, les dessiner en png en laissant une marge sur les côtés de la carte, ce sera notre façon de gérer l'espacement entre les cartes sans passer par des réglages compliqués dans le widget
+
+Trucs à moitié faits
+
+- Pour la taille des fenêtres, taille minimum gérée
+
+Trucs faits (copier, coller et commenter)
+
+# EXEMPLE
+- Manger des chips pour que le Memory soit plus intéressant
+[J'ai bien fait de choisir des Pringles Sour Cream and Onion, ça a parfaitement fonctionné. Les Lays testées en premier n'ont pas eu le même effet du tout, je m'étais trompé à leur sujet.]
+# FINDELEXEMPLE

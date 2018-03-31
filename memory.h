@@ -22,9 +22,13 @@ public:
     ~Memory();
     void paintEvent(QPaintEvent*);
 
+    int getNbCards(void);
+
 private:
     Ui::Memory *ui;
     QRect *tabCardRects;
+
+    int nbcards;
 
 };
 
