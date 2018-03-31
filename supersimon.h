@@ -39,10 +39,10 @@ public:
 
 public slots:
     /// appui sur bouton du simon
-    void simonClicked(int);
+    void simonClicked(const int);
 
     /// appui sur un modificateur de vie
-    void lifeClicked(int);
+    void lifeClicked(const int);
 
     /// appui sur read sequence
     void readSequenceClicked(void);
