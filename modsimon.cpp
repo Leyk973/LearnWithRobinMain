@@ -2,16 +2,19 @@
 
 ModSimon::ModSimon()
 {
+    std::cout << "Creation ModSimon" << std::endl;
     this->lives=3;
     this->score=0;
     this->createSequence();
     this->seqNum=1;
     this->iniScoreToReach();
+    std::cout << "Fin Creation ModSimon" << std::endl;
 }
 
 ModSimon::~ModSimon(void)
 {
     // nada
+    std::cout << "Destruction ModSimon" << std::endl;
 }
 
 ///

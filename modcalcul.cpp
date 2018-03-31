@@ -3,12 +3,14 @@
 /// Constructeur et destructeur
 ModCalcul::ModCalcul()
 {
+    std::cout << "Creation ModCalcul" << std::endl;
     srand(time(NULL));
     opeMin=0; opeMax=150;
     opeGauche=1; opeDroite=1;
     opeActuel="+";
     resultatAttendu=2;
     score=0;
+    std::cout << "Fin Creation ModCalcul" << std::endl;
 }
 
 /// \note ne va probablement pas être vraiment utilisé
@@ -35,6 +37,11 @@ ModCalcul::ModCalcul(ModCalcul *ptrMod)
     this->opeActuel=ptrMod->getOperateur();
     this->resultatAttendu=ptrMod->getResult();
     this->score=ptrMod->getScore();
+}
+
+ModCalcul::~ModCalcul()
+{
+    std::cout<<"Destruction ModCalcul"<<std::endl;
 }
 
 

@@ -2,6 +2,12 @@
 #define ROBINMAINWINDOW_H
 
 #include <QMainWindow>
+#include "mainmenu.h"
+#include "calculmental.h"
+#include "supersimon.h"
+#include "memory.h"
+#include <QStackedWidget>
+
 
 namespace Ui {
 class RobinMainWindow;
@@ -23,6 +29,7 @@ public slots:
     void backToMenu(void);
     void openCalcul(void);
     void openSimon(void);
+    void openMemory(void);
 
 private:
     Ui::RobinMainWindow *ui;
@@ -32,6 +39,8 @@ private:
     /// supprime le widget central (le pointeur)
     void deleteCentralWidget(void);
 
+    /// le stackedWidget qui contient les widgets à afficher
+    QStackedWidget * widStack;
 
 };
 

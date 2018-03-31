@@ -1,0 +1,5 @@
+Gros:
+Passage de SFML à Qt
+
+Petits:
+Passage à QStackedWidget pour l'affichage, après la découverte que QMainWindows gère difficilement le changement de CentralWidget
