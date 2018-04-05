@@ -7,7 +7,11 @@
 #include <QRect>
 #include "includeviews.h"
 #include "commonlibs.h"
-
+#include <QPushButton>
+#include <QHBoxLayout>
+#include <QGridLayout>
+#include <QLabel>
+#include <memory>
 
 namespace Ui {
 class Memory;
@@ -25,10 +29,30 @@ public:
     int getNbCards(void);
 
 private:
-    Ui::Memory *ui;
-    QRect *tabCardRects;
+    //Ui::Memory *ui;
+    //QRect *tabCardRects;
+
+    // on va plutôt avoir un tableau de boutons (qui seront des cartes à terme)
+
+    // boutons de test
+    /*QPushButton * boutonDeTestQuiSertARien1;
+    QPushButton * boutonDeTestQuiSertARien2;
+    QPushButton * boutonDeTestQuiSertARien3;
+    QPushButton * boutonDeTestQuiSertARien4;*/
+
+    /// NE PAS OUBLIER DE delete[] dans le destructeur
+    //QPushButton * tabCards;
+    std::vector<QPushButton *> cardsVector;
 
     int nbcards;
+
+    QGridLayout * theGrid;
+
+    // nombre de clics
+    QLabel * labScore;
+
+    // vider le vecteur de boutons
+    void emptyAndDeleteVector(void);
 
 };
 

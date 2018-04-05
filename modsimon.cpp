@@ -4,9 +4,9 @@ ModSimon::ModSimon()
 {
     std::cout << "Creation ModSimon" << std::endl;
     this->lives=3;
-    this->score=0;
-    this->createSequence();
+    this->score=0;    
     this->seqNum=1;
+    this->createSequence();
     this->iniScoreToReach();
     std::cout << "Fin Creation ModSimon" << std::endl;
 }

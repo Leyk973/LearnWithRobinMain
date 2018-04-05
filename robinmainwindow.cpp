@@ -40,9 +40,9 @@ RobinMainWindow::RobinMainWindow(QWidget *parent) :
 
     std::cout << "Debut construction MAIN 3" << std::endl;
 
-    Memory * theMemory = new Memory();
-    SuperSimon * theSimon = new SuperSimon();
-    CalculMental * theCalcul = new CalculMental();
+    Memory * theMemory = new Memory(this);
+    SuperSimon * theSimon = new SuperSimon(this);
+    CalculMental * theCalcul = new CalculMental(this);
 
     std::cout << "Debut construction MAIN 4" << std::endl;
 
@@ -73,6 +73,9 @@ RobinMainWindow::RobinMainWindow(QWidget *parent) :
 RobinMainWindow::~RobinMainWindow()
 {
     delete ui;
+
+    /// \todo faire une fonction qui vide le widget
+    delete widStack;
 }
 
 
