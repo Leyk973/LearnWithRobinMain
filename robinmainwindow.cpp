@@ -4,41 +4,69 @@
 /// \todo bien penser a connecter les boutons nécessaires quand on charge un widget
 /// quand le bouton menu sera passé dans chaque widget notamment
 
+/**
+ * @brief RobinMainWindow::RobinMainWindow
+ * INDEX des jeux dans le QStackedWidget d'affichage
+ * 0 MENU
+ * 1 CALCUL
+ * 2 SIMON
+ * 3 MEMORY
+ * 4 FLAGS
+ * 5 PUZZLE
+ * 6 POINT
+ */
+
+
 
 RobinMainWindow::RobinMainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::RobinMainWindow)
 {
     ui->setupUi(this);
-
-    /// \test
-    /// A PRIORI CA MARCHE
+    std::cout << "Debut construction MAIN 1" << std::endl;
     MainMenu *menuPrincipal = new MainMenu();
+
+    std::cout << "Debut construction MAIN 2" << std::endl;
+
     //RobinMainWindow::setCentralWidget(menuPrincipal);
     QObject::connect(ui->ButtonMenu, &QPushButton::clicked,this,&RobinMainWindow::backToMenu);
     this->atMenu=true;
+
     /// \test changer la fenetre
     /// on peut tenter vu que QWidget hérite de QObject
     QObject::connect(menuPrincipal,&MainMenu::clickedCalcul,this,&RobinMainWindow::openCalcul);
     QObject::connect(menuPrincipal,&MainMenu::clickedSimon,this,&RobinMainWindow::openSimon);
     QObject::connect(menuPrincipal,&MainMenu::clickedMemory,this,&RobinMainWindow::openMemory);
 
-
+    std::cout << "Debut construction MAIN 3" << std::endl;
 
     Memory * theMemory = new Memory();
-    SuperSimon * theSimon = new Simon();
+    SuperSimon * theSimon = new SuperSimon();
     CalculMental * theCalcul = new CalculMental();
 
-    this->widStack->addWidget(theMemory);
-    this->widStack->addWidget(theSimon);
-    this->widStack->addWidget(theCalcul);
-    this->widStack->addWidget(menuPrincipal);
+    std::cout << "Debut construction MAIN 4" << std::endl;
 
+    /// creation widStack
+    this->widStack = new QStackedWidget;
+
+    this->widStack->addWidget(menuPrincipal);
+    this->widStack->addWidget(theCalcul);
+    this->widStack->addWidget(theSimon);
+    this->widStack->addWidget(theMemory);
+
+
+
+
+    /// affichage du menu
+    this->widStack->setCurrentWidget(menuPrincipal);
+
+    std::cout << "Debut construction MAIN 5" << std::endl;
     RobinMainWindow::setCentralWidget(this->widStack);
 
+    std::cout << "Debut construction MAIN 6" << std::endl;
 
 
-
+    std::cout << "L'index est " << this->widStack->currentIndex() << std::endl;
 
 }
 
@@ -54,9 +82,10 @@ void RobinMainWindow::openCalcul()
     /// \todo completer
     std::cout << "On a cliqué sur calcul" << std::endl;
     this->atMenu=false;
-    deleteCentralWidget();
-    CalculMental * calcul = new CalculMental();
-    RobinMainWindow::setCentralWidget(calcul);
+    //deleteCentralWidget();
+    //CalculMental * calcul = new CalculMental();
+    //RobinMainWindow::setCentralWidget(calcul);
+    this->widStack->setCurrentIndex(1);
     std::cout << "openCalcul centralWidget : " << RobinMainWindow::centralWidget() << std::endl;
 }
 
@@ -65,9 +94,10 @@ void RobinMainWindow::openSimon()
     /// \todo completer
     std::cout << "On a cliqué sur calcul" << std::endl;
     this->atMenu=false;
-    deleteCentralWidget();
-    SuperSimon * simon = new SuperSimon();
-    RobinMainWindow::setCentralWidget(simon);
+    //deleteCentralWidget();
+    //SuperSimon * simon = new SuperSimon();
+    //RobinMainWindow::setCentralWidget(simon);
+    this->widStack->setCurrentIndex(2);
     std::cout << "openSimon centralWidget : " << RobinMainWindow::centralWidget() << std::endl;
 
 }
@@ -77,9 +107,10 @@ void RobinMainWindow::openMemory()
     /// \todo completer
     std::cout << "On a cliqué sur memory" << std::endl;
     this->atMenu=false;
-    deleteCentralWidget();
-    Memory * memus = new Memory();
-    RobinMainWindow::setCentralWidget(memus);
+    //deleteCentralWidget();
+    //Memory * memus = new Memory();
+    //RobinMainWindow::setCentralWidget(memus);
+    this->widStack->setCurrentIndex(3);
     std::cout << "openMemory centralWidget : " << RobinMainWindow::centralWidget() << std::endl;
 
 }
@@ -113,13 +144,14 @@ void RobinMainWindow::backToMenu()
     std::cout << "On a cliqué sur Menu" << std::endl;
     if (!atMenu)
     {
-        deleteCentralWidget();
+        //deleteCentralWidget();
         std::cout << "DEBUT backToMenu centralWidget : " << RobinMainWindow::centralWidget() << std::endl;
-        MainMenu *menuPrincipal = new MainMenu();
-        RobinMainWindow::setCentralWidget(menuPrincipal);
-        QObject::connect(menuPrincipal,&MainMenu::clickedCalcul,this,&RobinMainWindow::openCalcul);
-        QObject::connect(menuPrincipal,&MainMenu::clickedSimon,this,&RobinMainWindow::openSimon);
-        QObject::connect(menuPrincipal,&MainMenu::clickedMemory,this,&RobinMainWindow::openMemory);
+        //MainMenu *menuPrincipal = new MainMenu();
+        //RobinMainWindow::setCentralWidget(menuPrincipal);
+        //QObject::connect(menuPrincipal,&MainMenu::clickedCalcul,this,&RobinMainWindow::openCalcul);
+        //QObject::connect(menuPrincipal,&MainMenu::clickedSimon,this,&RobinMainWindow::openSimon);
+        //QObject::connect(menuPrincipal,&MainMenu::clickedMemory,this,&RobinMainWindow::openMemory);
+        this->widStack->setCurrentIndex(0);
         this->atMenu=true;
         std::cout << "FIN backToMenu centralWidget : " << RobinMainWindow::centralWidget() << std::endl;
     }

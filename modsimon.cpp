@@ -114,6 +114,7 @@ void ModSimon::createSequence()
 
     for (int i=0;i<nbBoucles; ++i)
     {
+        //std::cout << "nbBoucles : " << nbBoucles << " ET i : " << i << std::endl;
         res.append(std::to_string(this->giveRandom(1,4)));
     }
     std::cout << "la sequence actuelle est " << res << std::endl;

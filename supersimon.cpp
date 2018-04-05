@@ -5,18 +5,24 @@ SuperSimon::SuperSimon(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::SuperSimon)
 {
+    std::cout << "Debut construction SIMON" << std::endl;
     ui->setupUi(this);
     modele=new ModSimon;
 
+    std::cout << "Debut construction DEUX" << std::endl;
     QObject::connect(ui->butResScore, SIGNAL(clicked(bool)),this,SLOT(resetScoreClicked()));
+    std::cout << "Debut construction TROIS" << std::endl;
     QObject::connect(ui->butSeqEdit, SIGNAL(clicked(bool)),this,SLOT(editSequenceClicked()));
+    std::cout << "Debut construction QUATRE" << std::endl;
     QObject::connect(ui->butLireSeq, SIGNAL(clicked(bool)),this,SLOT(readSequenceClicked()));
-    QObject::connect(ui->butAddLife, SIGNAL(clicked(bool)),this,SLOT(lifeClicked()));
-    QObject::connect(ui->butRemLife, SIGNAL(clicked(bool)),this,SLOT(lifeClicked()));
-    QObject::connect(ui->butSim1, SIGNAL(clicked(bool)),this,SLOT(simonClicked()));
-    QObject::connect(ui->butSim2, SIGNAL(clicked(bool)),this,SLOT(simonClicked()));
-    QObject::connect(ui->butSim3, SIGNAL(clicked(bool)),this,SLOT(simonClicked()));
-    QObject::connect(ui->butSim4, SIGNAL(clicked(bool)),this,SLOT(simonClicked()));
+    /*QObject::connect(ui->butAddLife, SIGNAL(clicked(bool)),this,SLOT(lifeClicked(1)));
+    QObject::connect(ui->butRemLife, SIGNAL(clicked(bool)),this,SLOT(lifeClicked(-1)));
+    QObject::connect(ui->butSim1, SIGNAL(clicked(bool)),this,SLOT(simonClicked(1)));
+    QObject::connect(ui->butSim2, SIGNAL(clicked(bool)),this,SLOT(simonClicked(2)));
+    QObject::connect(ui->butSim3, SIGNAL(clicked(bool)),this,SLOT(simonClicked(3)));
+    QObject::connect(ui->butSim4, SIGNAL(clicked(bool)),this,SLOT(simonClicked(4)));*/
+
+    std::cout << "Fin construction SIMON" << std::endl;
 }
 
 SuperSimon::~SuperSimon()
@@ -95,8 +101,9 @@ void SuperSimon::lifeClicked(const int pindex)
     std::cout<<"life clicked"<<std::endl;
     switch (pindex)
     {
-        case 1 : this->addLife(); break;
-        case -1 : this->remLife(); break;
+    case 1 : this->addLife(); break;
+    case -1 : this->remLife(); break;
+    default:; break;
     }
 }
 

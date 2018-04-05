@@ -2,11 +2,11 @@
 #include "ui_memory.h"
 
 Memory::Memory(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::Memory)
+    QWidget(parent)//,
+    //ui(new Ui::Memory)
 {
     std::cout << "Creation Memory" << std::endl;
-    ui->setupUi(this);
+    //ui->setupUi(this);
 
     /// \todo faire en sorte de régler le nombre de cartes selon la difficulté
     this->nbcards=this->getNbCards();
