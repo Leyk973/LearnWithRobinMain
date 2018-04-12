@@ -39,10 +39,17 @@ public:
 
 public slots:
     /// appui sur bouton du simon
+    /// redirection vers simonClicked avec la valeur du bouton
+    void simonClickedRedirect();
+
+    /// appui sur bouton du simon
     void simonClicked(const int);
 
+    /// redirection vers lifeClicked avec la valeur du bouton
+    void addLifeClicked();
+
     /// appui sur un modificateur de vie
-    void lifeClicked(const int);
+    void remLifeClicked();
 
     /// appui sur read sequence
     void readSequenceClicked(void);
