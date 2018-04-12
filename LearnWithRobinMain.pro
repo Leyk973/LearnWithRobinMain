@@ -38,7 +38,8 @@ SOURCES += \
     modpuzzle.cpp \
     modmemory.cpp \
     modflags.cpp \
-    modpointandclick.cpp
+    modpointandclick.cpp \
+    memoryaddons.cpp
 
 HEADERS += \
         robinmainwindow.h \
@@ -56,7 +57,8 @@ HEADERS += \
     modpuzzle.h \
     modmemory.h \
     modflags.h \
-    modpointandclick.h
+    modpointandclick.h \
+    memoryaddons.h
 
 FORMS += \
         robinmainwindow.ui \
