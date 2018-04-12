@@ -38,6 +38,7 @@ public:
     bool sendSeqForCheck(void);
 
 public slots:
+    /// appui sur bouton du simon
     /// redirection vers simonClicked avec la valeur du bouton
     void simonClickedRedirect();
 

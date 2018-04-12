@@ -46,11 +46,15 @@ void SuperSimon::editSequence()
 void SuperSimon::addLife()
 {
    this->modele->addLife();
+   std::string mammouth = std::to_string(this->modele->getLives());
+   this->ui->labLifeRemaining->setText(QString::fromStdString(mammouth));
 }
 
 void SuperSimon::remLife()
 {
     this->modele->remLife();
+    std::string mammouth = std::to_string(this->modele->getLives());
+    this->ui->labLifeRemaining->setText(QString::fromStdString(mammouth));
 }
 
 void SuperSimon::resScore()
