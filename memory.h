@@ -28,6 +28,9 @@ public:
 
     int getNbCards(void);
 
+    // retourner une carte en changeant sa stylesheet
+    void flipCard(QPushButton*);
+
 private:
     //Ui::Memory *ui;
     //QRect *tabCardRects;

@@ -37,6 +37,18 @@ Memory::Memory(QWidget *parent) :
         for (int j = 0; j < 4; ++j){
             std::string l = std::to_string(monpetitcompteur);
             cardsVector.push_back(new QPushButton(QString::fromStdString(l)));
+            cardsVector.at(monpetitcompteur)->setFixedSize(100,100);
+            std::string nameCard = "card_" + l;
+            cardsVector.at(monpetitcompteur)->setObjectName(QString::fromStdString(nameCard));
+            cardsVector.at(monpetitcompteur)->setStyleSheet(QString::fromUtf8(
+                                                                "QPushButton {"
+                                                                "border-image:url(:/files/boutonTestNotClicked.png);"
+                                                                "}"
+                                                                "QPushButton::pressed {"
+                                                                "border-image:url(:/files/boutonTestClicked.png);"
+                                                                "}"
+                                                                ));
+            std::cout << "carte créée : " << cardsVector.at(monpetitcompteur)->objectName().toStdString() << std::endl;
             theGrid->addWidget(cardsVector.at(monpetitcompteur),i,j);
             ++monpetitcompteur;
         }

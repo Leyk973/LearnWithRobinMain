@@ -10,6 +10,9 @@ public:
 private:
     int score;
 
+    /// nombre de paires du memory en cours
+    int nbPaires;
+
 };
 
 #endif // MODMEMORY_H

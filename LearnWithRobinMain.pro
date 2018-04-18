@@ -39,7 +39,8 @@ SOURCES += \
     modmemory.cpp \
     modflags.cpp \
     modpointandclick.cpp \
-    memoryaddons.cpp
+    memoryaddons.cpp \
+    parameterslwr.cpp
 
 HEADERS += \
         robinmainwindow.h \
@@ -58,7 +59,8 @@ HEADERS += \
     modmemory.h \
     modflags.h \
     modpointandclick.h \
-    memoryaddons.h
+    memoryaddons.h \
+    parameterslwr.h
 
 FORMS += \
         robinmainwindow.ui \
@@ -69,3 +71,6 @@ FORMS += \
     flags.ui \
     puzzle.ui \
     pointandclick.ui
+
+RESOURCES += \
+    buttonrobin.qrc

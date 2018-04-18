@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>files/boutonTestClicked.png</file>
+        <file>files/boutonTestNotClicked.png</file>
+        <file>files/simonTransparent.png</file>
+    </qresource>
+</RCC>

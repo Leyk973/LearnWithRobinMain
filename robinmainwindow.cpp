@@ -72,10 +72,9 @@ RobinMainWindow::RobinMainWindow(QWidget *parent) :
 
 RobinMainWindow::~RobinMainWindow()
 {
-    delete ui;
-
     /// \todo faire une fonction qui vide le widget
     delete widStack;
+    delete ui;
 }
 
 
