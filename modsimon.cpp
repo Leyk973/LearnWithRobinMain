@@ -5,7 +5,7 @@ ModSimon::ModSimon()
     std::cout << "Creation ModSimon" << std::endl;
     this->lives=3;
     this->score=0;    
-    this->seqNum=1;
+    this->seqLen=1;
     this->createSequence();
     this->iniScoreToReach();
     std::cout << "Fin Creation ModSimon" << std::endl;
@@ -65,24 +65,26 @@ std::string ModSimon::getSequence()
     return this->sequence;
 }
 
-void ModSimon::setSeqNum(int psn)
+void ModSimon::setSeqLen(int psn)
 {
-    this->seqNum=psn;
+    this->seqLen=psn;
 }
 
-int ModSimon::getSeqNum()
+int ModSimon::getSeqLen()
 {
-    return this->seqNum;
+    return this->seqLen;
 }
 
 bool ModSimon::checkSequence(std::string seqToCheck)
 {
     if (seqToCheck==this->sequence)
     {
+        this->goodSeq();
         return true;
     }
     else
     {
+        this->badSeq();
         return false;
     }
 }
@@ -109,7 +111,7 @@ int ModSimon::giveRandom(int min, int max)
 void ModSimon::createSequence()
 {
     //azerty
-    int nbBoucles = this->seqNum;
+    int nbBoucles = this->seqLen;
     std::string res="";
 
     for (int i=0;i<nbBoucles; ++i)
@@ -121,3 +123,25 @@ void ModSimon::createSequence()
     this->sequence=res;
 }
 
+void ModSimon::goodSeq()
+{
+    this->setScore(this->getScore() + 1);
+
+    /// en cas de victoire
+    /// \todo faire des trucs
+    if (this->score >= this->scoreToReach) {
+        std::cout << "WEEEEEEEEEEE HAAAAAAAAAVE A CHAAAAAAAMPIOOOOOOOOOOOON" << std::endl;
+    }
+//  else {
+    this->setSeqLen(this->getSeqLen() + 1);
+    this->createSequence();
+    /// \todo completer
+//  }
+}
+
+void ModSimon::badSeq()
+{
+    std::cout << "trompage dans la sequencure" << std::endl;
+    this->remLife();
+    /// \todo completer
+}

@@ -9,6 +9,9 @@ SuperSimon::SuperSimon(QWidget *parent) :
     ui->setupUi(this);
     modele=new ModSimon;
 
+    // longueur attendue
+    this->expectedLength = modele->getSeqLen();
+
     std::cout << "Debut construction DEUX" << std::endl;
     QObject::connect(ui->butResScore, SIGNAL(clicked(bool)),this,SLOT(resetScoreClicked()));
     std::cout << "Debut construction TROIS" << std::endl;
@@ -35,12 +38,13 @@ SuperSimon::~SuperSimon()
 
 void SuperSimon::readSequence()
 {
-
+    ui->labLireSeq->setText(QString::fromStdString(modele->getSequence()));
+    ui->labSeqNumber->setText(QString::fromStdString(std::to_string(modele->getSeqLen())));
 }
 
 void SuperSimon::editSequence()
 {
-
+    /// \todo implémenter
 }
 
 void SuperSimon::addLife()
@@ -64,19 +68,39 @@ void SuperSimon::resScore()
 
 void SuperSimon::addToSequence(int numToAdd)
 {
-    this->modele->setSequence(this->modele->getSequence()+=std::to_string(numToAdd));
+    //this->modele->setSequence(this->modele->getSequence()+=std::to_string(numToAdd));
+    this->seqEntered.append(QString::fromStdString(std::to_string(numToAdd)));
+
+    std::cout << "seqentered actuel : " << seqEntered.toStdString() << std::endl;
+
     this->checkSeqLenght();
 }
 
 void SuperSimon::checkSeqLenght()
 {
-    //if (this->modele->getSequence()::size==4)
-    //    this->sendSeqForCheck();
+
+
+    if(seqEntered.length()==expectedLength) {
+        this->sendSeqForCheck();
+    } else if(seqEntered.length() > expectedLength){
+        std::cout << "euh, y a un probleme patron[supersimon::checkseqlength]" << std::endl;
+    } else {
+        //nothing, pas encore atteint la longueur de la sequence
+    }
 }
 
 bool SuperSimon::sendSeqForCheck()
 {
-    return this->modele->checkSequence(this->modele->getSequence());
+    // dans le si, on fait déjà les opérations sur le modèle, il faut donc simplement
+    // mettre à jour la vue après
+    if (this->modele->checkSequence(seqEntered.toStdString())) {
+        std::cout << "bonne sequence, felicitations de supersimon";
+        // longueur attendue
+    }
+    this->updateViewSimon();
+    this->expectedLength=modele->getSeqLen();
+    this->seqEntered=QString::fromStdString("");
+    //return true;
 }
 
 /// --------------------------------------------------------------------------
@@ -124,4 +148,17 @@ void SuperSimon::simonClicked(const int pindex)
 {
     std::cout<<"simon clicked " << pindex <<std::endl;
     this->addToSequence(pindex);
+}
+
+
+
+
+void SuperSimon::updateViewSimon()
+{
+    ui->labLireSeq->setText(QString::fromStdString(modele->getSequence()));
+    ui->labLifeRemaining->setText(QString::fromStdString(std::to_string(modele->getLives())));
+    ui->labScore->setText(QString::fromStdString(std::to_string(modele->getScore())));
+    ui->labSeqNumber->setText(QString::fromStdString(std::to_string(modele->getSeqLen())));
+
+    /// \todo mettre a jour les textes
 }

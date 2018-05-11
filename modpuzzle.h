@@ -6,6 +6,10 @@ class ModPuzzle
 {
 public:
     ModPuzzle();
+
+private:
+
+
 };
 
 #endif // MODPUZZLE_H

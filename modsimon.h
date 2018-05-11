@@ -29,8 +29,8 @@ public:
     void setSequence(std::string);
     std::string getSequence(void);
 
-    void setSeqNum(int);
-    int getSeqNum(void);
+    void setSeqLen(int);
+    int getSeqLen(void);
 
     /// verifier séquence entrée
     bool checkSequence (std::string);
@@ -58,13 +58,19 @@ private:
     std::string sequence;
 
     /// current sequence length
-    int seqNum;
+    int seqLen;
 
     /// score
     int score;
 
     /// score à atteindre
     int scoreToReach;
+
+    /// consequences of good sequence
+    void goodSeq(void);
+
+    /// consequences of bad sequence
+    void badSeq(void);
 
 };
 

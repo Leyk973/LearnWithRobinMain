@@ -1,5 +1,7 @@
 Trucs à faire (pas encore triés en ordre de priorité)
 
+- Prévoir un widget de victoire appelé par un signal commun aux jeu (avec des infos genre le nom du jeu et le score) qui permettrait de revenir au menu
+- Gérer la remise à zéro des jeux
 - Faire hériter les jeux d'une superclasse Jeu avec les méthodes et attributs de base (notamement à propos du score)
 - Voir si on peut mettre le bouton Menu dans le widget de chaque jeu, pour que ceux-ci signalent au stackedWidget qui change l'affichage
 - Se mettre au multithreading, pour l'audio, l'affichage en décalé du Simon, le chargement de l'application pour afficher les crédits et potentiellement de l'optimisation
@@ -15,6 +17,8 @@ Trucs à faire (pas encore triés en ordre de priorité)
 - Gérer les designs, l'icône, la mascotte
 - Gérer le bouton de consigne, peut-être dans le même layout que le bouton de menu
 - Peut-être mettre les infos sur le joueur en cours dans le même layout que celui des boutons de menu et consigne
+
+
 
 Trucs spécifiques à un jeu / une fonction
 

@@ -12,6 +12,10 @@ class SuperSimon : public QWidget
 {
     Q_OBJECT
 
+    /// \todo voir si on passerait pas plein de fonction public en private
+    /// vu que de toutes façons elles ne sont pas appelées hors de la classe
+    /// pour la plupart
+
 public:
     explicit SuperSimon(QWidget *parent = nullptr);
     ~SuperSimon();
@@ -36,6 +40,9 @@ public:
 
     /// envoie la sequence au modèle pour vérification
     bool sendSeqForCheck(void);
+
+    /// mettre à jour la vue
+    void updateViewSimon(void);
 
 public slots:
     /// appui sur bouton du simon

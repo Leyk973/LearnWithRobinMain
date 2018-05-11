@@ -12,6 +12,7 @@
 #include <QGridLayout>
 #include <QLabel>
 #include <memory>
+#include "modmemory.h"
 
 namespace Ui {
 class Memory;
@@ -56,6 +57,8 @@ private:
 
     // vider le vecteur de boutons
     void emptyAndDeleteVector(void);
+
+    ModMemory * modMemo;
 
 };
 
