@@ -7,6 +7,21 @@ SuperSimon::SuperSimon(QWidget *parent) :
 {
     std::cout << "Debut construction SIMON" << std::endl;
     ui->setupUi(this);
+
+    // TEST BOUTON PERSO
+    ui->butSim1->setFixedSize(50,50);
+    ui->butSim1->setStyleSheet(QString::fromUtf8(
+                                   "QPushButton {"
+                                   "border-image:url(:/files/simon1NotClickedTransp.png);"
+                                   "}"
+                                   "QPushButton::pressed {"
+                                   "border-image:url(:/files/simon1NotClickedTransp.png);"
+                                   "}"
+                                   ));
+
+
+
+
     modele=new ModSimon;
 
     // longueur attendue
