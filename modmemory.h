@@ -11,9 +11,22 @@ public:
 
     ~MemoryCard(void);
 
+    /// inverse l'état retournee de la carte
     void flipCard(void);
 
+    /// met associee a vrai
     void foundCard(void);
+
+    void setIndice(int & ind);
+    int getIndice(void);
+
+    void setPaire(int & pai);
+    int getPaire(void);
+
+    bool isRetournee(void);
+
+    bool isAssociee(void);
+
 
 private:
 

@@ -4,5 +4,9 @@
         <file>files/boutonTestNotClicked.png</file>
         <file>files/simonTransparent.png</file>
         <file>files/simon1NotClickedTransp.png</file>
+        <file>files/four.mp3</file>
+        <file>files/one.mp3</file>
+        <file>files/three.mp3</file>
+        <file>files/two.mp3</file>
     </qresource>
 </RCC>

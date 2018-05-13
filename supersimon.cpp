@@ -46,35 +46,74 @@ SuperSimon::SuperSimon(QWidget *parent) :
 
     //création des QMediaPlayer pour jouer des sons pendant le simon
 
-    QMediaPlayer playOne = new QMediaPlayer;
-    playOne->setMedia(QUrl::fromLocalFile(":/files/one.mp3"));
-    playOne->setVolume(50);
+    //QMediaPlayer playOne = new QMediaPlayer;
+    //this->playOne = new QMediaPlayer;
+    //playOne->setMedia(QUrl::fromLocalFile(":/files/one.mp3"));
+    //playOne->setMedia(QUrl::fromLocalFile("files/one.mp3"));
+    //playOne->setMedia(QUrl::from("qrc:/files/three.mp3"));
+    this->urlOne = new QUrl("qrc:/files/one.mp3");
+    //playOne->setMedia(urlOne);
+    //playOne->setVolume(50);
+    //playOne->play();
 
 
-    QMediaPlayer playTwo = new QMediaPlayer;
-    playTwo->setMedia(QUrl::fromLocalFile(":/files/two.mp3"));
-    playTwo->setVolume(50);
-    playTwo->play();
+    //QMediaPlayer playTwo = new QMediaPlayer;
+    //this->playTwo = new QMediaPlayer;
+    //playTwo->setMedia(QUrl::fromLocalFile(":/files/two.mp3"));
+    //playTwo->setMedia(QUrl::fromLocalFile("files/two.mp3"));
+    this->urlTwo = new QUrl("qrc:/files/two.mp3");
+    //playOne->setMedia(urlTwo);
+    //playTwo->setVolume(50);
+    //playTwo->play();
 
-    QMediaPlayer playThree = new QMediaPlayer;
-    playThree->setMedia(QUrl::fromLocalFile(":/files/three.mp3"));
-    playThree->setVolume(50);
-    playThree->play();
+    //QMediaPlayer playThree = new QMediaPlayer;
+    //this->playThree = new QMediaPlayer;
+    //playThree->setMedia(QUrl::fromLocalFile(":/files/three.mp3"));
+    //playThree->setMedia(QUrl::fromLocalFile("files/three.mp3"));
+    this->urlThree = new QUrl("qrc:/files/three.mp3");
+    //playOne->setMedia(urlThree);
+    //playThree->setVolume(50);
+    //playThree->play();
 
-    QMediaPlayer playFour = new QMediaPlayer;
-    playFour->setMedia(QUrl::fromLocalFile(":/files/four.mp3"));
-    playFour->setVolume(50);
-    playFour->play();
+    //QMediaPlayer playFour = new QMediaPlayer;
+    //this->playFour = new QMediaPlayer;
+    //playFour->setMedia(QUrl::fromLocalFile(":/files/four.mp3"));
+    //playFour->setMedia(QUrl::fromLocalFile("files/four.mp3"));
+    this->urlFour= new QUrl("qrc:/files/four.mp3");
+    //playOne->setMedia(urlFour);
+    //playFour->setVolume(50);
+    //playFour->play();
+
+    playerSimon = new QMediaPlayer;
+    playerSimon->setVolume(50);
+    // playlist
+    playSeq = new QMediaPlaylist;
+    //playerSimon->setPlaylist(playSeq);
+
+
+
 }
 
 SuperSimon::~SuperSimon()
 {
     std::cout<<"Destruction SuperSimon"<<std::endl;
+    //delete playOne;
+    //delete playTwo;
+    //delete playThree;
+    //delete playFour;
+    this->deleteAudio();
     delete ui;
 }
 
 void SuperSimon::readSequence()
 {
+    // vidage de la playlist
+    if(this->playSeq->clear())
+    {
+        std::cout << "liste de lecture videe" << std::endl;
+    } else {
+        std::cout << "probleme lors du vidage de la liste de lecture" << std::endl;
+    }
 
     ui->labSeqNumber->setText("SIMON --- " + QString::fromStdString(std::to_string(modele->getSeqLen())));
     ui->labLireSeq->setText("");
@@ -83,30 +122,57 @@ void SuperSimon::readSequence()
     std::string seq = this->modele->getSequence();
     //for sur string de séquence pour remplir
     //labLireSeq et lire l'audio en même temps
+
+    // chaine a mettre sous la lecture
+    std::string seqLue = "";
+
+    std::cout << "on va faire pour la lecture " << this->modele->getSeqLen() << " boucles" << std::endl;
     for (int i=0;i<this->modele->getSeqLen();++i)
     {
-        nextChar=str.at(seq);
+        //nextChar=str.at(seq);
+        nextChar=seq.at(i);
+        std::cout << "le nextchar est " << nextChar << std::endl;
         switch(nextChar){
-            case(1):{
-                ui->labLireSeq->setText(ui->labLireSeq->getText + "one ");
-                playOne->play();
-            }
-            case(2):{
-                ui->labLireSeq->setText(ui->labLireSeq->getText + "two ");
-                playTwo->play();
-            }
-            case(3):{
-                ui->labLireSeq->setText(ui->labLireSeq->getText + "three ");
-                playThree->play();
-            }
-            case(4):{
-                ui->labLireSeq->setText(ui->labLireSeq->getText + "four ");
-                playFour->play();
-            }
+        case('1'):{
+            //ui->labLireSeq->setText(QString::fromStdString(ui->labLireSeq->text().toStdString()) + "one ");
+            seqLue += "one ";
+            //playOne->play();
+            this->playSeq->addMedia(*urlOne);
+            break;
+        }
+        case('2'):{
+            //ui->labLireSeq->setText(QString::fromStdString(ui->labLireSeq->text().toStdString()) + "two ");
+            seqLue += "two ";
+            //playTwo->play();
+            this->playSeq->addMedia(*urlTwo);
+            break;
+        }
+        case('3'):{
+            //ui->labLireSeq->setText(QString::fromStdString(ui->labLireSeq->text().toStdString()) + "three ");
+            seqLue += "three ";
+            //playThree->play();
+            this->playSeq->addMedia(*urlThree);
+            break;
+        }
+        case('4'):{
+            //ui->labLireSeq->setText(QString::fromStdString(ui->labLireSeq->text().toStdString()) + "four ");
+            seqLue += "four ";
+            //playFour->play();
+            this->playSeq->addMedia(*urlFour);
+            break;
+        }
         }
         //délai pour éviter une superposition des mp3
-        void QThread::msleep(1000);
+        //QThread::msleep(1000);
+        //int sec = 2;
+        //this->delay(sec);
     }
+    ui->labLireSeq->setText(QString::fromStdString(seqLue));
+    //this->playSeq->setCurrentIndex(1);
+    std::cout << "la playlist contient " << playSeq->mediaCount() << std::endl;
+    playerSimon->setPlaylist(playSeq);
+    playerSimon->setVolume(50);
+    playerSimon->play();
 
 }
 
@@ -117,9 +183,9 @@ void SuperSimon::editSequence()
 
 void SuperSimon::addLife()
 {
-   this->modele->addLife();
-   std::string mammouth = std::to_string(this->modele->getLives());
-   this->ui->labLifeRemaining->setText(QString::fromStdString(mammouth));
+    this->modele->addLife();
+    std::string mammouth = std::to_string(this->modele->getLives());
+    this->ui->labLifeRemaining->setText(QString::fromStdString(mammouth));
 }
 
 void SuperSimon::remLife()
@@ -216,6 +282,31 @@ void SuperSimon::simonClicked(const int pindex)
 {
     std::cout<<"simon clicked " << pindex <<std::endl;
     this->addToSequence(pindex);
+
+    // faire du bruit
+    switch(pindex){
+    case(1):{
+        this->playerSimon->setMedia(*urlOne);
+        this->playerSimon->play();
+        break;
+    }
+    case(2):{
+        this->playerSimon->setMedia(*urlTwo);
+        this->playerSimon->play();
+        break;
+    }
+    case(3):{
+        this->playerSimon->setMedia(*urlThree);
+        this->playerSimon->play();
+        break;
+    }
+    case(4):{
+        this->playerSimon->setMedia(*urlFour);
+        this->playerSimon->play();
+        break;
+    }
+    }
+
 }
 
 
@@ -229,4 +320,23 @@ void SuperSimon::updateViewSimon()
     ui->labSeqNumber->setText(QString::fromStdString(std::to_string(modele->getSeqLen())));
 
     /// \todo mettre a jour les textes
+}
+
+
+/// \test
+void SuperSimon::delay(int & sec)
+{
+    QTime dieTime= QTime::currentTime().addSecs(sec);
+    while (QTime::currentTime() < dieTime)
+        QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+}
+
+void SuperSimon::deleteAudio()
+{
+    delete urlOne;
+    delete urlTwo;
+    delete urlThree;
+    delete urlFour;
+    delete playSeq;
+    delete playerSimon;
 }

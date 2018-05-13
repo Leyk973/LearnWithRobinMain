@@ -3,6 +3,9 @@
 
 #include "includeviews.h"
 #include "modsimon.h"
+#include <QMediaPlayer>
+#include <QTime>
+#include <QMediaPlaylist>
 
 namespace Ui {
 class SuperSimon;
@@ -44,6 +47,12 @@ public:
     /// mettre à jour la vue
     void updateViewSimon(void);
 
+    /// \test
+    /// pas concluant
+    /// attend sec secondes
+    void delay(int & sec);
+
+
 public slots:
     /// appui sur bouton du simon
     /// redirection vers simonClicked avec la valeur du bouton
@@ -67,6 +76,7 @@ public slots:
     /// appui reset score
     void resetScoreClicked(void);
 
+    void deleteAudio(void);
 
 private:
     Ui::SuperSimon *ui;
@@ -77,6 +87,23 @@ private:
 
     /// taille attendue, à récupérer du modèle
     int expectedLength;
+
+    /// \test
+    /// Les players pour lire les mp3
+    //QMediaPlayer * playOne;
+    QUrl * urlOne;
+    //QMediaPlayer * playTwo;
+    QUrl * urlTwo;
+    //QMediaPlayer * playThree;
+    QUrl * urlThree;
+    //QMediaPlayer * playFour;
+    QUrl * urlFour;
+
+    /// playlist pour lire la sequence
+    QMediaPlaylist * playSeq;
+
+    /// gros player de ses morts
+    QMediaPlayer * playerSimon;
 
 };
 
