@@ -43,6 +43,28 @@ SuperSimon::SuperSimon(QWidget *parent) :
     QObject::connect(ui->butSim4, SIGNAL(clicked(bool)),this,SLOT(simonClickedRedirect()));
 
     std::cout << "Fin construction SIMON" << std::endl;
+
+    //création des QMediaPlayer pour jouer des sons pendant le simon
+
+    QMediaPlayer playOne = new QMediaPlayer;
+    playOne->setMedia(QUrl::fromLocalFile(":/files/one.mp3"));
+    playOne->setVolume(50);
+
+
+    QMediaPlayer playTwo = new QMediaPlayer;
+    playTwo->setMedia(QUrl::fromLocalFile(":/files/two.mp3"));
+    playTwo->setVolume(50);
+    playTwo->play();
+
+    QMediaPlayer playThree = new QMediaPlayer;
+    playThree->setMedia(QUrl::fromLocalFile(":/files/three.mp3"));
+    playThree->setVolume(50);
+    playThree->play();
+
+    QMediaPlayer playFour = new QMediaPlayer;
+    playFour->setMedia(QUrl::fromLocalFile(":/files/four.mp3"));
+    playFour->setVolume(50);
+    playFour->play();
 }
 
 SuperSimon::~SuperSimon()
@@ -53,8 +75,39 @@ SuperSimon::~SuperSimon()
 
 void SuperSimon::readSequence()
 {
-    ui->labLireSeq->setText(QString::fromStdString(modele->getSequence()));
-    ui->labSeqNumber->setText(QString::fromStdString(std::to_string(modele->getSeqLen())));
+
+    ui->labSeqNumber->setText("SIMON --- " + QString::fromStdString(std::to_string(modele->getSeqLen())));
+    ui->labLireSeq->setText("");
+
+    char nextChar;
+    std::string seq = this->modele->getSequence();
+    //for sur string de séquence pour remplir
+    //labLireSeq et lire l'audio en même temps
+    for (int i=0;i<this->modele->getSeqLen();++i)
+    {
+        nextChar=str.at(seq);
+        switch(nextChar){
+            case(1):{
+                ui->labLireSeq->setText(ui->labLireSeq->getText + "one ");
+                playOne->play();
+            }
+            case(2):{
+                ui->labLireSeq->setText(ui->labLireSeq->getText + "two ");
+                playTwo->play();
+            }
+            case(3):{
+                ui->labLireSeq->setText(ui->labLireSeq->getText + "three ");
+                playThree->play();
+            }
+            case(4):{
+                ui->labLireSeq->setText(ui->labLireSeq->getText + "four ");
+                playFour->play();
+            }
+        }
+        //délai pour éviter une superposition des mp3
+        void QThread::msleep(1000);
+    }
+
 }
 
 void SuperSimon::editSequence()
