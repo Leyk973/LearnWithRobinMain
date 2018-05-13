@@ -311,7 +311,6 @@ void SuperSimon::simonClicked(const int pindex)
 
 
 
-
 void SuperSimon::updateViewSimon()
 {
     ui->labLireSeq->setText(QString::fromStdString(modele->getSequence()));

@@ -14,4 +14,5 @@
 #include <QIcon>
 #include <QPaintEvent>
 #include "commonlibs.h"
+
 #endif // INCLUDEVIEWS_H
