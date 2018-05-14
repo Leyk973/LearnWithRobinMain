@@ -23,13 +23,17 @@ class Memory : public QWidget
     Q_OBJECT
 
 public:
+    /// Constructeur et destructeur
     explicit Memory(QWidget *parent = 0);
     ~Memory();
+
+    /// Met à jour l'interface
     void paintEvent(QPaintEvent*);
 
+    /// Récupère le nombre de cartes
     int getNbCards(void);
 
-    // retourner une carte en changeant sa stylesheet
+    /// Retourne une carte en changeant sa stylesheet
     void flipCard(QPushButton*);
 
 private:
@@ -44,20 +48,25 @@ private:
     QPushButton * boutonDeTestQuiSertARien3;
     QPushButton * boutonDeTestQuiSertARien4;*/
 
+    /// Vecteur qui contient les pointeurs vers les boutons créés dynanmiquement par le programme
     /// NE PAS OUBLIER DE delete[] dans le destructeur
     //QPushButton * tabCards;
     std::vector<QPushButton *> cardsVector;
 
+    /// Nombre de cartes
     int nbcards;
 
+    /// Grille sur laquelle les cartes sont placées
     QGridLayout * theGrid;
 
+    /// Affiche le score
     // nombre de clics
     QLabel * labScore;
 
-    // vider le vecteur de boutons
+    /// Vider et supprimer le vecteur de boutons
     void emptyAndDeleteVector(void);
 
+    /// Modèle
     ModMemory * modMemo;
 
 };

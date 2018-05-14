@@ -109,7 +109,7 @@ void Memory::paintEvent(QPaintEvent *)
 
 int Memory::getNbCards()
 {
-    /// \todo récupérer dansle modèle après
+    /// \todo récupérer dans le modèle après
     return 16;
 }
 

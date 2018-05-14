@@ -25,7 +25,7 @@ public:
     /// \param setOp parmi OPE_ALL, OPE_EASY, OPE_NORM
     void iniSetOperateurs(posSetOp setOp);
 
-    /// Creer un calcul
+    /// Créer un calcul
     void iniCalcul(void);
 
     /// Donner les opérandes
@@ -45,13 +45,13 @@ public:
     /// Verifier le résultat
     bool verifRes(int prop);
 
-    /// Gestion du score (test)
+    /// Gestion du score
     void resetScore(void);
     int getScore(void);
     void setScore(int nS);
     void onePoint(void);
 
-    /// donner les nombres en toutes lettres
+    /// Donner les nombres en toutes lettres
     /// \todo implémenter
     std::string getOpe1Str(void);
     std::string getOpe2Str(void);
@@ -62,9 +62,9 @@ private:
 
     /// Opérateurs disponibles
     /// \todo en faire un tableau de std::string ? initialisé au setOperateurs
-    ///  Pour l'instant, on n'autorise que l'addition
+    /// Pour l'instant, on n'autorise que l'addition
 
-    /// bornes pour les opérandes
+    /// Bornes pour les opérandes
     int opeMin, opeMax;
 
     /// Opérandes actuels
@@ -79,7 +79,7 @@ private:
     /// \test TEMPORAIRE
     int score;
 
-    /// transformer un int en string (english)
+    /// Transformer un int en string (english)
     std::string numToWords(int val);
 
 };

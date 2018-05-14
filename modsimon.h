@@ -10,7 +10,7 @@ public:
     ModSimon();
     ~ModSimon(void);
 
-    /// difficulte (de 1 facile à 3 difficile)
+    /// Difficulté (de 1 facile à 3 difficile)
     //void setDifficulte(int);
 
     /// SCORE
@@ -32,14 +32,13 @@ public:
     void setSeqLen(int);
     int getSeqLen(void);
 
-    /// verifier séquence entrée
+    /// Vérifier la séquence entrée
     bool checkSequence (std::string);
 
-    /// definir la séquence des couleurs
-    /// le parametre est le nombre de clignotements
+    /// Définir la séquence des couleurs
     void createSequence();
 
-    /// set le scoreToReach selon la difficulté
+    /// Set le scoreToReach selon la difficulté
     /// \todo implémenter difficulté
     void iniScoreToReach(void);
 
@@ -47,29 +46,29 @@ public:
 
 private:
 
-    /// difficulté
+    /// Difficulté
     /// \todo implémenter
     // std::string : difficulté
 
-    /// remaining lives
+    /// Vies restantes
     int lives;
 
-    /// current sequence
+    /// Séquence actuelle
     std::string sequence;
 
-    /// current sequence length
+    /// Longueur de la séquence actuelle
     int seqLen;
 
-    /// score
+    /// Score actuel
     int score;
 
-    /// score à atteindre
+    /// Score à atteindre
     int scoreToReach;
 
-    /// consequences of good sequence
+    /// Conséquences d'une bonne séquence
     void goodSeq(void);
 
-    /// consequences of bad sequence
+    /// Conséquences d'une mauvaise séquence
     void badSeq(void);
 
 };
