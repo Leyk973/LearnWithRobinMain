@@ -5,6 +5,7 @@
 class ModPuzzle
 {
 public:
+    /// Constructeur
     ModPuzzle();
 
 private:

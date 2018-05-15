@@ -5,6 +5,7 @@
 class ModPointAndClick
 {
 public:
+    /// Constructeur
     ModPointAndClick();
 };
 

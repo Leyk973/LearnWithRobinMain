@@ -5,6 +5,7 @@
 class parametersLWR
 {
 public:
+    /// Constructeur
     parametersLWR();
 };
 

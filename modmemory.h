@@ -4,95 +4,101 @@
 #include "commonlibs.h"
 #include <vector>
 
-/// classe pour les cartes de memory
+/// Classe pour les cartes de memory
 class MemoryCard
 {
 public:
 
-    // constructeur
+    /// Constructeur par défaut
     MemoryCard(void);
 
-    /// constructeur complet
+    /// Constructeur complet
     /// \param 1 indice
     /// \param 2 paire
     /// \param 3 retournee
     /// \param 4 associee
     MemoryCard(int&, int&, bool, bool);
 
+    /// Destructeur
     ~MemoryCard(void);
 
-    /// inverse l'état retournee de la carte
+    /// Inverse l'état retournee de la carte
     void flipCard(void);
 
-    /// met associee a vrai
+    /// Met associee à vrai
     void foundCard(void);
 
+    /// Get-set l'indice d'une carte
     void setIndice(int & ind);
     int getIndice(void);
 
+    /// Get-set une paire
     void setPaire(int & pai);
     int getPaire(void);
 
+    /// Renvoie l'état de la carte (retournée ou non)
     bool isRetournee(void);
 
+    /// Renvoie l'état de la paire (associée ou non)
     bool isAssociee(void);
 
 
 private:
 
-    // indice de la carte dans le memory [0-15]
+    /// Indice de la carte dans le memory [0-15]
     int indice;
 
-    // indice de la paire dans le memory [0-7]
+    /// Indice de la paire dans le memory [0-7]
     int paire;
 
-    // etat de la carte [retournée ou pas]
+    /// Etat de la carte [retournée ou pas]
     bool retournee;
 
-    // paire trouvee ?
+    /// Etat de la paire [trouvée ou pas]
     bool associee;
 };
 
+/// Classe du modèle
 class ModMemory
 {
 public:
+    /// Constructeur et destructeur
     ModMemory();
     ~ModMemory();
 
-    /// mélanger les cartes dans le vecteur
-    /// \details principe : la vue va associer les cartes
-    /// de son vecteur avec celles du modele en prenant leurs
-    /// indices dans leurs vecteurs respectifs, et le modele va
+    /// Mélanger les cartes dans le vecteur
+    /// \details Principe : la vue va associer les cartes
+    /// de son vecteur avec celles du modèle en prenant leurs
+    /// indices dans leurs vecteurs respectifs, et le modèle va
     /// communiquer les informations des MemoryCards, mélangées donc.
     /// Tout ça pour dire que pas besoin de mélanger ou synchroniser
     /// la vue et le modèle entre eux.
     void shuffleCards(void);
 
-    /// \warning tous les indices demandes sour forme d'int sont
-    /// les indice du vecteur, pas les attributs indice des MemoryCards elles-mêmes
+    /// \warning Tous les indices demandés sour forme d'int sont
+    /// les indice du vecteur, pas les attributs indices des MemoryCards elles-mêmes
 
-    /// verifie si la carte est ouverte (valeur visible)
+    /// Vérifie si la carte est retournée
     bool cardIsOpen(int&);
 
-    /// retourner une carte vers face visible
-    /// l'ajoute au vecteur flippedcards
+    /// Retourner une carte face visible
+    /// L'ajoute au vecteur flippedcards
     void openCard(int&);
 
-    /// retourne les cartes de flipped cards
+    /// Retourne les cartes de flippedcards face cachée
     void closeCards(int&);
 
-    /// verifier si les cartes sont de la même paire
+    /// Vérifier si les cartes appartiennent à la même paire
     bool checkCards(int&, int&);
 
-    /// indice de la carte
-    /// utile seulement pour le shuffle
-    /// et encore, peut-être
+    /// Indice de la carte
+    /// Utile seulement pour le shuffle
     int getIndiceCarte(int&);
 
-    /// paire de la carte
+    /// Paire de la carte
     int getPaireCarte(int&);
 
-    /// verifie si la carte est associee
+    /// Vérifie si la carte est associée
     bool cardIsPaired(int&);
 
 
@@ -103,22 +109,22 @@ public:
 
 
 private:
-    /// nombre de coups
-    /// + petit = + mieux
+    /// Nombre de coups
+    /// Le plus petit le mieux
     int score;
 
-    /// nombre de paires du memory en cours
+    /// Nombre de paires du memory en cours
     int nbPaires;
 
-    /// nombre de cartes du memory en cours
+    /// Nombre de cartes du memory en cours
     int nbCards;
 
-    /// la liste des cartes
+    /// Liste des cartes
     std::vector<MemoryCard> cards;
 
-    /// la liste des cartes retournees
-    /// quand elle a plus de 2 elements, on enleve les deux
-    /// plus anciens
+    /// La liste des cartes retournées
+    /// Quand elle a plus de 2 éléments, on enlève les deux
+    /// les plus anciens
     std::vector<MemoryCard> flippedCards;
 
 
