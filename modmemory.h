@@ -132,12 +132,8 @@ private:
 
     /// la quantité de cartes retournees
     int nbCartesRetournees;
-    /// La liste des cartes retournées
-    /// Quand elle a plus de 2 éléments, on enlève les deux
-    /// les plus anciens
-    std::vector<MemoryCard> flippedCards;
 
-    /// les indices des cartes retournées
+    /// Indices des cartes retournées
     std::pair<int,int> flippedCards;
 
 };
