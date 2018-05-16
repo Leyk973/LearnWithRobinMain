@@ -5,7 +5,7 @@
 class ModPuzzle
 {
 public:
-    /// Constructeur
+    /// \brief Constructeur
     ModPuzzle();
 
 private:

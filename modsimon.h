@@ -6,39 +6,39 @@ class ModSimon
 {
 public:
 
-    /// Constructeur destructeur
+    /// \brief Constructeur destructeur
     ModSimon();
     ~ModSimon(void);
 
-    /// Difficulté (de 1 facile à 3 difficile)
+    /// \brief Difficulté (de 1 facile à 3 difficile)
     //void setDifficulte(int);
 
-    /// SCORE
+    /// \brief SCORE
     void setScore(int);
     int getScore(void);
 
-    ///LIVES
-    /// Vérifier quand on la modifie qu'elle ne passe pas en dessous de 0
+    /// \brief LIVES
+    /// \details Vérifier quand on la modifie qu'elle ne passe pas en dessous de 0
     void setLives(int);
     int getLives(void);
     void addLife(void);
     void remLife(void);
 
 
-    /// SEQUENCE
+    /// \brief SEQUENCE
     void setSequence(std::string);
     std::string getSequence(void);
 
     void setSeqLen(int);
     int getSeqLen(void);
 
-    /// Vérifier la séquence entrée
+    /// \brief Vérifier la séquence entrée
     bool checkSequence (std::string);
 
-    /// Définir la séquence des couleurs
+    /// \brief Définir la séquence des couleurs
     void createSequence();
 
-    /// Set le scoreToReach selon la difficulté
+    /// \brief Set le scoreToReach selon la difficulté
     /// \todo implémenter difficulté
     void iniScoreToReach(void);
 
@@ -46,29 +46,29 @@ public:
 
 private:
 
-    /// Difficulté
+    /// \brief Difficulté
     /// \todo implémenter
     // std::string : difficulté
 
-    /// Vies restantes
+    /// \brief Vies restantes
     int lives;
 
-    /// Séquence actuelle
+    /// \brief Séquence actuelle
     std::string sequence;
 
-    /// Longueur de la séquence actuelle
+    /// \brief Longueur de la séquence actuelle
     int seqLen;
 
-    /// Score actuel
+    /// \brief Score actuel
     int score;
 
-    /// Score à atteindre
+    /// \brief Score à atteindre
     int scoreToReach;
 
-    /// Conséquences d'une bonne séquence
+    /// \brief Conséquences d'une bonne séquence
     void goodSeq(void);
 
-    /// Conséquences d'une mauvaise séquence
+    /// \brief Conséquences d'une mauvaise séquence
     void badSeq(void);
 
 };

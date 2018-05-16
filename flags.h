@@ -13,12 +13,12 @@ class Flags : public QWidget
     Q_OBJECT
 
 public:
-    /// Constructeur et destructeur
+    /// \brief Constructeur et destructeur
     explicit Flags(QWidget *parent = 0);
     ~Flags();
 
 private:
-    /// Interface utilisateur
+    /// \brief Interface utilisateur
     Ui::Flags *ui;
 };
 

@@ -13,7 +13,7 @@
 class MemoryIndexCards {
     public:
 
-    /// Constructeur à partir d'un fichier csv
+    /// \brief Constructeur à partir d'un fichier csv
     /// \todo implémenter
     MemoryIndexCards(std::string &pathcsv);
 
@@ -26,23 +26,23 @@ class MemoryCard: public QPushButton {
 public:
     /*MemoryCard();*/
 
-    /// Constructeur
+    /// \brief Constructeur
     /// \param pathBackCard chemin vers l'image du dos de la carte
     /// \param pathFlipCard chemin vers l'image de la face de la carte
     /// \param val_pair index de la paire dans le tableau des paires
     MemoryCard(std::string &pathBackCard, std::string &pathFlipCard, int &val_pair);
 
-    /// Destructeur
+    /// \brief Destructeur
     ~MemoryCard(void);
 
-    /// Donner l'index de la paire
+    /// \brief Donner l'index de la paire
     int getValuePair(void);
 
     //
 
 private:
 
-    /// L'id de la paire qui correspond
+    /// \brief L'id de la paire qui correspond
     int value_pair;
 
     // image de fond

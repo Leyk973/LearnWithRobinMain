@@ -5,7 +5,7 @@
 class parametersLWR
 {
 public:
-    /// Constructeur
+    /// \brief Constructeur
     parametersLWR();
 };
 

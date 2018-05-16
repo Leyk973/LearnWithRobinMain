@@ -5,81 +5,81 @@
 class ModCalcul
 {
 public:
-    /// Constructeur et destructeur
+    /// \brief Constructeur et destructeur
     ModCalcul(void);
     ModCalcul(const ModCalcul& modToCopy);
     ModCalcul(ModCalcul *modToCopy);
     ~ModCalcul(void);
 
-    /// Possibilités setOperateurs
+    /// \brief Possibilités setOperateurs
     enum posSetOp { OPE_ALL, OPE_EASY, OPE_NORM };
 
-    /// Constructeur et initialisation du premier calcul
+    /// \brief Constructeur et initialisation du premier calcul
     ModCalcul(int bmin, int bmax, posSetOp setOpe);
 
-    /// Définir les bornes des chiffres proposés pour la somme
+    /// \brief Définir les bornes des chiffres proposés pour la somme
     void setBornes(int bmin, int bmax);
 
-    /// Définir quel set d'opérateurs employer
+    /// \brief Définir quel set d'opérateurs employer
     /// \todo gérer ça
     /// \param setOp parmi OPE_ALL, OPE_EASY, OPE_NORM
     void iniSetOperateurs(posSetOp setOp);
 
-    /// Créer un calcul
+    /// \brief Créer un calcul
     void iniCalcul(void);
 
-    /// Donner les opérandes
+    /// \brief Donner les opérandes
     int getOperande1(void);
     int getOperande2(void);
 
-    /// Donner les min et max
+    /// \brief Donner les min et max
     int getOpeMin(void);
     int getOpeMax(void);
 
-    /// Donner l'opérateur
+    /// \brief Donner l'opérateur
     std::string getOperateur(void);
 
-    /// Donner le résultat
+    /// \brief Donner le résultat
     int getResult(void);
 
-    /// Verifier le résultat
+    /// \brief Verifier le résultat
     bool verifRes(int prop);
 
-    /// Gestion du score
+    /// \brief Gestion du score
     void resetScore(void);
     int getScore(void);
     void setScore(int nS);
     void onePoint(void);
 
-    /// Donner les nombres en toutes lettres
+    /// \brief Donner les nombres en toutes lettres
     /// \todo implémenter
     std::string getOpe1Str(void);
     std::string getOpe2Str(void);
 
 private:
-    /// Donne un entier aléatoire entre min et max inclus
+    /// \brief Donne un entier aléatoire entre min et max inclus
     int giveRandom(int min,  int max);
 
-    /// Opérateurs disponibles
+    /// \brief Opérateurs disponibles
     /// \todo en faire un tableau de std::string ? initialisé au setOperateurs
-    /// Pour l'instant, on n'autorise que l'addition
+    /// \details Pour l'instant, on n'autorise que l'addition
 
-    /// Bornes pour les opérandes
+    /// \brief Bornes pour les opérandes
     int opeMin, opeMax;
 
-    /// Opérandes actuels
+    /// \brief Opérandes actuels
     int opeGauche, opeDroite;
 
-    /// Opérateur actuel
+    /// \brief Opérateur actuel
     std::string opeActuel;
 
-    /// Résultat actuel
+    /// \brief Résultat actuel
     int resultatAttendu;
 
     /// \test TEMPORAIRE
     int score;
 
-    /// Transformer un int en string (english)
+    /// \brief Transformer un int en string (english)
     std::string numToWords(int val);
 
 };

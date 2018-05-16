@@ -6,6 +6,7 @@
 class ModFlags
 {
 public:
+    /// \brief Constructeur
     ModFlags();
 };
 

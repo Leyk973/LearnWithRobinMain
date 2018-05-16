@@ -18,39 +18,39 @@ class RobinMainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    /// Constructeur et destructeur
+    /// \brief Constructeur et destructeur
     explicit RobinMainWindow(QWidget *parent = 0);
     ~RobinMainWindow();
 
-    /// Getter setter
+    /// \brief Getter setter
     void setAtMenu(bool am);
     bool getAtMenu(void);
 
 public slots:
-    /// Signal pour retourner au menu principal
+    /// \brief Signal pour retourner au menu principal
     void backToMenu(void);
 
-    /// Signal pour lancer le calcul mental
+    /// \brief Signal pour lancer le calcul mental
     void openCalcul(void);
 
-    /// Signal pour lancer le super simon
+    /// \brief Signal pour lancer le super simon
     void openSimon(void);
 
-    /// Signal pour lancer le memory
+    /// \brief Signal pour lancer le memory
     void openMemory(void);
 
 private:
-    /// Interface utilisateur
+    /// \brief Interface utilisateur
     Ui::RobinMainWindow *ui;
 
-    /// Permet de savoir si l'on est dans le menu ou non
+    /// \brief Permet de savoir si l'on est dans le menu ou non
     bool atMenu;
 
     /// \warning A manipuler avec précaution
-    /// Supprime le widget central (le pointeur)
+    /// \brief Supprime le widget central (le pointeur)
     void deleteCentralWidget(void);
 
-    /// Le stackedWidget qui contient les widgets à afficher
+    /// \brief Le stackedWidget qui contient les widgets à afficher
     QStackedWidget * widStack;
 
 };
