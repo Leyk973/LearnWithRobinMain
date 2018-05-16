@@ -8,5 +8,7 @@
         <file>files/one.mp3</file>
         <file>files/three.mp3</file>
         <file>files/two.mp3</file>
+        <file>files/boutonMenu.png</file>
+        <file>files/boutonMenuClicked.png</file>
     </qresource>
 </RCC>

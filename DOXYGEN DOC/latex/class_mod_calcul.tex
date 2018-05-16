@@ -1,0 +1,163 @@
+\hypertarget{class_mod_calcul}{}\section{Mod\+Calcul Class Reference}
+\label{class_mod_calcul}\index{Mod\+Calcul@{Mod\+Calcul}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_mod_calcul_a6c7aa1fa9a9cf577567da286e26596ce}\label{class_mod_calcul_a6c7aa1fa9a9cf577567da286e26596ce}} 
+enum \hyperlink{class_mod_calcul_a6c7aa1fa9a9cf577567da286e26596ce}{pos\+Set\+Op} \{ {\bfseries O\+P\+E\+\_\+\+A\+LL}, 
+{\bfseries O\+P\+E\+\_\+\+E\+A\+SY}, 
+{\bfseries O\+P\+E\+\_\+\+N\+O\+RM}
+ \}\begin{DoxyCompactList}\small\item\em Possibilités set\+Operateurs. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_mod_calcul_ac5da8ccb4058c1c3aa3ee15a60572f23}\label{class_mod_calcul_ac5da8ccb4058c1c3aa3ee15a60572f23}} 
+\hyperlink{class_mod_calcul_ac5da8ccb4058c1c3aa3ee15a60572f23}{Mod\+Calcul} (void)
+\begin{DoxyCompactList}\small\item\em Constructeur et destructeur. \end{DoxyCompactList}\item 
+\hyperlink{class_mod_calcul_a80ee3b9e056beb4942449219ac036e6e}{Mod\+Calcul} (const \hyperlink{class_mod_calcul}{Mod\+Calcul} \&mod\+To\+Copy)
+\item 
+\hyperlink{class_mod_calcul_ad10f52bb861bf4b76e12f5bba1d97b67}{Mod\+Calcul} (\hyperlink{class_mod_calcul}{Mod\+Calcul} $\ast$mod\+To\+Copy)
+\item 
+\mbox{\Hypertarget{class_mod_calcul_a28524d6936ea23d374b01d8b0f8feba2}\label{class_mod_calcul_a28524d6936ea23d374b01d8b0f8feba2}} 
+\hyperlink{class_mod_calcul_a28524d6936ea23d374b01d8b0f8feba2}{Mod\+Calcul} (int bmin, int bmax, \hyperlink{class_mod_calcul_a6c7aa1fa9a9cf577567da286e26596ce}{pos\+Set\+Op} set\+Ope)
+\begin{DoxyCompactList}\small\item\em Constructeur et initialisation du premier calcul. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mod_calcul_a3bc78a2a5165705dc3f15f516b6dc22c}\label{class_mod_calcul_a3bc78a2a5165705dc3f15f516b6dc22c}} 
+void \hyperlink{class_mod_calcul_a3bc78a2a5165705dc3f15f516b6dc22c}{set\+Bornes} (int bmin, int bmax)
+\begin{DoxyCompactList}\small\item\em Définir les bornes des chiffres proposés pour la somme. \end{DoxyCompactList}\item 
+void \hyperlink{class_mod_calcul_ad6061decce032f0debf6fa79d153df5d}{ini\+Set\+Operateurs} (\hyperlink{class_mod_calcul_a6c7aa1fa9a9cf577567da286e26596ce}{pos\+Set\+Op} set\+Op)
+\begin{DoxyCompactList}\small\item\em Définir quel set d\textquotesingle{}opérateurs employer. \end{DoxyCompactList}\item 
+void \hyperlink{class_mod_calcul_ab725cb964df070cf7ccda5853ea918f2}{ini\+Calcul} (void)
+\begin{DoxyCompactList}\small\item\em Créer un calcul. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mod_calcul_a0fbbf13959d04845c103e106e6c495dc}\label{class_mod_calcul_a0fbbf13959d04845c103e106e6c495dc}} 
+int \hyperlink{class_mod_calcul_a0fbbf13959d04845c103e106e6c495dc}{get\+Operande1} (void)
+\begin{DoxyCompactList}\small\item\em Donner les opérandes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mod_calcul_ab48d9276a63761f6a034ed746d21df0b}\label{class_mod_calcul_ab48d9276a63761f6a034ed746d21df0b}} 
+int {\bfseries get\+Operande2} (void)
+\item 
+\mbox{\Hypertarget{class_mod_calcul_a532a25b057812a683fccd87164818e58}\label{class_mod_calcul_a532a25b057812a683fccd87164818e58}} 
+int \hyperlink{class_mod_calcul_a532a25b057812a683fccd87164818e58}{get\+Ope\+Min} (void)
+\begin{DoxyCompactList}\small\item\em Donner les min et max. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mod_calcul_ad8e5ae82931e90554c3f253d7e013176}\label{class_mod_calcul_ad8e5ae82931e90554c3f253d7e013176}} 
+int {\bfseries get\+Ope\+Max} (void)
+\item 
+\mbox{\Hypertarget{class_mod_calcul_abb295fd73af71d56b2ba3a7395336ec1}\label{class_mod_calcul_abb295fd73af71d56b2ba3a7395336ec1}} 
+std\+::string \hyperlink{class_mod_calcul_abb295fd73af71d56b2ba3a7395336ec1}{get\+Operateur} (void)
+\begin{DoxyCompactList}\small\item\em Donner l\textquotesingle{}opérateur. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mod_calcul_ab7ec5c33e373740b4096534b78198011}\label{class_mod_calcul_ab7ec5c33e373740b4096534b78198011}} 
+int \hyperlink{class_mod_calcul_ab7ec5c33e373740b4096534b78198011}{get\+Result} (void)
+\begin{DoxyCompactList}\small\item\em Donner le résultat. \end{DoxyCompactList}\item 
+bool \hyperlink{class_mod_calcul_a66c4a1a155a2a74a53bba15967ef1bdb}{verif\+Res} (int prop)
+\begin{DoxyCompactList}\small\item\em Verifier le résultat. \end{DoxyCompactList}\item 
+void \hyperlink{class_mod_calcul_ab2fe81565c7084fa2c4344fce053eb14}{reset\+Score} (void)
+\begin{DoxyCompactList}\small\item\em Gestion du score. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mod_calcul_a6d8cf463ce23eacb768e2ce8ef8e348a}\label{class_mod_calcul_a6d8cf463ce23eacb768e2ce8ef8e348a}} 
+int {\bfseries get\+Score} (void)
+\item 
+\mbox{\Hypertarget{class_mod_calcul_ad10794443a0c0684912d1b22e3612bd3}\label{class_mod_calcul_ad10794443a0c0684912d1b22e3612bd3}} 
+void {\bfseries set\+Score} (int nS)
+\item 
+\mbox{\Hypertarget{class_mod_calcul_a7e4594693f592c46b245f1aa1de31ce8}\label{class_mod_calcul_a7e4594693f592c46b245f1aa1de31ce8}} 
+void {\bfseries one\+Point} (void)
+\item 
+std\+::string \hyperlink{class_mod_calcul_aa16185334bb48c8e312bd0b9148aa00d}{get\+Ope1\+Str} (void)
+\begin{DoxyCompactList}\small\item\em Donner les nombres en toutes lettres. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mod_calcul_a77b55cb859fcae911e8d3d2521885ea5}\label{class_mod_calcul_a77b55cb859fcae911e8d3d2521885ea5}} 
+std\+::string {\bfseries get\+Ope2\+Str} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_mod_calcul_a80ee3b9e056beb4942449219ac036e6e}\label{class_mod_calcul_a80ee3b9e056beb4942449219ac036e6e}} 
+\index{Mod\+Calcul@{Mod\+Calcul}!Mod\+Calcul@{Mod\+Calcul}}
+\index{Mod\+Calcul@{Mod\+Calcul}!Mod\+Calcul@{Mod\+Calcul}}
+\subsubsection{\texorpdfstring{Mod\+Calcul()}{ModCalcul()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Mod\+Calcul\+::\+Mod\+Calcul (\begin{DoxyParamCaption}\item[{const \hyperlink{class_mod_calcul}{Mod\+Calcul} \&}]{mod\+To\+Copy }\end{DoxyParamCaption})}
+
+\begin{DoxyNote}{Note}
+ne va probablement pas être vraiment utilisé 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_mod_calcul_ad10f52bb861bf4b76e12f5bba1d97b67}\label{class_mod_calcul_ad10f52bb861bf4b76e12f5bba1d97b67}} 
+\index{Mod\+Calcul@{Mod\+Calcul}!Mod\+Calcul@{Mod\+Calcul}}
+\index{Mod\+Calcul@{Mod\+Calcul}!Mod\+Calcul@{Mod\+Calcul}}
+\subsubsection{\texorpdfstring{Mod\+Calcul()}{ModCalcul()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Mod\+Calcul\+::\+Mod\+Calcul (\begin{DoxyParamCaption}\item[{\hyperlink{class_mod_calcul}{Mod\+Calcul} $\ast$}]{ptr\+Mod }\end{DoxyParamCaption})}
+
+\begin{DoxyNote}{Note}
+probablement pas non plus 
+\end{DoxyNote}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_mod_calcul_aa16185334bb48c8e312bd0b9148aa00d}\label{class_mod_calcul_aa16185334bb48c8e312bd0b9148aa00d}} 
+\index{Mod\+Calcul@{Mod\+Calcul}!get\+Ope1\+Str@{get\+Ope1\+Str}}
+\index{get\+Ope1\+Str@{get\+Ope1\+Str}!Mod\+Calcul@{Mod\+Calcul}}
+\subsubsection{\texorpdfstring{get\+Ope1\+Str()}{getOpe1Str()}}
+{\footnotesize\ttfamily std\+::string Mod\+Calcul\+::get\+Ope1\+Str (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Donner les nombres en toutes lettres. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000011}{Todo}]implémenter \end{DoxyRefDesc}
+\mbox{\Hypertarget{class_mod_calcul_ab725cb964df070cf7ccda5853ea918f2}\label{class_mod_calcul_ab725cb964df070cf7ccda5853ea918f2}} 
+\index{Mod\+Calcul@{Mod\+Calcul}!ini\+Calcul@{ini\+Calcul}}
+\index{ini\+Calcul@{ini\+Calcul}!Mod\+Calcul@{Mod\+Calcul}}
+\subsubsection{\texorpdfstring{ini\+Calcul()}{iniCalcul()}}
+{\footnotesize\ttfamily void Mod\+Calcul\+::ini\+Calcul (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Créer un calcul. 
+
+Creer un calcul. \mbox{\Hypertarget{class_mod_calcul_ad6061decce032f0debf6fa79d153df5d}\label{class_mod_calcul_ad6061decce032f0debf6fa79d153df5d}} 
+\index{Mod\+Calcul@{Mod\+Calcul}!ini\+Set\+Operateurs@{ini\+Set\+Operateurs}}
+\index{ini\+Set\+Operateurs@{ini\+Set\+Operateurs}!Mod\+Calcul@{Mod\+Calcul}}
+\subsubsection{\texorpdfstring{ini\+Set\+Operateurs()}{iniSetOperateurs()}}
+{\footnotesize\ttfamily void Mod\+Calcul\+::ini\+Set\+Operateurs (\begin{DoxyParamCaption}\item[{\hyperlink{class_mod_calcul_a6c7aa1fa9a9cf577567da286e26596ce}{pos\+Set\+Op}}]{set\+Op }\end{DoxyParamCaption})}
+
+
+
+Définir quel set d\textquotesingle{}opérateurs employer. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000010}{Todo}]gérer ça \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em set\+Op} & parmi O\+P\+E\+\_\+\+A\+LL, O\+P\+E\+\_\+\+E\+A\+SY, O\+P\+E\+\_\+\+N\+O\+RM\\
+\hline
+\end{DoxyParams}
+Définir quel set d\textquotesingle{}opérateurs employer \begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000009}{Todo}]gérer ça \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em set\+Op} & parmi O\+P\+E\+\_\+\+A\+LL, O\+P\+E\+\_\+\+E\+A\+SY, O\+P\+E\+\_\+\+N\+O\+RM \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_mod_calcul_ab2fe81565c7084fa2c4344fce053eb14}\label{class_mod_calcul_ab2fe81565c7084fa2c4344fce053eb14}} 
+\index{Mod\+Calcul@{Mod\+Calcul}!reset\+Score@{reset\+Score}}
+\index{reset\+Score@{reset\+Score}!Mod\+Calcul@{Mod\+Calcul}}
+\subsubsection{\texorpdfstring{reset\+Score()}{resetScore()}}
+{\footnotesize\ttfamily void Mod\+Calcul\+::reset\+Score (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Gestion du score. 
+
+Gestion du score (test) \mbox{\Hypertarget{class_mod_calcul_a66c4a1a155a2a74a53bba15967ef1bdb}\label{class_mod_calcul_a66c4a1a155a2a74a53bba15967ef1bdb}} 
+\index{Mod\+Calcul@{Mod\+Calcul}!verif\+Res@{verif\+Res}}
+\index{verif\+Res@{verif\+Res}!Mod\+Calcul@{Mod\+Calcul}}
+\subsubsection{\texorpdfstring{verif\+Res()}{verifRes()}}
+{\footnotesize\ttfamily bool Mod\+Calcul\+::verif\+Res (\begin{DoxyParamCaption}\item[{int}]{prop }\end{DoxyParamCaption})}
+
+
+
+Verifier le résultat. 
+
+Verification du résultat. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Jean-\/\+Loup/\+Documents/\+L3/\+Projet\+Malette\+Jeux/\+Q\+T/\+L\+W\+Robin/\+Learn\+With\+Robin\+Main/modcalcul.\+h\item 
+C\+:/\+Users/\+Jean-\/\+Loup/\+Documents/\+L3/\+Projet\+Malette\+Jeux/\+Q\+T/\+L\+W\+Robin/\+Learn\+With\+Robin\+Main/modcalcul.\+cpp\end{DoxyCompactItemize}

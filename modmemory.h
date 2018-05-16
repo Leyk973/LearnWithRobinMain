@@ -118,6 +118,10 @@ public:
     /// \brief Getter de la paire de cartes retournées
     std::pair<int,int> getFlippedCards(void);
 
+    /// \brief Pour vérifier les cartes retournées
+    bool checkFlippedCards(void);
+
+
     /// \brief Getter
     int getNbCartesRestantes(void);
 

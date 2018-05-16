@@ -1,0 +1,139 @@
+\hypertarget{class_mod_memory}{}\section{Mod\+Memory Class Reference}
+\label{class_mod_memory}\index{Mod\+Memory@{Mod\+Memory}}
+
+
+{\ttfamily \#include $<$modmemory.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_mod_memory_a8604678a120d5f8e430d5d2248a44e36}{Mod\+Memory} ()
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+\hyperlink{class_mod_memory_a77d39288e861c84edcfa760170fbc44d}{$\sim$\+Mod\+Memory} ()
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+void \hyperlink{class_mod_memory_ad85f5a28220e641195215e705a928fb1}{shuffle\+Cards} (void)
+\begin{DoxyCompactList}\small\item\em Mélanger les cartes dans le vecteur. \end{DoxyCompactList}\item 
+bool \hyperlink{class_mod_memory_a67247c021d8bf91192c2c32c1eb560ad}{card\+Is\+Open} (int \&)
+\begin{DoxyCompactList}\small\item\em Vérifie si la carte est retournée. \end{DoxyCompactList}\item 
+void \hyperlink{class_mod_memory_a5886105416521e463eeaf732e8a0f6fe}{open\+Card} (int \&)
+\begin{DoxyCompactList}\small\item\em Retourner une carte face visible. \end{DoxyCompactList}\item 
+void \hyperlink{class_mod_memory_a4e6581fef7b3adbad429bf4c39d38e88}{close\+Cards} (void)
+\begin{DoxyCompactList}\small\item\em Retourne les cartes de flippedcards face cachée. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mod_memory_ab037bba20af618761450a5bf4e221d4b}\label{class_mod_memory_ab037bba20af618761450a5bf4e221d4b}} 
+bool \hyperlink{class_mod_memory_ab037bba20af618761450a5bf4e221d4b}{check\+Cards} (int \&, int \&)
+\begin{DoxyCompactList}\small\item\em Vérifier si les cartes appartiennent à la même paire. \end{DoxyCompactList}\item 
+int \hyperlink{class_mod_memory_a2ea383b6a13143c4f1f5fa9534e6faa6}{get\+Indice\+Carte} (int \&)
+\begin{DoxyCompactList}\small\item\em Indice de la carte. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mod_memory_a0f00b2aabc36bccd1eae114917b0bdc3}\label{class_mod_memory_a0f00b2aabc36bccd1eae114917b0bdc3}} 
+int \hyperlink{class_mod_memory_a0f00b2aabc36bccd1eae114917b0bdc3}{get\+Paire\+Carte} (int \&)
+\begin{DoxyCompactList}\small\item\em Paire de la carte. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mod_memory_a01b946e68364a820b65e4681b4b87ed8}\label{class_mod_memory_a01b946e68364a820b65e4681b4b87ed8}} 
+bool \hyperlink{class_mod_memory_a01b946e68364a820b65e4681b4b87ed8}{card\+Is\+Paired} (int \&)
+\begin{DoxyCompactList}\small\item\em Vérifie si la carte est associée. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mod_memory_a42de695b99429f9a9461db78b2375e3a}\label{class_mod_memory_a42de695b99429f9a9461db78b2375e3a}} 
+int \hyperlink{class_mod_memory_a42de695b99429f9a9461db78b2375e3a}{get\+Nb\+Cartes\+Retournees} (void)
+\begin{DoxyCompactList}\small\item\em Getter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mod_memory_a00449888edb65708081e0e074391a28c}\label{class_mod_memory_a00449888edb65708081e0e074391a28c}} 
+std\+::pair$<$ int, int $>$ \hyperlink{class_mod_memory_a00449888edb65708081e0e074391a28c}{get\+Flipped\+Cards} (void)
+\begin{DoxyCompactList}\small\item\em Getter de la paire de cartes retournées. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_mod_memory_ada71dd41fee113c35c644f4c2e335096}\label{class_mod_memory_ada71dd41fee113c35c644f4c2e335096}} 
+int \hyperlink{class_mod_memory_ada71dd41fee113c35c644f4c2e335096}{get\+Nb\+Cartes\+Restantes} (void)
+\begin{DoxyCompactList}\small\item\em Getter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe du modèle 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_mod_memory_a8604678a120d5f8e430d5d2248a44e36}\label{class_mod_memory_a8604678a120d5f8e430d5d2248a44e36}} 
+\index{Mod\+Memory@{Mod\+Memory}!Mod\+Memory@{Mod\+Memory}}
+\index{Mod\+Memory@{Mod\+Memory}!Mod\+Memory@{Mod\+Memory}}
+\subsubsection{\texorpdfstring{Mod\+Memory()}{ModMemory()}}
+{\footnotesize\ttfamily Mod\+Memory\+::\+Mod\+Memory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur. 
+
+\hyperlink{class_mod_memory}{Mod\+Memory}. \mbox{\Hypertarget{class_mod_memory_a77d39288e861c84edcfa760170fbc44d}\label{class_mod_memory_a77d39288e861c84edcfa760170fbc44d}} 
+\index{Mod\+Memory@{Mod\+Memory}!````~Mod\+Memory@{$\sim$\+Mod\+Memory}}
+\index{````~Mod\+Memory@{$\sim$\+Mod\+Memory}!Mod\+Memory@{Mod\+Memory}}
+\subsubsection{\texorpdfstring{$\sim$\+Mod\+Memory()}{~ModMemory()}}
+{\footnotesize\ttfamily Mod\+Memory\+::$\sim$\+Mod\+Memory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000013}{Todo}]supprimer contenu des vecteurs et les vider \end{DoxyRefDesc}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_mod_memory_a67247c021d8bf91192c2c32c1eb560ad}\label{class_mod_memory_a67247c021d8bf91192c2c32c1eb560ad}} 
+\index{Mod\+Memory@{Mod\+Memory}!card\+Is\+Open@{card\+Is\+Open}}
+\index{card\+Is\+Open@{card\+Is\+Open}!Mod\+Memory@{Mod\+Memory}}
+\subsubsection{\texorpdfstring{card\+Is\+Open()}{cardIsOpen()}}
+{\footnotesize\ttfamily bool Mod\+Memory\+::card\+Is\+Open (\begin{DoxyParamCaption}\item[{int \&}]{ind }\end{DoxyParamCaption})}
+
+
+
+Vérifie si la carte est retournée. 
+
+\begin{DoxyWarning}{Warning}
+Tous les indices demandés sour forme d\textquotesingle{}int sont les indice du vecteur, pas les attributs indices des Memory\+Cards elles-\/mêmes 
+\end{DoxyWarning}
+\mbox{\Hypertarget{class_mod_memory_a4e6581fef7b3adbad429bf4c39d38e88}\label{class_mod_memory_a4e6581fef7b3adbad429bf4c39d38e88}} 
+\index{Mod\+Memory@{Mod\+Memory}!close\+Cards@{close\+Cards}}
+\index{close\+Cards@{close\+Cards}!Mod\+Memory@{Mod\+Memory}}
+\subsubsection{\texorpdfstring{close\+Cards()}{closeCards()}}
+{\footnotesize\ttfamily void Mod\+Memory\+::close\+Cards (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Retourne les cartes de flippedcards face cachée. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000014}{Todo}]C\+O\+M\+P\+L\+E\+T\+ER en retournant les trucs de flipped card et verifier qu\textquotesingle{}on ne manipule pas flippedcard dans les methodes ou l\textquotesingle{}on devrait manipuler cards\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000015}{Todo}]arreter d\textquotesingle{}etre malade \end{DoxyRefDesc}
+\mbox{\Hypertarget{class_mod_memory_a2ea383b6a13143c4f1f5fa9534e6faa6}\label{class_mod_memory_a2ea383b6a13143c4f1f5fa9534e6faa6}} 
+\index{Mod\+Memory@{Mod\+Memory}!get\+Indice\+Carte@{get\+Indice\+Carte}}
+\index{get\+Indice\+Carte@{get\+Indice\+Carte}!Mod\+Memory@{Mod\+Memory}}
+\subsubsection{\texorpdfstring{get\+Indice\+Carte()}{getIndiceCarte()}}
+{\footnotesize\ttfamily int Mod\+Memory\+::get\+Indice\+Carte (\begin{DoxyParamCaption}\item[{int \&}]{ind }\end{DoxyParamCaption})}
+
+
+
+Indice de la carte. 
+
+Utile seulement pour le shuffle \mbox{\Hypertarget{class_mod_memory_a5886105416521e463eeaf732e8a0f6fe}\label{class_mod_memory_a5886105416521e463eeaf732e8a0f6fe}} 
+\index{Mod\+Memory@{Mod\+Memory}!open\+Card@{open\+Card}}
+\index{open\+Card@{open\+Card}!Mod\+Memory@{Mod\+Memory}}
+\subsubsection{\texorpdfstring{open\+Card()}{openCard()}}
+{\footnotesize\ttfamily void Mod\+Memory\+::open\+Card (\begin{DoxyParamCaption}\item[{int \&}]{ind }\end{DoxyParamCaption})}
+
+
+
+Retourner une carte face visible. 
+
+L\textquotesingle{}ajoute a la paire flipped\+Cards \mbox{\Hypertarget{class_mod_memory_ad85f5a28220e641195215e705a928fb1}\label{class_mod_memory_ad85f5a28220e641195215e705a928fb1}} 
+\index{Mod\+Memory@{Mod\+Memory}!shuffle\+Cards@{shuffle\+Cards}}
+\index{shuffle\+Cards@{shuffle\+Cards}!Mod\+Memory@{Mod\+Memory}}
+\subsubsection{\texorpdfstring{shuffle\+Cards()}{shuffleCards()}}
+{\footnotesize\ttfamily void Mod\+Memory\+::shuffle\+Cards (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Mélanger les cartes dans le vecteur. 
+
+Principe \+: la vue va associer les cartes de son vecteur avec celles du modèle en prenant leurs indices dans leurs vecteurs respectifs, et le modèle va communiquer les informations des Memory\+Cards, mélangées donc. Tout ça pour dire que pas besoin de mélanger ou synchroniser la vue et le modèle entre eux.
+
+En somme, le shuffle attribue les paires 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Jean-\/\+Loup/\+Documents/\+L3/\+Projet\+Malette\+Jeux/\+Q\+T/\+L\+W\+Robin/\+Learn\+With\+Robin\+Main/modmemory.\+h\item 
+C\+:/\+Users/\+Jean-\/\+Loup/\+Documents/\+L3/\+Projet\+Malette\+Jeux/\+Q\+T/\+L\+W\+Robin/\+Learn\+With\+Robin\+Main/modmemory.\+cpp\end{DoxyCompactItemize}

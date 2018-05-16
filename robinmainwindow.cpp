@@ -26,6 +26,21 @@ RobinMainWindow::RobinMainWindow(QWidget *parent) :
     std::cout << "Debut construction MAIN 1" << std::endl;
     MainMenu *menuPrincipal = new MainMenu();
 
+
+    // tentative style bouton menu
+    // TEST BOUTON PERSO
+    ui->ButtonMenu->setFixedSize(300,50);
+    ui->ButtonMenu->setStyleSheet(QString::fromUtf8(
+                                      "QPushButton {"
+                                      "border-image:url(:/files/boutonMenu.png);"
+                                      "}"
+                                      "QPushButton::pressed {"
+                                      "border-image:url(:/files/boutonMenuClicked.png);"
+                                      "}"
+                                      ));
+    ui->ButtonMenu->setText("");
+
+
     std::cout << "Debut construction MAIN 2" << std::endl;
 
     //RobinMainWindow::setCentralWidget(menuPrincipal);

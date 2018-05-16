@@ -1,0 +1,79 @@
+\hypertarget{class_calcul_mental}{}\section{Calcul\+Mental Class Reference}
+\label{class_calcul_mental}\index{Calcul\+Mental@{Calcul\+Mental}}
+Inheritance diagram for Calcul\+Mental\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_calcul_mental}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_calcul_mental_a4f5f4f6818eaa9968900e94ea2ddbd87}\label{class_calcul_mental_a4f5f4f6818eaa9968900e94ea2ddbd87}} 
+void \hyperlink{class_calcul_mental_a4f5f4f6818eaa9968900e94ea2ddbd87}{reset\+Score} ()
+\begin{DoxyCompactList}\small\item\em Appui sur bouton reset score. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_calcul_mental_aec1aa48cc17bdce965ea7d9aed0044ef}\label{class_calcul_mental_aec1aa48cc17bdce965ea7d9aed0044ef}} 
+void \hyperlink{class_calcul_mental_aec1aa48cc17bdce965ea7d9aed0044ef}{disp\+New\+Calc} ()
+\begin{DoxyCompactList}\small\item\em Appui sur bouton nouveau calcul. \end{DoxyCompactList}\item 
+void \hyperlink{class_calcul_mental_ae74ebe9d8a7f8581ab2958a7987b7d5d}{submit\+Res} ()
+\begin{DoxyCompactList}\small\item\em Appui sur bouton soumettre résultat. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_calcul_mental_a1d00ff120d4375847d790991edd85059}\label{class_calcul_mental_a1d00ff120d4375847d790991edd85059}} 
+\hyperlink{class_calcul_mental_a1d00ff120d4375847d790991edd85059}{Calcul\+Mental} (Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructeur et destructeur. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_calcul_mental_a2c3a044640c58c0cc865e286334ce591}\label{class_calcul_mental_a2c3a044640c58c0cc865e286334ce591}} 
+void \hyperlink{class_calcul_mental_a2c3a044640c58c0cc865e286334ce591}{set\+Score} (Q\+String p\+Score)
+\begin{DoxyCompactList}\small\item\em S\+C\+O\+RE. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_calcul_mental_abfcfd41b1b8b818352674c2565dc084f}\label{class_calcul_mental_abfcfd41b1b8b818352674c2565dc084f}} 
+Q\+String {\bfseries get\+Score} (void)
+\item 
+\mbox{\Hypertarget{class_calcul_mental_a3d56b1b9c73714179370b3f0ca4420e9}\label{class_calcul_mental_a3d56b1b9c73714179370b3f0ca4420e9}} 
+Q\+String \hyperlink{class_calcul_mental_a3d56b1b9c73714179370b3f0ca4420e9}{get\+Ope1} (void)
+\begin{DoxyCompactList}\small\item\em Récupérer les opérandes en lettres \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_calcul_mental_afa5c299ddbe9c23c0c12deb7765c70f1}\label{class_calcul_mental_afa5c299ddbe9c23c0c12deb7765c70f1}} 
+Q\+String {\bfseries get\+Ope2} (void)
+\item 
+\mbox{\Hypertarget{class_calcul_mental_ab838d242ea4101002bf72f26b18c261b}\label{class_calcul_mental_ab838d242ea4101002bf72f26b18c261b}} 
+Q\+String \hyperlink{class_calcul_mental_ab838d242ea4101002bf72f26b18c261b}{get\+Operator} (void)
+\begin{DoxyCompactList}\small\item\em Récupérer l\textquotesingle{}opérateur. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_calcul_mental_a559ea88a8156df0f54761c4f0cc17144}\label{class_calcul_mental_a559ea88a8156df0f54761c4f0cc17144}} 
+Q\+String \hyperlink{class_calcul_mental_a559ea88a8156df0f54761c4f0cc17144}{get\+Exp\+Res} (void)
+\begin{DoxyCompactList}\small\item\em Récupérer le résultat de l\textquotesingle{}expression. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_calcul_mental_a1078407e65b60debd469fbdd6b629366}\label{class_calcul_mental_a1078407e65b60debd469fbdd6b629366}} 
+void \hyperlink{class_calcul_mental_a1078407e65b60debd469fbdd6b629366}{ask\+New\+Calc} (void)
+\begin{DoxyCompactList}\small\item\em Demander un nouveau calcul au modèle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_calcul_mental_a85dd050ef2efa7c6440a1ba0595b6c2e}\label{class_calcul_mental_a85dd050ef2efa7c6440a1ba0595b6c2e}} 
+bool \hyperlink{class_calcul_mental_a85dd050ef2efa7c6440a1ba0595b6c2e}{check\+Result} (Q\+String res\+Propose)
+\begin{DoxyCompactList}\small\item\em Vérifier le resultat, et s\textquotesingle{}il est bon ajouter un point et demander un nouveau calcul. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_calcul_mental_a24f15b92a313ab8ca872b0d495ce4852}\label{class_calcul_mental_a24f15b92a313ab8ca872b0d495ce4852}} 
+void \hyperlink{class_calcul_mental_a24f15b92a313ab8ca872b0d495ce4852}{add\+Point} (void)
+\begin{DoxyCompactList}\small\item\em Ajouter un point au score. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_calcul_mental_ac56dfddc93f21f48beb2202940d7d005}\label{class_calcul_mental_ac56dfddc93f21f48beb2202940d7d005}} 
+Q\+String \hyperlink{class_calcul_mental_ac56dfddc93f21f48beb2202940d7d005}{get\+Ope1\+Str} (void)
+\begin{DoxyCompactList}\small\item\em Get les opérandes en lettres. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_calcul_mental_afd4f24b373c7ba4fe2fa247819266096}\label{class_calcul_mental_afd4f24b373c7ba4fe2fa247819266096}} 
+Q\+String {\bfseries get\+Ope2\+Str} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_calcul_mental_ae74ebe9d8a7f8581ab2958a7987b7d5d}\label{class_calcul_mental_ae74ebe9d8a7f8581ab2958a7987b7d5d}} 
+\index{Calcul\+Mental@{Calcul\+Mental}!submit\+Res@{submit\+Res}}
+\index{submit\+Res@{submit\+Res}!Calcul\+Mental@{Calcul\+Mental}}
+\subsubsection{\texorpdfstring{submit\+Res}{submitRes}}
+{\footnotesize\ttfamily void Calcul\+Mental\+::submit\+Res (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Appui sur bouton soumettre résultat. 
+
+
+
+ \subsubsection*{S\+L\+O\+TS }
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Jean-\/\+Loup/\+Documents/\+L3/\+Projet\+Malette\+Jeux/\+Q\+T/\+L\+W\+Robin/\+Learn\+With\+Robin\+Main/calculmental.\+h\item 
+C\+:/\+Users/\+Jean-\/\+Loup/\+Documents/\+L3/\+Projet\+Malette\+Jeux/\+Q\+T/\+L\+W\+Robin/\+Learn\+With\+Robin\+Main/calculmental.\+cpp\end{DoxyCompactItemize}

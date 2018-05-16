@@ -1,0 +1,134 @@
+\hypertarget{class_memory_card}{}\section{Memory\+Card Class Reference}
+\label{class_memory_card}\index{Memory\+Card@{Memory\+Card}}
+
+
+Classe pour les cartes de memory.  
+
+
+
+
+{\ttfamily \#include $<$modmemory.\+h$>$}
+
+Inheritance diagram for Memory\+Card\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_memory_card}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_memory_card_a64380fa5fec0bcd01a1907804989ca9c}{Memory\+Card} (std\+::string \&path\+Back\+Card, std\+::string \&path\+Flip\+Card, int \&val\+\_\+pair)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_memory_card_a3de3cef7b7af45dbf250435fb5004223}\label{class_memory_card_a3de3cef7b7af45dbf250435fb5004223}} 
+\hyperlink{class_memory_card_a3de3cef7b7af45dbf250435fb5004223}{$\sim$\+Memory\+Card} (void)
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_memory_card_a1d6b3ba288249cbd619700cc4f4fddd3}\label{class_memory_card_a1d6b3ba288249cbd619700cc4f4fddd3}} 
+int \hyperlink{class_memory_card_a1d6b3ba288249cbd619700cc4f4fddd3}{get\+Value\+Pair} (void)
+\begin{DoxyCompactList}\small\item\em Donner l\textquotesingle{}index de la paire. \end{DoxyCompactList}\item 
+\hyperlink{class_memory_card_a3d59bf204269e8b83a7eff862a838505}{Memory\+Card} (void)
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut. \end{DoxyCompactList}\item 
+\hyperlink{class_memory_card_a682c2f65715e5e1bae9f0f04c361cddc}{Memory\+Card} (\hyperlink{class_memory_card}{Memory\+Card} \&)
+\begin{DoxyCompactList}\small\item\em Constructeur par copie. \end{DoxyCompactList}\item 
+\hyperlink{class_memory_card_ac34a1add168e88d58c5f864a35d4b136}{Memory\+Card} (int \&, int \&, bool, bool)
+\begin{DoxyCompactList}\small\item\em Constructeur complet. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_memory_card_a3de3cef7b7af45dbf250435fb5004223}\label{class_memory_card_a3de3cef7b7af45dbf250435fb5004223}} 
+\hyperlink{class_memory_card_a3de3cef7b7af45dbf250435fb5004223}{$\sim$\+Memory\+Card} (void)
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_memory_card_ae46bae56b80b8a55957cf105240f8a50}\label{class_memory_card_ae46bae56b80b8a55957cf105240f8a50}} 
+void \hyperlink{class_memory_card_ae46bae56b80b8a55957cf105240f8a50}{flip\+Card} (void)
+\begin{DoxyCompactList}\small\item\em Inverse l\textquotesingle{}état retournee de la carte. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_memory_card_ae704a33a0efe3fc47cff411154d0aa7f}\label{class_memory_card_ae704a33a0efe3fc47cff411154d0aa7f}} 
+void \hyperlink{class_memory_card_ae704a33a0efe3fc47cff411154d0aa7f}{found\+Card} (void)
+\begin{DoxyCompactList}\small\item\em Met associee à vrai. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_memory_card_a17b81ae2bd924ae5430684ec02573aac}\label{class_memory_card_a17b81ae2bd924ae5430684ec02573aac}} 
+void \hyperlink{class_memory_card_a17b81ae2bd924ae5430684ec02573aac}{set\+Indice} (int \&ind)
+\begin{DoxyCompactList}\small\item\em Get-\/set l\textquotesingle{}indice d\textquotesingle{}une carte. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_memory_card_a33e0dfc3a27e0342e21dd7aa0d01f3bc}\label{class_memory_card_a33e0dfc3a27e0342e21dd7aa0d01f3bc}} 
+int {\bfseries get\+Indice} (void)
+\item 
+\mbox{\Hypertarget{class_memory_card_a0ceb17bd1ca14d7da5be66e7d5653d0b}\label{class_memory_card_a0ceb17bd1ca14d7da5be66e7d5653d0b}} 
+void \hyperlink{class_memory_card_a0ceb17bd1ca14d7da5be66e7d5653d0b}{set\+Paire} (int \&pai)
+\begin{DoxyCompactList}\small\item\em Get-\/set une paire. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_memory_card_a61732d2d84d73b52d46506be8951d971}\label{class_memory_card_a61732d2d84d73b52d46506be8951d971}} 
+int {\bfseries get\+Paire} (void)
+\item 
+\mbox{\Hypertarget{class_memory_card_a7ac054746ae11df4769bd97523e304fd}\label{class_memory_card_a7ac054746ae11df4769bd97523e304fd}} 
+bool \hyperlink{class_memory_card_a7ac054746ae11df4769bd97523e304fd}{is\+Retournee} (void)
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}état de la carte (retournée ou non) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_memory_card_aba6f7bf6100c8a0972732fd94f1523dd}\label{class_memory_card_aba6f7bf6100c8a0972732fd94f1523dd}} 
+bool \hyperlink{class_memory_card_aba6f7bf6100c8a0972732fd94f1523dd}{is\+Associee} (void)
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}état de la paire (associée ou non) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe pour les cartes de memory. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_memory_card_a64380fa5fec0bcd01a1907804989ca9c}\label{class_memory_card_a64380fa5fec0bcd01a1907804989ca9c}} 
+\index{Memory\+Card@{Memory\+Card}!Memory\+Card@{Memory\+Card}}
+\index{Memory\+Card@{Memory\+Card}!Memory\+Card@{Memory\+Card}}
+\subsubsection{\texorpdfstring{Memory\+Card()}{MemoryCard()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Memory\+Card\+::\+Memory\+Card (\begin{DoxyParamCaption}\item[{std\+::string \&}]{path\+Back\+Card,  }\item[{std\+::string \&}]{path\+Flip\+Card,  }\item[{int \&}]{val\+\_\+pair }\end{DoxyParamCaption})}
+
+
+
+Constructeur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+Back\+Card} & chemin vers l\textquotesingle{}image du dos de la carte \\
+\hline
+{\em path\+Flip\+Card} & chemin vers l\textquotesingle{}image de la face de la carte \\
+\hline
+{\em val\+\_\+pair} & index de la paire dans le tableau des paires \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_memory_card_a3d59bf204269e8b83a7eff862a838505}\label{class_memory_card_a3d59bf204269e8b83a7eff862a838505}} 
+\index{Memory\+Card@{Memory\+Card}!Memory\+Card@{Memory\+Card}}
+\index{Memory\+Card@{Memory\+Card}!Memory\+Card@{Memory\+Card}}
+\subsubsection{\texorpdfstring{Memory\+Card()}{MemoryCard()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Memory\+Card\+::\+Memory\+Card (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur par défaut. 
+
+\hyperlink{class_memory_card}{Memory\+Card}. \mbox{\Hypertarget{class_memory_card_a682c2f65715e5e1bae9f0f04c361cddc}\label{class_memory_card_a682c2f65715e5e1bae9f0f04c361cddc}} 
+\index{Memory\+Card@{Memory\+Card}!Memory\+Card@{Memory\+Card}}
+\index{Memory\+Card@{Memory\+Card}!Memory\+Card@{Memory\+Card}}
+\subsubsection{\texorpdfstring{Memory\+Card()}{MemoryCard()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Memory\+Card\+::\+Memory\+Card (\begin{DoxyParamCaption}\item[{\hyperlink{class_memory_card}{Memory\+Card} \&}]{mem\+Cop }\end{DoxyParamCaption})}
+
+
+
+Constructeur par copie. 
+
+\hyperlink{class_memory_card}{Memory\+Card}. \mbox{\Hypertarget{class_memory_card_ac34a1add168e88d58c5f864a35d4b136}\label{class_memory_card_ac34a1add168e88d58c5f864a35d4b136}} 
+\index{Memory\+Card@{Memory\+Card}!Memory\+Card@{Memory\+Card}}
+\index{Memory\+Card@{Memory\+Card}!Memory\+Card@{Memory\+Card}}
+\subsubsection{\texorpdfstring{Memory\+Card()}{MemoryCard()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Memory\+Card\+::\+Memory\+Card (\begin{DoxyParamCaption}\item[{int \&}]{ind,  }\item[{int \&}]{pai,  }\item[{bool}]{ret,  }\item[{bool}]{asso }\end{DoxyParamCaption})}
+
+
+
+Constructeur complet. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em 1} & indice \\
+\hline
+{\em 2} & paire \\
+\hline
+{\em 3} & retournee \\
+\hline
+{\em 4} & associee \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Jean-\/\+Loup/\+Documents/\+L3/\+Projet\+Malette\+Jeux/\+Q\+T/\+L\+W\+Robin/\+Learn\+With\+Robin\+Main/memoryaddons.\+h\item 
+C\+:/\+Users/\+Jean-\/\+Loup/\+Documents/\+L3/\+Projet\+Malette\+Jeux/\+Q\+T/\+L\+W\+Robin/\+Learn\+With\+Robin\+Main/modmemory.\+h\item 
+C\+:/\+Users/\+Jean-\/\+Loup/\+Documents/\+L3/\+Projet\+Malette\+Jeux/\+Q\+T/\+L\+W\+Robin/\+Learn\+With\+Robin\+Main/modmemory.\+cpp\end{DoxyCompactItemize}

@@ -96,7 +96,7 @@ int ModMemory::getNbCartesRetournees()
     return this->nbCartesRetournees;
 }
 
-std::pair<> ModMemory::getFlippedCards()
+std::pair<int,int> ModMemory::getFlippedCards()
 {
     return flippedCards;
 }
@@ -118,7 +118,7 @@ bool ModMemory::checkCards(int & ind1, int & ind2)
     int pai1 = cards.at(ind1).getPaire();
     int pai2 = cards.at(ind2).getPaire();
 
-    if (pai1 == p2)
+    if (pai1 == pai2)
     {
         cards.at(ind1).foundCard();
         cards.at(ind2).foundCard();
@@ -131,17 +131,17 @@ bool ModMemory::checkCards(int & ind1, int & ind2)
 
 int ModMemory::getIndiceCarte(int & ind)
 {
-    return flippedCards.at(ind).getIndice();
+    return cards.at(ind).getIndice();
 }
 
 int ModMemory::getPaireCarte(int & ind)
 {
-    return flippedCards.at(ind).getPaire();
+    return cards.at(ind).getPaire();
 }
 
 bool ModMemory::cardIsPaired(int & ind)
 {
-    return flippedCards.at(ind).isAssociee();
+    return cards.at(ind).isAssociee();
 }
 
 /// MemoryCard
