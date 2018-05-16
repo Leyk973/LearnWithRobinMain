@@ -12,33 +12,33 @@ class MainMenu : public QWidget
 {
     Q_OBJECT
 public:
-    /// Constructeur et destructeur
+    /// \brief Constructeur et destructeur
     explicit MainMenu(QWidget *parent = nullptr);
     ~MainMenu(void);
 
 signals:
-    /// Signal pour lancer le jeu calcul mental
+    /// \brief Signal pour lancer le jeu calcul mental
     void clickedCalcul(void);
 
-    /// Signal pour lancer le jeu super simon
+    /// \brief Signal pour lancer le jeu super simon
     void clickedSimon(void);
 
-    /// Signal pour lancer le jeu memory
+    /// \brief Signal pour lancer le jeu memory
     void clickedMemory(void);
 
 public slots:
     /// \note on va garder la syntaxe goFor, c'est bien :)
-    /// Appui sur le bouton calcul mental
+    /// \brief Appui sur le bouton calcul mental
     void goForCalcul(void);
 
-    /// Appui sur le bouton super simon
+    /// \brief Appui sur le bouton super simon
     void goForSimon(void);
 
-    /// Appui sur le bouton memory
+    /// \brief Appui sur le bouton memory
     void goForMemory(void);
 
 private:
-    /// Interface utilisateur
+    /// \brief Interface utilisateur
     Ui::MainMenu *ui;
 };
 

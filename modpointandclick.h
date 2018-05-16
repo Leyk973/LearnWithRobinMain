@@ -5,7 +5,7 @@
 class ModPointAndClick
 {
 public:
-    /// Constructeur
+    /// \brief Constructeur
     ModPointAndClick();
 };
 

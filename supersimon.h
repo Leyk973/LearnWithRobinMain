@@ -21,84 +21,84 @@ class SuperSimon : public QWidget
 
 public:
 
-    /// Constructeur destructeur
+    /// \brief Constructeur destructeur
     explicit SuperSimon(QWidget *parent = nullptr);
     ~SuperSimon();
 
-    /// Lire la séquence actuelle (joue et affiche en toutes lettres le nom des couleurs)
+    /// \brief Lire la séquence actuelle (joue et affiche en toutes lettres le nom des couleurs)
     void readSequence(void);
 
-    /// Editer la séquence à jouer
+    /// \brief Editer la séquence à jouer
     void editSequence(void);
 
-    /// Ajouter une vie au joueur
+    /// \brief Ajouter une vie au joueur
     void addLife(void);
 
-    /// Retirer une vie au joueur
+    /// \brief Retirer une vie au joueur
     void remLife(void);
 
     /// Réinitialiser le score
     void resScore(void);
 
-    /// Ajoute l'entier représentant un bouton au QString seqEntered
-    /// Appelle checkSeqLenght
+    /// \brief Ajoute l'entier représentant un bouton au QString seqEntered
+    /// \details Appelle checkSeqLenght
     void addToSequence(int);
 
-    /// Vérifie la taille de seqEntered
-    /// Appelle sendSeqForCheck si la taille attendue est atteinte
+    /// \brief Vérifie la taille de seqEntered
+    /// \details Appelle sendSeqForCheck si la taille attendue est atteinte
     void checkSeqLenght(void);
 
-    /// Envoie la séquence au modèle pour vérification
+    /// \brief Envoie la séquence au modèle pour vérification
     bool sendSeqForCheck(void);
 
-    /// Mettre à jour la vue
+    /// \brief Mettre à jour la vue
     void updateViewSimon(void);
 
-    /// Attend sec secondes
+    /// \brief Attend sec secondes
     void delay(int & sec);
 
 
 public slots:
-    /// Appui sur bouton du simon
-    /// Redirection vers simonClicked avec la valeur du bouton
+    /// \brief Appui sur bouton du simon
+    /// \details Redirection vers simonClicked avec la valeur du bouton
     void simonClickedRedirect();
 
-    /// Appui sur bouton du simon
+    /// \brief Appui sur bouton du simon
     void simonClicked(const int);
 
-    /// Redirection vers lifeClicked avec la valeur du bouton
+    /// \brief Redirection vers lifeClicked avec la valeur du bouton
     void addLifeClicked();
 
-    /// Appui sur un modificateur de vie
+    /// \brief Appui sur un modificateur de vie
     void remLifeClicked();
 
-    /// Appui sur read sequence
+    /// \brief Appui sur read sequence
     void readSequenceClicked(void);
 
-    /// Appui sur edit sequence
+    /// \brief Appui sur edit sequence
     void editSequenceClicked(void);
 
-    /// Appui sur reset score
+    /// \brief Appui sur reset score
     void resetScoreClicked(void);
 
-    /// Supprime les éléments responsables du son
+    /// \brief Supprime les éléments responsables du son
     void deleteAudio(void);
 
 private:
-    /// Interface utilisateur
+    /// \brief Interface utilisateur
     Ui::SuperSimon *ui;
 
-    /// Modèle
+    /// \brief Modèle
     ModSimon *modele;
 
-    /// Séquence entrée par appui sur les boutons
+    /// \brief Séquence entrée par appui sur les boutons
     QString seqEntered;
 
-    /// Taille attendue, à récupérer du modèle
+    /// \brief Taille attendue, à récupérer du modèle
     int expectedLength;
 
     /// \test
-    /// Url des fichiers audio
+    /// \brief Url des fichiers audio
     //QMediaPlayer * playOne;
     QUrl * urlOne;
     //QMediaPlayer * playTwo;
@@ -108,10 +108,10 @@ private:
     //QMediaPlayer * playFour;
     QUrl * urlFour;
 
-    /// Playlist pour lire la séquence
+    /// \brief Playlist pour lire la séquence
     QMediaPlaylist * playSeq;
 
-    /// Player pour lire les mp3
+    /// \brief Player pour lire les mp3
     QMediaPlayer * playerSimon;
 
 };

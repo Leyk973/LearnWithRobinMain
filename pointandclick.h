@@ -12,12 +12,12 @@ class PointAndClick : public QWidget
     Q_OBJECT
 
 public:
-    /// Constructeur et destructeur
+    /// \brief Constructeur et destructeur
     explicit PointAndClick(QWidget *parent = 0);
     ~PointAndClick();
 
 private:
-    /// Interface utilisateur
+    /// \brief Interface utilisateur
     Ui::PointAndClick *ui;
 };
 
