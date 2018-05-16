@@ -6,7 +6,9 @@
 #include "calculmental.h"
 #include "supersimon.h"
 #include "memory.h"
+#include "flags.h"
 #include <QStackedWidget>
+#include "player.h"
 
 
 namespace Ui {
@@ -39,6 +41,8 @@ public slots:
     /// \brief Signal pour lancer le memory
     void openMemory(void);
 
+    /// \brief Sauvegarde de score de test
+    void saveScoreTest();
 private:
     /// \brief Interface utilisateur
     Ui::RobinMainWindow *ui;
@@ -52,6 +56,9 @@ private:
 
     /// \brief Le stackedWidget qui contient les widgets à afficher
     QStackedWidget * widStack;
+
+    /// \brief Joueur de cette session
+    Player * joueurSession;
 
 };
 

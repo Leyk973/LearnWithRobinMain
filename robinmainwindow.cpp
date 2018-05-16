@@ -1,5 +1,6 @@
 #include "robinmainwindow.h"
 #include "ui_robinmainwindow.h"
+#include <QIcon>
 
 /// \todo bien penser a connecter les boutons nécessaires quand on charge un widget
 /// quand le bouton menu sera passé dans chaque widget notamment
@@ -23,8 +24,14 @@ RobinMainWindow::RobinMainWindow(QWidget *parent) :
     ui(new Ui::RobinMainWindow)
 {
     ui->setupUi(this);
+
+    this->setWindowIcon(QIcon(":/files/robin.png"));
+
     std::cout << "Debut construction MAIN 1" << std::endl;
     MainMenu *menuPrincipal = new MainMenu();
+
+    // joueur
+    this->joueurSession = new Player;
 
 
     // tentative style bouton menu
@@ -40,6 +47,17 @@ RobinMainWindow::RobinMainWindow(QWidget *parent) :
                                       ));
     ui->ButtonMenu->setText("");
 
+    ui->ButtonHelp->setFixedSize(300,50);
+    ui->ButtonHelp->setStyleSheet(QString::fromUtf8(
+                                      "QPushButton {"
+                                      "border-image:url(:/files/boutonHelp.png);"
+                                      "}"
+                                      "QPushButton::pressed {"
+                                      "border-image:url(:/files/boutonHelpClicked.png);"
+                                      "}"
+                                      ));
+    ui->ButtonHelp->setText("");
+
 
     std::cout << "Debut construction MAIN 2" << std::endl;
 
@@ -52,6 +70,13 @@ RobinMainWindow::RobinMainWindow(QWidget *parent) :
     QObject::connect(menuPrincipal,&MainMenu::clickedCalcul,this,&RobinMainWindow::openCalcul);
     QObject::connect(menuPrincipal,&MainMenu::clickedSimon,this,&RobinMainWindow::openSimon);
     QObject::connect(menuPrincipal,&MainMenu::clickedMemory,this,&RobinMainWindow::openMemory);
+
+
+    /// \test test très fort
+    QObject::connect(menuPrincipal,&MainMenu::clickedPuzzle,this,&RobinMainWindow::saveScoreTest);
+
+
+
 
     std::cout << "Debut construction MAIN 3" << std::endl;
 
@@ -94,43 +119,7 @@ RobinMainWindow::~RobinMainWindow()
 
 
 
-void RobinMainWindow::openCalcul()
-{
-    /// \todo completer
-    std::cout << "On a cliqué sur calcul" << std::endl;
-    this->atMenu=false;
-    //deleteCentralWidget();
-    //CalculMental * calcul = new CalculMental();
-    //RobinMainWindow::setCentralWidget(calcul);
-    this->widStack->setCurrentIndex(1);
-    std::cout << "openCalcul centralWidget : " << RobinMainWindow::centralWidget() << std::endl;
-}
 
-void RobinMainWindow::openSimon()
-{
-    /// \todo completer
-    std::cout << "On a cliqué sur calcul" << std::endl;
-    this->atMenu=false;
-    //deleteCentralWidget();
-    //SuperSimon * simon = new SuperSimon();
-    //RobinMainWindow::setCentralWidget(simon);
-    this->widStack->setCurrentIndex(2);
-    std::cout << "openSimon centralWidget : " << RobinMainWindow::centralWidget() << std::endl;
-
-}
-
-void RobinMainWindow::openMemory()
-{
-    /// \todo completer
-    std::cout << "On a cliqué sur memory" << std::endl;
-    this->atMenu=false;
-    //deleteCentralWidget();
-    //Memory * memus = new Memory();
-    //RobinMainWindow::setCentralWidget(memus);
-    this->widStack->setCurrentIndex(3);
-    std::cout << "openMemory centralWidget : " << RobinMainWindow::centralWidget() << std::endl;
-
-}
 
 void RobinMainWindow::deleteCentralWidget()
 {
@@ -176,4 +165,48 @@ void RobinMainWindow::backToMenu()
     {
         std::cout << "Deja au menu" << std::endl;
     }
+}
+
+
+void RobinMainWindow::openCalcul()
+{
+    /// \todo completer
+    std::cout << "On a cliqué sur calcul" << std::endl;
+    this->atMenu=false;
+    //deleteCentralWidget();
+    //CalculMental * calcul = new CalculMental();
+    //RobinMainWindow::setCentralWidget(calcul);
+    this->widStack->setCurrentIndex(1);
+    std::cout << "openCalcul centralWidget : " << RobinMainWindow::centralWidget() << std::endl;
+}
+
+void RobinMainWindow::openSimon()
+{
+    /// \todo completer
+    std::cout << "On a cliqué sur calcul" << std::endl;
+    this->atMenu=false;
+    //deleteCentralWidget();
+    //SuperSimon * simon = new SuperSimon();
+    //RobinMainWindow::setCentralWidget(simon);
+    this->widStack->setCurrentIndex(2);
+    std::cout << "openSimon centralWidget : " << RobinMainWindow::centralWidget() << std::endl;
+
+}
+
+void RobinMainWindow::openMemory()
+{
+    /// \todo completer
+    std::cout << "On a cliqué sur memory" << std::endl;
+    this->atMenu=false;
+    //deleteCentralWidget();
+    //Memory * memus = new Memory();
+    //RobinMainWindow::setCentralWidget(memus);
+    this->widStack->setCurrentIndex(3);
+    std::cout << "openMemory centralWidget : " << RobinMainWindow::centralWidget() << std::endl;
+
+}
+
+void RobinMainWindow::saveScoreTest()
+{
+    Tools::SavePlayerScoreForGame(joueurSession->getName(),42,"LOG4LOG");
 }

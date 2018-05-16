@@ -10,5 +10,11 @@
         <file>files/two.mp3</file>
         <file>files/boutonMenu.png</file>
         <file>files/boutonMenuClicked.png</file>
+        <file>files/fondBouton.png</file>
+        <file>files/fondBoutonClicked.png</file>
+        <file>files/fondBoutonTravaux.png</file>
+        <file>files/boutonHelp.png</file>
+        <file>files/boutonHelpClicked.png</file>
+        <file>files/robin.png</file>
     </qresource>
 </RCC>

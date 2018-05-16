@@ -43,7 +43,9 @@ SOURCES += \
     modflags.cpp \
     modpointandclick.cpp \
     memoryaddons.cpp \
-    parameterslwr.cpp
+    parameterslwr.cpp \
+    tools.cpp \
+    player.cpp
 
 HEADERS += \
         robinmainwindow.h \
@@ -63,7 +65,9 @@ HEADERS += \
     modflags.h \
     modpointandclick.h \
     memoryaddons.h \
-    parameterslwr.h
+    parameterslwr.h \
+    tools.h \
+    player.h
 
 FORMS += \
         robinmainwindow.ui \
