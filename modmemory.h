@@ -10,64 +10,72 @@ class MemoryCard
 {
 public:
 
-    /// Constructeur par défaut
+    /// \brief Constructeur par défaut
     MemoryCard(void);
+
+    /// \brief Constructeur par copie
     MemoryCard(MemoryCard &);
-    /// Constructeur complet
+
+    /// \brief Constructeur complet
     /// \param 1 indice
     /// \param 2 paire
     /// \param 3 retournee
     /// \param 4 associee
     MemoryCard(int&, int&, bool, bool);
 
-    /// Destructeur
+    /// \brief Destructeur
     ~MemoryCard(void);
 
-    /// Inverse l'état retournee de la carte
+    /// \brief Inverse l'état retournee de la carte
     void flipCard(void);
 
-    /// Met associee à vrai
+    /// \brief Met associee à vrai
     void foundCard(void);
 
-    /// Get-set l'indice d'une carte
+    /// \brief Get-set l'indice d'une carte
     void setIndice(int & ind);
     int getIndice(void);
 
-    /// Get-set une paire
+    /// \brief Get-set une paire
     void setPaire(int & pai);
     int getPaire(void);
 
-    /// Renvoie l'état de la carte (retournée ou non)
+    /// \brief Renvoie l'état de la carte (retournée ou non)
     bool isRetournee(void);
 
-    /// Renvoie l'état de la paire (associée ou non)
+    /// \brief Renvoie l'état de la paire (associée ou non)
     bool isAssociee(void);
 
 
 private:
 
-    /// Indice de la carte dans le memory [0-15]
+    /// \brief Indice de la carte dans le memory [0-15]
     int indice;
 
-    /// Indice de la paire dans le memory [0-7]
+    /// \brief Indice de la paire dans le memory [0-7]
     int paire;
 
-    /// Etat de la carte [retournée ou pas]
+    /// \brief Etat de la carte [retournée ou pas]
     bool retournee;
 
-    /// Etat de la paire [trouvée ou pas]
+    /// \brief Etat de la paire [trouvée ou pas]
     bool associee;
 };
 
+///
 /// Classe du modèle
+///
 class ModMemory
 {
 public:
-    /// Constructeur et destructeur
+    ///
+    /// \brief Constructeur
     ModMemory();
+
+    /// \brief Destructeur
     ~ModMemory();
 
-    /// Mélanger les cartes dans le vecteur
+    /// \brief Mélanger les cartes dans le vecteur
     /// \details Principe : la vue va associer les cartes
     /// de son vecteur avec celles du modèle en prenant leurs
     /// indices dans leurs vecteurs respectifs, et le modèle va
@@ -81,59 +89,58 @@ public:
     /// \warning Tous les indices demandés sour forme d'int sont
     /// les indice du vecteur, pas les attributs indices des MemoryCards elles-mêmes
 
-    /// Vérifie si la carte est retournée
+    /// \brief Vérifie si la carte est retournée
     bool cardIsOpen(int&);
 
-    /// Retourner une carte face visible
-    /// L'ajoute au vecteur flippedcards
+    /// \brief Retourner une carte face visible
+    /// \details L'ajoute a la paire flippedCards
     void openCard(int&);
 
-    /// Retourne les cartes de flippedcards face cachée
+    /// \brief Retourne les cartes de flippedcards face cachée
     void closeCards(void);
 
-    /// Vérifier si les cartes appartiennent à la même paire
+    /// \brief Vérifier si les cartes appartiennent à la même paire
     bool checkCards(int&, int&);
 
-    /// Indice de la carte
-    /// Utile seulement pour le shuffle
+    /// \brief Indice de la carte
+    /// \details Utile seulement pour le shuffle
     int getIndiceCarte(int&);
 
-    /// Paire de la carte
+    /// \brief Paire de la carte
     int getPaireCarte(int&);
 
-    /// Vérifie si la carte est associée
+    /// \brief Vérifie si la carte est associée
     bool cardIsPaired(int&);
 
-
+    /// \brief Getter
     int getNbCartesRetournees(void);
 
+    /// \brief Getter de la paire de cartes retournées
     std::pair<int,int> getFlippedCards(void);
 
-
+    /// \brief Getter
     int getNbCartesRestantes(void);
-    // getters
 
-    //setters
 
 
 private:
-    /// Nombre de coups
-    /// Le plus petit le mieux
+    /// \brief Nombre de coups
+    /// \details Le plus petit le mieux
     int score;
 
-    /// Nombre de paires du memory en cours
+    /// \brief Nombre de paires du memory en cours
     int nbPaires;
 
-    /// Nombre de cartes du memory en cours
+    /// \brief Nombre de cartes du memory en cours
     int nbCartesRestantes;
 
-    /// Liste des cartes
+    /// \brief Liste des cartes
     std::vector<MemoryCard> cards;
 
-    /// la quantité de cartes retournees
+    /// \brief Quantité de cartes retournees
     int nbCartesRetournees;
 
-    /// Indices des cartes retournées
+    /// \brief Indices des cartes retournées
     std::pair<int,int> flippedCards;
 
 };
