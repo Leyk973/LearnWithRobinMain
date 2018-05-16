@@ -3,6 +3,7 @@
 
 #include "commonlibs.h"
 #include <vector>
+#include <algorithm>
 
 /// Classe pour les cartes de memory
 class MemoryCard
@@ -11,7 +12,7 @@ public:
 
     /// Constructeur par défaut
     MemoryCard(void);
-
+    MemoryCard(MemoryCard &);
     /// Constructeur complet
     /// \param 1 indice
     /// \param 2 paire
@@ -73,6 +74,8 @@ public:
     /// communiquer les informations des MemoryCards, mélangées donc.
     /// Tout ça pour dire que pas besoin de mélanger ou synchroniser
     /// la vue et le modèle entre eux.
+    ///
+    /// En somme, le shuffle attribue les paires
     void shuffleCards(void);
 
     /// \warning Tous les indices demandés sour forme d'int sont
@@ -86,7 +89,7 @@ public:
     void openCard(int&);
 
     /// Retourne les cartes de flippedcards face cachée
-    void closeCards(int&);
+    void closeCards(void);
 
     /// Vérifier si les cartes appartiennent à la même paire
     bool checkCards(int&, int&);
@@ -102,7 +105,12 @@ public:
     bool cardIsPaired(int&);
 
 
+    int getNbCartesRetournees(void);
 
+    std::pair<int,int> getFlippedCards(void);
+
+
+    int getNbCartesRestantes(void);
     // getters
 
     //setters
@@ -117,17 +125,20 @@ private:
     int nbPaires;
 
     /// Nombre de cartes du memory en cours
-    int nbCards;
+    int nbCartesRestantes;
 
     /// Liste des cartes
     std::vector<MemoryCard> cards;
 
+    /// la quantité de cartes retournees
+    int nbCartesRetournees;
     /// La liste des cartes retournées
     /// Quand elle a plus de 2 éléments, on enlève les deux
     /// les plus anciens
     std::vector<MemoryCard> flippedCards;
 
-
+    /// les indices des cartes retournées
+    std::pair<int,int> flippedCards;
 
 };
 

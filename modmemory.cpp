@@ -5,12 +5,40 @@
 ModMemory::ModMemory()
 {
     std::cout << "Creation ModMemory" << std::endl;
+
+
+
+
+
     std::cout << "Fin Creation ModMemory" << std::endl;
 }
 
 ModMemory::~ModMemory()
 {
     // nothing
+    /// \todo supprimer contenu des vecteurs et les vider
+}
+
+void ModMemory::shuffleCards()
+{
+    // remplissage d'un vecteur contenant les paires
+    std::vector<int> vecPaires;
+
+    for (int i = 0; i < 8 ; ++ i)
+    {
+        vecPaires.push_back(i);
+        vecPaires.push_back(i);
+    }
+
+    // melange des paires
+    std::random_shuffle(vecPaires.begin(), vecPaires.end());
+
+    //attribution des paires de 1 à 7
+    for (int i = 0; i < 16; ++i)
+    {
+        cards.at(i).setPaire(vecPaires.at(i));
+    }
+
 }
 
 bool ModMemory::cardIsOpen(int & ind)
@@ -20,18 +48,39 @@ bool ModMemory::cardIsOpen(int & ind)
 
 void ModMemory::openCard(int & ind)
 {
+    // verifier si flipped card est rempli
+    if (nbCartesRetournees>1)
+    {
+        closeCards();
+    }
+
+    ++score;
+
     if(!cards.at(ind).isRetournee())
     {
         cards.at(ind).flipCard();
     }
+    ++nbCartesRetournees;
+
+    if (nbCartesRetournees>1)
+    {
+        checkFlippedCards();
+    }
+
 }
 
-void ModMemory::closeCard(int & ind)
+void ModMemory::closeCards()
 {
-    /*if(flippedCards.at(ind).isRetournee())
+    for(std::vector<MemoryCard>::iterator it = cards.begin(); it != cards.end(); ++it)
     {
-        flippedCards.at(ind).flipCard();
-    }*/
+        if (it->isRetournee() && !it->isAssociee())
+        {
+            it->flipCard();
+        }
+    }
+
+    nbCartesRetournees = 0;
+
 
     /// \todo
     /// COMPLETER en retournant les trucs de flipped card
@@ -40,13 +89,44 @@ void ModMemory::closeCard(int & ind)
     ///
     /// \todo
     /// arreter d'etre malade
-
-
 }
+
+int ModMemory::getNbCartesRetournees()
+{
+    return this->nbCartesRetournees;
+}
+
+std::pair<> ModMemory::getFlippedCards()
+{
+    return flippedCards;
+}
+
+
+bool ModMemory::checkFlippedCards()
+{
+    return checkCards(flippedCards.first,flippedCards.second);
+}
+
+int ModMemory::getNbCartesRestantes()
+{
+    return nbCartesRestantes;
+}
+
 
 bool ModMemory::checkCards(int & ind1, int & ind2)
 {
-    int pai1 =
+    int pai1 = cards.at(ind1).getPaire();
+    int pai2 = cards.at(ind2).getPaire();
+
+    if (pai1 == p2)
+    {
+        cards.at(ind1).foundCard();
+        cards.at(ind2).foundCard();
+        nbCartesRestantes-=2;
+        return true;
+    } else {
+        return false;
+    }
 }
 
 int ModMemory::getIndiceCarte(int & ind)
@@ -76,6 +156,15 @@ MemoryCard::MemoryCard()
 MemoryCard::~MemoryCard()
 {
     //nothing
+}
+
+/// MemoryCard
+MemoryCard::MemoryCard(MemoryCard & memCop)
+{
+    indice=memCop.indice;
+    paire=memCop.paire;
+    retournee=memCop.retournee;
+    associee=memCop.associee;
 }
 
 MemoryCard::MemoryCard(int& ind, int& pai, bool ret, bool asso)
