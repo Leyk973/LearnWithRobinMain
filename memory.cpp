@@ -169,15 +169,15 @@ int Memory::getIndiceFromName(QPushButton *but)
 {
     std::string nameObj=but->objectName().toStdString();
 
-    std::cout << "nom du bazar : " << nameObj << std::endl;
+    //std::cout << "nom du bazar : " << nameObj << std::endl;
 
     nameObj=nameObj.substr(5,2); //indice
 
-    std::cout << "nom du bazar avant deux : " << nameObj << std::endl;
+    //std::cout << "nom du bazar avant deux : " << nameObj << std::endl;
 
     int indice = std::stoi(nameObj);
 
-    std::cout << "nom du bazar deux : " << indice << std::endl;
+    //std::cout << "nom du bazar deux : " << indice << std::endl;
 
     return indice;
 }
@@ -203,7 +203,7 @@ void Memory::carteClic()
 {
     int indice = getIndiceFromName((QPushButton*)sender());
 
-    std::cout << "juste crartes retournees " << modMemo->getNbCartesRetournees() << std::endl;
+    std::cout << "cartes  1  retournees : " << modMemo->getNbCartesRetournees() << std::endl;
 
     // verif si retournee
     if (modMemo->cardIsOpen(indice))
@@ -211,16 +211,56 @@ void Memory::carteClic()
         // nothing
     } else {
         // verification nbCartes
+
+        //
         if (modMemo->getNbCartesRetournees()+1>2)
         {
-            std::cout << "je lance un test modmeme crartes retournees " << modMemo->getNbCartesRetournees() << std::endl;
-            modMemo->checkFlippedCards();
+            std::cout << "cartes  2  retournees : " << modMemo->getNbCartesRetournees() << std::endl;
+            //modMemo->checkFlippedCards();
             closeAllCards();
         }
 
         modMemo->openCard(indice);
 
+        labScore->setText(QString::fromStdString("SCORE : " + std::to_string(modMemo->getScore())));
+
         setupCardFromModel(indice);
     }
+    if (this->checkEndOfGame())
+    {
+        this->sendEndOfGame();
+    }
 
+}
+
+void Memory::sendEndOfGame(void)
+{
+    std::pair<std::string,int> paireALancer;
+    std::string jeu = "MEMORY";
+    int leScore = modMemo->getScore();
+    paireALancer.first=jeu;
+    paireALancer.second=leScore;
+    std::cout << "SIGNAL DE FIN LANCE::Reinitialisation" << std::endl;
+    ModMemory * nouveauMod = new ModMemory;
+    delete this->modMemo;
+    this->modMemo = nouveauMod;
+
+
+    this->labScore->setText("SCORE : 0");
+    for (int i = 0; i < 16; ++i)
+    {
+        setupCardFromModel(i);
+    }
+
+    emit endOfGame(paireALancer);
+}
+
+bool Memory::checkEndOfGame()
+{
+    if (modMemo->getNbCartesRestantes() <= 0)
+    {
+        return true;
+    } else {
+        return false;
+    }
 }

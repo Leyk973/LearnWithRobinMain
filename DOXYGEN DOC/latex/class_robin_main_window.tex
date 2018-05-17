@@ -9,6 +9,8 @@ Inheritance diagram for Robin\+Main\+Window\+:\begin{figure}[H]
 \subsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
+void \hyperlink{class_robin_main_window_a08e1d2b660c03aa711d552258a368ec0}{game\+Ended} (std\+::pair$<$ std\+::string, int $>$ asso)
+\begin{DoxyCompactList}\small\item\em Slot d\textquotesingle{}attente de fin de jeu. \end{DoxyCompactList}\item 
 void \hyperlink{class_robin_main_window_a0850e17ae24394b14eb2dcfc4f15eeca}{back\+To\+Menu} (void)
 \begin{DoxyCompactList}\small\item\em Signal pour retourner au menu principal. \end{DoxyCompactList}\item 
 void \hyperlink{class_robin_main_window_a55e49d0a4d727066b553fc2277dd8a78}{open\+Calcul} (void)
@@ -16,7 +18,13 @@ void \hyperlink{class_robin_main_window_a55e49d0a4d727066b553fc2277dd8a78}{open\
 void \hyperlink{class_robin_main_window_ab00b403de3169493a08c53f5d623ce6b}{open\+Simon} (void)
 \begin{DoxyCompactList}\small\item\em Signal pour lancer le super simon. \end{DoxyCompactList}\item 
 void \hyperlink{class_robin_main_window_aaf62641d678eb0f8829a2fb9c513ae68}{open\+Memory} (void)
-\begin{DoxyCompactList}\small\item\em Signal pour lancer le memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Signal pour lancer le memory. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_robin_main_window_a3fb974c65b231fe737c9574acf989c36}\label{class_robin_main_window_a3fb974c65b231fe737c9574acf989c36}} 
+void \hyperlink{class_robin_main_window_a3fb974c65b231fe737c9574acf989c36}{save\+Score\+Test} (void)
+\begin{DoxyCompactList}\small\item\em Sauvegarde de score de test. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_robin_main_window_a8bd52ec1bdbcbeaee45005ce4f0196f3}\label{class_robin_main_window_a8bd52ec1bdbcbeaee45005ce4f0196f3}} 
+void \hyperlink{class_robin_main_window_a8bd52ec1bdbcbeaee45005ce4f0196f3}{change\+Player} (void)
+\begin{DoxyCompactList}\small\item\em Changement de joueur. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -46,9 +54,13 @@ Constructeur et destructeur.
 \hyperlink{class_robin_main_window_a55f7775f5daefb2099a51e97d50df666}{Robin\+Main\+Window\+::\+Robin\+Main\+Window} I\+N\+D\+EX des jeux dans le Q\+Stacked\+Widget d\textquotesingle{}affichage 0 M\+E\+NU 1 C\+A\+L\+C\+UL 2 S\+I\+M\+ON 3 M\+E\+M\+O\+RY 4 F\+L\+A\+GS 5 P\+U\+Z\+Z\+LE 6 P\+O\+I\+NT.
 
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000021}{Todo}]bien penser a connecter les boutons nécessaires quand on charge un widget quand le bouton menu sera passé dans chaque widget notamment \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000019}{Todo}]bien penser a connecter les boutons nécessaires quand on charge un widget quand le bouton menu sera passé dans chaque widget notamment \end{DoxyRefDesc}
 \begin{DoxyRefDesc}{Test}
-\item[\hyperlink{test__test000003}{Test}]changer la fenetre on peut tenter vu que Q\+Widget hérite de Q\+Object \end{DoxyRefDesc}
+\item[\hyperlink{test__test000004}{Test}]changer la fenetre on peut tenter vu que Q\+Widget hérite de Q\+Object \end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Test}
+\item[\hyperlink{test__test000005}{Test}]test très fort \end{DoxyRefDesc}
 
 
 creation wid\+Stack
@@ -60,7 +72,7 @@ affichage du menu \mbox{\Hypertarget{class_robin_main_window_a72eb8450efc1dfe22e
 {\footnotesize\ttfamily Robin\+Main\+Window\+::$\sim$\+Robin\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000022}{Todo}]faire une fonction qui vide le widget \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000020}{Todo}]faire une fonction qui vide le widget \end{DoxyRefDesc}
 
 
 \subsection{Member Function Documentation}
@@ -79,8 +91,18 @@ Signal pour retourner au menu principal.
  \subsubsection*{S\+L\+O\+TS }
 
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000026}{Todo}]bien penser a reconnecter tout \end{DoxyRefDesc}
-\mbox{\Hypertarget{class_robin_main_window_a55e49d0a4d727066b553fc2277dd8a78}\label{class_robin_main_window_a55e49d0a4d727066b553fc2277dd8a78}} 
+\item[\hyperlink{todo__todo000021}{Todo}]bien penser a reconnecter tout \end{DoxyRefDesc}
+\mbox{\Hypertarget{class_robin_main_window_a08e1d2b660c03aa711d552258a368ec0}\label{class_robin_main_window_a08e1d2b660c03aa711d552258a368ec0}} 
+\index{Robin\+Main\+Window@{Robin\+Main\+Window}!game\+Ended@{game\+Ended}}
+\index{game\+Ended@{game\+Ended}!Robin\+Main\+Window@{Robin\+Main\+Window}}
+\subsubsection{\texorpdfstring{game\+Ended}{gameEnded}}
+{\footnotesize\ttfamily void Robin\+Main\+Window\+::game\+Ended (\begin{DoxyParamCaption}\item[{std\+::pair$<$ std\+::string, int $>$}]{asso }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Slot d\textquotesingle{}attente de fin de jeu. 
+
+Fait apparaitre une popup de récapitulation \mbox{\Hypertarget{class_robin_main_window_a55e49d0a4d727066b553fc2277dd8a78}\label{class_robin_main_window_a55e49d0a4d727066b553fc2277dd8a78}} 
 \index{Robin\+Main\+Window@{Robin\+Main\+Window}!open\+Calcul@{open\+Calcul}}
 \index{open\+Calcul@{open\+Calcul}!Robin\+Main\+Window@{Robin\+Main\+Window}}
 \subsubsection{\texorpdfstring{open\+Calcul}{openCalcul}}
@@ -91,7 +113,7 @@ Signal pour retourner au menu principal.
 Signal pour lancer le calcul mental. 
 
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000023}{Todo}]completer \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000022}{Todo}]completer \end{DoxyRefDesc}
 \mbox{\Hypertarget{class_robin_main_window_aaf62641d678eb0f8829a2fb9c513ae68}\label{class_robin_main_window_aaf62641d678eb0f8829a2fb9c513ae68}} 
 \index{Robin\+Main\+Window@{Robin\+Main\+Window}!open\+Memory@{open\+Memory}}
 \index{open\+Memory@{open\+Memory}!Robin\+Main\+Window@{Robin\+Main\+Window}}
@@ -103,7 +125,7 @@ Signal pour lancer le calcul mental.
 Signal pour lancer le memory. 
 
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000025}{Todo}]completer \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000024}{Todo}]completer \end{DoxyRefDesc}
 \mbox{\Hypertarget{class_robin_main_window_ab00b403de3169493a08c53f5d623ce6b}\label{class_robin_main_window_ab00b403de3169493a08c53f5d623ce6b}} 
 \index{Robin\+Main\+Window@{Robin\+Main\+Window}!open\+Simon@{open\+Simon}}
 \index{open\+Simon@{open\+Simon}!Robin\+Main\+Window@{Robin\+Main\+Window}}
@@ -115,7 +137,7 @@ Signal pour lancer le memory.
 Signal pour lancer le super simon. 
 
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000024}{Todo}]completer \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000023}{Todo}]completer \end{DoxyRefDesc}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

@@ -77,6 +77,9 @@ Inheritance diagram for RobinMainWindow:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
+<tr class="memitem:a08e1d2b660c03aa711d552258a368ec0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robin_main_window.html#a08e1d2b660c03aa711d552258a368ec0">gameEnded</a> (std::pair&lt; std::string, int &gt; asso)</td></tr>
+<tr class="memdesc:a08e1d2b660c03aa711d552258a368ec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot d'attente de fin de jeu.  <a href="#a08e1d2b660c03aa711d552258a368ec0">More...</a><br /></td></tr>
+<tr class="separator:a08e1d2b660c03aa711d552258a368ec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0850e17ae24394b14eb2dcfc4f15eeca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robin_main_window.html#a0850e17ae24394b14eb2dcfc4f15eeca">backToMenu</a> (void)</td></tr>
 <tr class="memdesc:a0850e17ae24394b14eb2dcfc4f15eeca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal pour retourner au menu principal.  <a href="#a0850e17ae24394b14eb2dcfc4f15eeca">More...</a><br /></td></tr>
 <tr class="separator:a0850e17ae24394b14eb2dcfc4f15eeca"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -89,6 +92,14 @@ Public Slots</h2></td></tr>
 <tr class="memitem:aaf62641d678eb0f8829a2fb9c513ae68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robin_main_window.html#aaf62641d678eb0f8829a2fb9c513ae68">openMemory</a> (void)</td></tr>
 <tr class="memdesc:aaf62641d678eb0f8829a2fb9c513ae68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal pour lancer le memory.  <a href="#aaf62641d678eb0f8829a2fb9c513ae68">More...</a><br /></td></tr>
 <tr class="separator:aaf62641d678eb0f8829a2fb9c513ae68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fb974c65b231fe737c9574acf989c36"><td class="memItemLeft" align="right" valign="top"><a id="a3fb974c65b231fe737c9574acf989c36"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robin_main_window.html#a3fb974c65b231fe737c9574acf989c36">saveScoreTest</a> (void)</td></tr>
+<tr class="memdesc:a3fb974c65b231fe737c9574acf989c36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sauvegarde de score de test. <br /></td></tr>
+<tr class="separator:a3fb974c65b231fe737c9574acf989c36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bd52ec1bdbcbeaee45005ce4f0196f3"><td class="memItemLeft" align="right" valign="top"><a id="a8bd52ec1bdbcbeaee45005ce4f0196f3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robin_main_window.html#a8bd52ec1bdbcbeaee45005ce4f0196f3">changePlayer</a> (void)</td></tr>
+<tr class="memdesc:a8bd52ec1bdbcbeaee45005ce4f0196f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changement de joueur. <br /></td></tr>
+<tr class="separator:a8bd52ec1bdbcbeaee45005ce4f0196f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -132,8 +143,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>getAtMenu</b> (void)<
 
 <p>Constructeur et destructeur. </p>
 <p><a class="el" href="class_robin_main_window.html#a55f7775f5daefb2099a51e97d50df666" title="Constructeur et destructeur. ">RobinMainWindow::RobinMainWindow</a> INDEX des jeux dans le QStackedWidget d'affichage 0 MENU 1 CALCUL 2 SIMON 3 MEMORY 4 FLAGS 5 PUZZLE 6 POINT.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000021">Todo:</a></b></dt><dd>bien penser a connecter les boutons nécessaires quand on charge un widget quand le bouton menu sera passé dans chaque widget notamment </dd></dl>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000003">Test:</a></b></dt><dd>changer la fenetre on peut tenter vu que QWidget hérite de QObject </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000019">Todo:</a></b></dt><dd>bien penser a connecter les boutons nécessaires quand on charge un widget quand le bouton menu sera passé dans chaque widget notamment </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000004">Test:</a></b></dt><dd>changer la fenetre on peut tenter vu que QWidget hérite de QObject </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000005">Test:</a></b></dt><dd>test très fort </dd></dl>
 <p>creation widStack</p>
 <p>affichage du menu </p>
 
@@ -153,7 +165,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>getAtMenu</b> (void)<
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000022">Todo:</a></b></dt><dd>faire une fonction qui vide le widget </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000020">Todo:</a></b></dt><dd>faire une fonction qui vide le widget </dd></dl>
 
 </div>
 </div>
@@ -185,7 +197,36 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>getAtMenu</b> (void)<
 <p>Signal pour retourner au menu principal. </p>
 <hr/>
  <h2>SLOTS </h2>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000026">Todo:</a></b></dt><dd>bien penser a reconnecter tout </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000021">Todo:</a></b></dt><dd>bien penser a reconnecter tout </dd></dl>
+
+</div>
+</div>
+<a id="a08e1d2b660c03aa711d552258a368ec0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08e1d2b660c03aa711d552258a368ec0">&#9670;&nbsp;</a></span>gameEnded</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RobinMainWindow::gameEnded </td>
+          <td>(</td>
+          <td class="paramtype">std::pair&lt; std::string, int &gt;&#160;</td>
+          <td class="paramname"><em>asso</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Slot d'attente de fin de jeu. </p>
+<p>Fait apparaitre une popup de récapitulation </p>
 
 </div>
 </div>
@@ -214,7 +255,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>getAtMenu</b> (void)<
 </div><div class="memdoc">
 
 <p>Signal pour lancer le calcul mental. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000023">Todo:</a></b></dt><dd>completer </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000022">Todo:</a></b></dt><dd>completer </dd></dl>
 
 </div>
 </div>
@@ -243,7 +284,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>getAtMenu</b> (void)<
 </div><div class="memdoc">
 
 <p>Signal pour lancer le memory. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000025">Todo:</a></b></dt><dd>completer </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000024">Todo:</a></b></dt><dd>completer </dd></dl>
 
 </div>
 </div>
@@ -272,7 +313,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>getAtMenu</b> (void)<
 </div><div class="memdoc">
 
 <p>Signal pour lancer le super simon. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000024">Todo:</a></b></dt><dd>completer </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000023">Todo:</a></b></dt><dd>completer </dd></dl>
 
 </div>
 </div>

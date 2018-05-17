@@ -59,6 +59,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-slots">Public Slots</a> &#124;
+<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="class_memory-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -74,21 +76,51 @@ Inheritance diagram for Memory:</div>
 </map>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
+Public Slots</h2></td></tr>
+<tr class="memitem:af967fc9232b5f014ad2d5b020c463727"><td class="memItemLeft" align="right" valign="top"><a id="af967fc9232b5f014ad2d5b020c463727"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_memory.html#af967fc9232b5f014ad2d5b020c463727">carteClic</a> (void)</td></tr>
+<tr class="memdesc:af967fc9232b5f014ad2d5b020c463727"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clic sur une carte. <br /></td></tr>
+<tr class="separator:af967fc9232b5f014ad2d5b020c463727"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Signals</h2></td></tr>
+<tr class="memitem:a94744018f48144f6089011c74ee1a13b"><td class="memItemLeft" align="right" valign="top"><a id="a94744018f48144f6089011c74ee1a13b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_memory.html#a94744018f48144f6089011c74ee1a13b">endOfGame</a> (std::pair&lt; std::string, int &gt; asso)</td></tr>
+<tr class="memdesc:a94744018f48144f6089011c74ee1a13b"><td class="mdescLeft">&#160;</td><td class="mdescRight">fin du jeu <br /></td></tr>
+<tr class="separator:a94744018f48144f6089011c74ee1a13b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a243eef3e0fd8d02131e3bcca0471c931"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_memory.html#a243eef3e0fd8d02131e3bcca0471c931">Memory</a> (QWidget *parent=0)</td></tr>
 <tr class="memdesc:a243eef3e0fd8d02131e3bcca0471c931"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur et destructeur.  <a href="#a243eef3e0fd8d02131e3bcca0471c931">More...</a><br /></td></tr>
 <tr class="separator:a243eef3e0fd8d02131e3bcca0471c931"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9a06b40d30c5ee3bbccacb37795255b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_memory.html#ad9a06b40d30c5ee3bbccacb37795255b">paintEvent</a> (QPaintEvent *)</td></tr>
-<tr class="memdesc:ad9a06b40d30c5ee3bbccacb37795255b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour l'interface.  <a href="#ad9a06b40d30c5ee3bbccacb37795255b">More...</a><br /></td></tr>
-<tr class="separator:ad9a06b40d30c5ee3bbccacb37795255b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c8b57775899a3782edcdf4da430ad61"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_memory.html#a7c8b57775899a3782edcdf4da430ad61">getNbCards</a> (void)</td></tr>
-<tr class="memdesc:a7c8b57775899a3782edcdf4da430ad61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère le nombre de cartes.  <a href="#a7c8b57775899a3782edcdf4da430ad61">More...</a><br /></td></tr>
+<tr class="memdesc:a7c8b57775899a3782edcdf4da430ad61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour l'interface  void paintEvent(QPaintEvent*);.  <a href="#a7c8b57775899a3782edcdf4da430ad61">More...</a><br /></td></tr>
 <tr class="separator:a7c8b57775899a3782edcdf4da430ad61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55cc1392f73a9b45478e7799bf1861e1"><td class="memItemLeft" align="right" valign="top"><a id="a55cc1392f73a9b45478e7799bf1861e1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_memory.html#a55cc1392f73a9b45478e7799bf1861e1">flipCard</a> (QPushButton *)</td></tr>
-<tr class="memdesc:a55cc1392f73a9b45478e7799bf1861e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne une carte en changeant sa stylesheet. <br /></td></tr>
-<tr class="separator:a55cc1392f73a9b45478e7799bf1861e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a296d041ffa5698d725cbf34257c8aeb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_memory.html#a296d041ffa5698d725cbf34257c8aeb3">setupCardFromModel</a> (int ind)</td></tr>
+<tr class="memdesc:a296d041ffa5698d725cbf34257c8aeb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Donner les informations.  <a href="#a296d041ffa5698d725cbf34257c8aeb3">More...</a><br /></td></tr>
+<tr class="separator:a296d041ffa5698d725cbf34257c8aeb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21ee675074812b4fb7b56dd6795b229c"><td class="memItemLeft" align="right" valign="top"><a id="a21ee675074812b4fb7b56dd6795b229c"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_memory.html#a21ee675074812b4fb7b56dd6795b229c">getCardFromPaire</a> (int paire)</td></tr>
+<tr class="memdesc:a21ee675074812b4fb7b56dd6795b229c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nom de fichier attendu pour la paire. <br /></td></tr>
+<tr class="separator:a21ee675074812b4fb7b56dd6795b229c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a162c70bd9a89e92e601c68ae51d78159"><td class="memItemLeft" align="right" valign="top"><a id="a162c70bd9a89e92e601c68ae51d78159"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_memory.html#a162c70bd9a89e92e601c68ae51d78159">getIndiceFromName</a> (QPushButton *but)</td></tr>
+<tr class="memdesc:a162c70bd9a89e92e601c68ae51d78159"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trouver l'indice de la carte depuis son nom. <br /></td></tr>
+<tr class="separator:a162c70bd9a89e92e601c68ae51d78159"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b2e64de3708d9ddf397517a668d813d"><td class="memItemLeft" align="right" valign="top"><a id="a8b2e64de3708d9ddf397517a668d813d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_memory.html#a8b2e64de3708d9ddf397517a668d813d">closeAllCards</a> (void)</td></tr>
+<tr class="memdesc:a8b2e64de3708d9ddf397517a668d813d"><td class="mdescLeft">&#160;</td><td class="mdescRight">retourner toutes les cartes non appairées <br /></td></tr>
+<tr class="separator:a8b2e64de3708d9ddf397517a668d813d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee5f2b150b3b90ba1dd6ba7bf1b671a2"><td class="memItemLeft" align="right" valign="top"><a id="aee5f2b150b3b90ba1dd6ba7bf1b671a2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_memory.html#aee5f2b150b3b90ba1dd6ba7bf1b671a2">sendEndOfGame</a> (void)</td></tr>
+<tr class="memdesc:aee5f2b150b3b90ba1dd6ba7bf1b671a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declencher fin du jeu. <br /></td></tr>
+<tr class="separator:aee5f2b150b3b90ba1dd6ba7bf1b671a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfb41c91c7dd6166088a38b0689bc5e5"><td class="memItemLeft" align="right" valign="top"><a id="abfb41c91c7dd6166088a38b0689bc5e5"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_memory.html#abfb41c91c7dd6166088a38b0689bc5e5">checkEndOfGame</a> (void)</td></tr>
+<tr class="memdesc:abfb41c91c7dd6166088a38b0689bc5e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifier si fin du jeu. <br /></td></tr>
+<tr class="separator:abfb41c91c7dd6166088a38b0689bc5e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a243eef3e0fd8d02131e3bcca0471c931"></a>
@@ -139,31 +171,30 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
       </table>
 </div><div class="memdoc">
 
-<p>Récupère le nombre de cartes. </p>
-<p>futures fonctions liées au modèle pour quand il y aura un modèle </p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo:</a></b></dt><dd>faire un modèle </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo:</a></b></dt><dd>récupérer dans le modèle après </dd></dl>
+<p>Met à jour l'interface  void paintEvent(QPaintEvent*);. </p>
+<p>Récupère le nombre de cartes </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>récupérer dans le modèle après </dd></dl>
 
 </div>
 </div>
-<a id="ad9a06b40d30c5ee3bbccacb37795255b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9a06b40d30c5ee3bbccacb37795255b">&#9670;&nbsp;</a></span>paintEvent()</h2>
+<a id="a296d041ffa5698d725cbf34257c8aeb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a296d041ffa5698d725cbf34257c8aeb3">&#9670;&nbsp;</a></span>setupCardFromModel()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Memory::paintEvent </td>
+          <td class="memname">void Memory::setupCardFromModel </td>
           <td>(</td>
-          <td class="paramtype">QPaintEvent *&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ind</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Met à jour l'interface. </p>
-<p>nope, on va plutôt y aller avec des widgets pour les cartes </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>vérifier ce que ça fait je pense que c'est pour stocker les rectangles dessinés dans le tableau mentionné ça sert peut-être à rien ici </dd></dl>
+<p>Donner les informations. </p>
+<p>Verifie si la carte est retournée ou non et lui attribue une stylesheet correspondant à cela en se basant pour son image si elle est retournée sur la paire du modele </p>
 
 </div>
 </div>

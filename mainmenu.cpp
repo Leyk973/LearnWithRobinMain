@@ -9,7 +9,7 @@ MainMenu::MainMenu(QWidget *parent) :
     ui->setupUi(this);
 
     putInShape(ui->buttonCalcul);
-    putInShape(ui->buttonFlags);
+    putInShapeWIP(ui->buttonFlags);
     putInShape(ui->buttonMemory);
     putInShapeWIP(ui->buttonPointClick);
     putInShapeWIP(ui->buttonPuzzle);
@@ -88,6 +88,6 @@ void MainMenu::goForMemory()
 
 void MainMenu::goForPuzzle()
 {
-    std::cout << "ENREGISTREMENT TEST GOFORPUZZLE" << std::endl;
+    //std::cout << "ENREGISTREMENT TEST GOFORPUZZLE" << std::endl;
     emit clickedPuzzle();
 }

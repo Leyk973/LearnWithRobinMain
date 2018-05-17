@@ -87,7 +87,7 @@ RobinMainWindow::RobinMainWindow(QWidget *parent) :
 
 
     /// \test test très fort
-    QObject::connect(menuPrincipal,&MainMenu::clickedPuzzle,this,&RobinMainWindow::saveScoreTest);
+    //QObject::connect(menuPrincipal,&MainMenu::clickedPuzzle,this,&RobinMainWindow::saveScoreTest);
 
 
 
@@ -112,7 +112,7 @@ RobinMainWindow::RobinMainWindow(QWidget *parent) :
 
     // connexion des fins de jeu
     QObject::connect(theSimon,&SuperSimon::endOfGame,this,&RobinMainWindow::gameEnded);
-
+    QObject::connect(theMemory,&Memory::endOfGame,this,&RobinMainWindow::gameEnded);
 
 
 

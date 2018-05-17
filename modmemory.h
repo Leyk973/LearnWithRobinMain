@@ -125,6 +125,8 @@ public:
     /// \brief Getter
     int getNbCartesRestantes(void);
 
+    /// \brief Getter
+    int getScore(void);
 
 
 private:

@@ -49,6 +49,16 @@ public:
     /// \brief  retourner toutes les cartes non appairées
     void closeAllCards(void);
 
+    /// \brief Declencher fin du jeu
+    void sendEndOfGame(void);
+
+    /// \brief Verifier si fin du jeu
+    bool checkEndOfGame(void);
+
+signals:
+    /// \brief fin du jeu
+    void endOfGame(std::pair<std::string,int> asso);
+
 public slots:
 
     /// \brief Clic sur une carte

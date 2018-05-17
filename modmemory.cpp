@@ -59,6 +59,7 @@ void ModMemory::openCard(int & ind)
     // verifier si flipped card est rempli
     if (nbCartesRetournees>1)
     {
+        std::cout << "clic avec deux cartes ouvertes" <<std::endl;
         closeCards();
 
         ++score;
@@ -72,6 +73,7 @@ void ModMemory::openCard(int & ind)
         flippedCards.first = ind;
 
     } else { // si pas rempli
+        std::cout << "clic avec zero ou une cartes ouvertes" <<std::endl;
         ++score;
 
         if(!cards.at(ind).isRetournee())
@@ -135,20 +137,27 @@ int ModMemory::getNbCartesRestantes()
     return nbCartesRestantes;
 }
 
+int ModMemory::getScore()
+{
+    return this->score;
+}
+
 
 bool ModMemory::checkCards(int & ind1, int & ind2)
 {
-    std::cout << "test asso :" << ind1 << " ET " << ind2 << std::endl;
+    //std::cout << "test asso :" << ind1 << " ET " << ind2 << std::endl;
     int pai1 = cards.at(ind1).getPaire();
     int pai2 = cards.at(ind2).getPaire();
 
-    std::cout << "les paires sont :" << pai1 << " ET " << pai2 << std::endl;
+    //std::cout << "les paires sont :" << pai1 << " ET " << pai2 << std::endl;
 
     if (pai1 == pai2)
     {
         cards.at(ind1).foundCard();
         cards.at(ind2).foundCard();
-        nbCartesRestantes-=2;
+        nbCartesRestantes--;
+        nbCartesRestantes--;
+        std::cout << "IL RESTE TANT DE CARTES :::   " << nbCartesRestantes<<std::endl;
         return true;
     } else {
         return false;

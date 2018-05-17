@@ -1,13 +1,18 @@
 var searchData=
 [
+  ['saveplayerscoreforgame',['SavePlayerScoreForGame',['../class_tools.html#a5de09268ac074b96c2275ccad05316ca',1,'Tools']]],
+  ['savescoretest',['saveScoreTest',['../class_robin_main_window.html#a3fb974c65b231fe737c9574acf989c36',1,'RobinMainWindow']]],
+  ['sendendofgame',['sendEndOfGame',['../class_memory.html#aee5f2b150b3b90ba1dd6ba7bf1b671a2',1,'Memory::sendEndOfGame()'],['../class_super_simon.html#ad579e5ed8007a599d5074299c4bee712',1,'SuperSimon::sendEndOfGame()']]],
   ['sendseqforcheck',['sendSeqForCheck',['../class_super_simon.html#a242ac18e5bcd7487bfd8a5b01b59669a',1,'SuperSimon']]],
   ['setatmenu',['setAtMenu',['../class_robin_main_window.html#a66991c9057efd1d3ebc38e57e8df5b72',1,'RobinMainWindow']]],
   ['setbornes',['setBornes',['../class_mod_calcul.html#a3bc78a2a5165705dc3f15f516b6dc22c',1,'ModCalcul']]],
   ['setindice',['setIndice',['../class_memory_card.html#a17b81ae2bd924ae5430684ec02573aac',1,'MemoryCard']]],
   ['setlives',['setLives',['../class_mod_simon.html#a8aa773733ce3e7cca012cf60383210aa',1,'ModSimon']]],
+  ['setname',['setName',['../class_player.html#a9afd1a776feece693c2c156c4fa6fcfa',1,'Player']]],
   ['setpaire',['setPaire',['../class_memory_card.html#a0ceb17bd1ca14d7da5be66e7d5653d0b',1,'MemoryCard']]],
   ['setscore',['setScore',['../class_calcul_mental.html#a2c3a044640c58c0cc865e286334ce591',1,'CalculMental::setScore()'],['../class_mod_simon.html#a5f019f6797813a9d2bd11c1e1692e1dd',1,'ModSimon::setScore()']]],
   ['setsequence',['setSequence',['../class_mod_simon.html#a3b031c28072d6564e238daacc254c522',1,'ModSimon']]],
+  ['setupcardfrommodel',['setupCardFromModel',['../class_memory.html#a296d041ffa5698d725cbf34257c8aeb3',1,'Memory']]],
   ['shufflecards',['shuffleCards',['../class_mod_memory.html#ad85f5a28220e641195215e705a928fb1',1,'ModMemory']]],
   ['simonclicked',['simonClicked',['../class_super_simon.html#accceee26094ef9d22fe8b3934f34e607',1,'SuperSimon']]],
   ['simonclickedredirect',['simonClickedRedirect',['../class_super_simon.html#af495f2a329d2966c2f265cb46753a13d',1,'SuperSimon']]],

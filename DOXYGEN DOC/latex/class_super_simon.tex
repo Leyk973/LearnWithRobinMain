@@ -31,10 +31,15 @@ void \hyperlink{class_super_simon_a81bff9afba77880d36563aac5534ccd3}{reset\+Scor
 \mbox{\Hypertarget{class_super_simon_aa8c1d5cee800c30c2eda3d4e32a438eb}\label{class_super_simon_aa8c1d5cee800c30c2eda3d4e32a438eb}} 
 void \hyperlink{class_super_simon_aa8c1d5cee800c30c2eda3d4e32a438eb}{delete\+Audio} (void)
 \begin{DoxyCompactList}\small\item\em Supprime les éléments responsables du son. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_super_simon_ac03f5803072330be308372659c5ffb1c}\label{class_super_simon_ac03f5803072330be308372659c5ffb1c}} 
+void \hyperlink{class_super_simon_ac03f5803072330be308372659c5ffb1c}{end\+Of\+Game} (std\+::pair$<$ std\+::string, int $>$ asso)
+\begin{DoxyCompactList}\small\item\em fin du jeu \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_super_simon_a203f799a56234b59ba692ed5b7a74537}\label{class_super_simon_a203f799a56234b59ba692ed5b7a74537}} 
 \hyperlink{class_super_simon_a203f799a56234b59ba692ed5b7a74537}{Super\+Simon} (Q\+Widget $\ast$parent=nullptr)
 \begin{DoxyCompactList}\small\item\em Constructeur destructeur. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_super_simon_a1676872fe3b03afef6ce057beae773b8}\label{class_super_simon_a1676872fe3b03afef6ce057beae773b8}} 
@@ -61,8 +66,27 @@ bool \hyperlink{class_super_simon_a242ac18e5bcd7487bfd8a5b01b59669a}{send\+Seq\+
 void \hyperlink{class_super_simon_a8d5c23562cd6b048720003d3c796ac7a}{update\+View\+Simon} (void)
 \begin{DoxyCompactList}\small\item\em Mettre à jour la vue. \end{DoxyCompactList}\item 
 void \hyperlink{class_super_simon_af12663f8a26a971a508a40a33d0afceb}{delay} (int \&sec)
-\begin{DoxyCompactList}\small\item\em Attend sec secondes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Attend sec secondes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_super_simon_ad579e5ed8007a599d5074299c4bee712}\label{class_super_simon_ad579e5ed8007a599d5074299c4bee712}} 
+void \hyperlink{class_super_simon_ad579e5ed8007a599d5074299c4bee712}{send\+End\+Of\+Game} (void)
+\begin{DoxyCompactList}\small\item\em Declencher fin du jeu. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_super_simon_a3834147e3d6956d918a9ef31c4a87c3d}\label{class_super_simon_a3834147e3d6956d918a9ef31c4a87c3d}} 
+bool \hyperlink{class_super_simon_a3834147e3d6956d918a9ef31c4a87c3d}{check\+End\+Of\+Game} (void)
+\begin{DoxyCompactList}\small\item\em Verifier si fin du jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_super_simon_a203f799a56234b59ba692ed5b7a74537}\label{class_super_simon_a203f799a56234b59ba692ed5b7a74537}} 
+\index{Super\+Simon@{Super\+Simon}!Super\+Simon@{Super\+Simon}}
+\index{Super\+Simon@{Super\+Simon}!Super\+Simon@{Super\+Simon}}
+\subsubsection{\texorpdfstring{Super\+Simon()}{SuperSimon()}}
+{\footnotesize\ttfamily Super\+Simon\+::\+Super\+Simon (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructeur destructeur. 
+
+Pour info 1 \+: blue 2 \+: green 3 \+: red 4 \+: yellow
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_super_simon_aece1587ad880233a11cf24cbbe284a42}\label{class_super_simon_aece1587ad880233a11cf24cbbe284a42}} 
@@ -96,7 +120,7 @@ Appelle send\+Seq\+For\+Check si la taille attendue est atteinte \mbox{\Hypertar
 Attend sec secondes. 
 
 \begin{DoxyRefDesc}{Test}
-\item[\hyperlink{test__test000004}{Test}]\end{DoxyRefDesc}
+\item[\hyperlink{test__test000006}{Test}]\end{DoxyRefDesc}
 \mbox{\Hypertarget{class_super_simon_af00408823847e80a511019baa536afb3}\label{class_super_simon_af00408823847e80a511019baa536afb3}} 
 \index{Super\+Simon@{Super\+Simon}!edit\+Sequence@{edit\+Sequence}}
 \index{edit\+Sequence@{edit\+Sequence}!Super\+Simon@{Super\+Simon}}
@@ -107,8 +131,6 @@ Attend sec secondes.
 
 Editer la séquence à jouer. 
 
-\begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000027}{Todo}]implémenter \end{DoxyRefDesc}
 \mbox{\Hypertarget{class_super_simon_a81bff9afba77880d36563aac5534ccd3}\label{class_super_simon_a81bff9afba77880d36563aac5534ccd3}} 
 \index{Super\+Simon@{Super\+Simon}!reset\+Score\+Clicked@{reset\+Score\+Clicked}}
 \index{reset\+Score\+Clicked@{reset\+Score\+Clicked}!Super\+Simon@{Super\+Simon}}
@@ -142,7 +164,7 @@ Redirection vers simon\+Clicked avec la valeur du bouton \mbox{\Hypertarget{clas
 Mettre à jour la vue. 
 
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000028}{Todo}]mettre a jour les textes \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000025}{Todo}]mettre a jour les textes \end{DoxyRefDesc}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

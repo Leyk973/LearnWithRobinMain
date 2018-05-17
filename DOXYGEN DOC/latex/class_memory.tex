@@ -6,18 +6,42 @@ Inheritance diagram for Memory\+:\begin{figure}[H]
 \includegraphics[height=2.000000cm]{class_memory}
 \end{center}
 \end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_memory_af967fc9232b5f014ad2d5b020c463727}\label{class_memory_af967fc9232b5f014ad2d5b020c463727}} 
+void \hyperlink{class_memory_af967fc9232b5f014ad2d5b020c463727}{carte\+Clic} (void)
+\begin{DoxyCompactList}\small\item\em Clic sur une carte. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_memory_a94744018f48144f6089011c74ee1a13b}\label{class_memory_a94744018f48144f6089011c74ee1a13b}} 
+void \hyperlink{class_memory_a94744018f48144f6089011c74ee1a13b}{end\+Of\+Game} (std\+::pair$<$ std\+::string, int $>$ asso)
+\begin{DoxyCompactList}\small\item\em fin du jeu \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_memory_a243eef3e0fd8d02131e3bcca0471c931}{Memory} (Q\+Widget $\ast$parent=0)
 \begin{DoxyCompactList}\small\item\em Constructeur et destructeur. \end{DoxyCompactList}\item 
-void \hyperlink{class_memory_ad9a06b40d30c5ee3bbccacb37795255b}{paint\+Event} (Q\+Paint\+Event $\ast$)
-\begin{DoxyCompactList}\small\item\em Met à jour l\textquotesingle{}interface. \end{DoxyCompactList}\item 
 int \hyperlink{class_memory_a7c8b57775899a3782edcdf4da430ad61}{get\+Nb\+Cards} (void)
-\begin{DoxyCompactList}\small\item\em Récupère le nombre de cartes. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_memory_a55cc1392f73a9b45478e7799bf1861e1}\label{class_memory_a55cc1392f73a9b45478e7799bf1861e1}} 
-void \hyperlink{class_memory_a55cc1392f73a9b45478e7799bf1861e1}{flip\+Card} (Q\+Push\+Button $\ast$)
-\begin{DoxyCompactList}\small\item\em Retourne une carte en changeant sa stylesheet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Met à jour l\textquotesingle{}interface  void paint\+Event(\+Q\+Paint\+Event$\ast$);. \end{DoxyCompactList}\item 
+void \hyperlink{class_memory_a296d041ffa5698d725cbf34257c8aeb3}{setup\+Card\+From\+Model} (int ind)
+\begin{DoxyCompactList}\small\item\em Donner les informations. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_memory_a21ee675074812b4fb7b56dd6795b229c}\label{class_memory_a21ee675074812b4fb7b56dd6795b229c}} 
+std\+::string \hyperlink{class_memory_a21ee675074812b4fb7b56dd6795b229c}{get\+Card\+From\+Paire} (int paire)
+\begin{DoxyCompactList}\small\item\em Retourne le nom de fichier attendu pour la paire. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_memory_a162c70bd9a89e92e601c68ae51d78159}\label{class_memory_a162c70bd9a89e92e601c68ae51d78159}} 
+int \hyperlink{class_memory_a162c70bd9a89e92e601c68ae51d78159}{get\+Indice\+From\+Name} (Q\+Push\+Button $\ast$but)
+\begin{DoxyCompactList}\small\item\em Trouver l\textquotesingle{}indice de la carte depuis son nom. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_memory_a8b2e64de3708d9ddf397517a668d813d}\label{class_memory_a8b2e64de3708d9ddf397517a668d813d}} 
+void \hyperlink{class_memory_a8b2e64de3708d9ddf397517a668d813d}{close\+All\+Cards} (void)
+\begin{DoxyCompactList}\small\item\em retourner toutes les cartes non appairées \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_memory_aee5f2b150b3b90ba1dd6ba7bf1b671a2}\label{class_memory_aee5f2b150b3b90ba1dd6ba7bf1b671a2}} 
+void \hyperlink{class_memory_aee5f2b150b3b90ba1dd6ba7bf1b671a2}{send\+End\+Of\+Game} (void)
+\begin{DoxyCompactList}\small\item\em Declencher fin du jeu. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_memory_abfb41c91c7dd6166088a38b0689bc5e5}\label{class_memory_abfb41c91c7dd6166088a38b0689bc5e5}} 
+bool \hyperlink{class_memory_abfb41c91c7dd6166088a38b0689bc5e5}{check\+End\+Of\+Game} (void)
+\begin{DoxyCompactList}\small\item\em Verifier si fin du jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -52,25 +76,21 @@ Constructeur et destructeur.
 
 
 
-Récupère le nombre de cartes. 
+Met à jour l\textquotesingle{}interface  void paint\+Event(\+Q\+Paint\+Event$\ast$);. 
 
-futures fonctions liées au modèle pour quand il y aura un modèle \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000005}{Todo}]faire un modèle \end{DoxyRefDesc}
-\begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000006}{Todo}]récupérer dans le modèle après \end{DoxyRefDesc}
-\mbox{\Hypertarget{class_memory_ad9a06b40d30c5ee3bbccacb37795255b}\label{class_memory_ad9a06b40d30c5ee3bbccacb37795255b}} 
-\index{Memory@{Memory}!paint\+Event@{paint\+Event}}
-\index{paint\+Event@{paint\+Event}!Memory@{Memory}}
-\subsubsection{\texorpdfstring{paint\+Event()}{paintEvent()}}
-{\footnotesize\ttfamily void Memory\+::paint\+Event (\begin{DoxyParamCaption}\item[{Q\+Paint\+Event $\ast$}]{ }\end{DoxyParamCaption})}
+Récupère le nombre de cartes \begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000004}{Todo}]récupérer dans le modèle après \end{DoxyRefDesc}
+\mbox{\Hypertarget{class_memory_a296d041ffa5698d725cbf34257c8aeb3}\label{class_memory_a296d041ffa5698d725cbf34257c8aeb3}} 
+\index{Memory@{Memory}!setup\+Card\+From\+Model@{setup\+Card\+From\+Model}}
+\index{setup\+Card\+From\+Model@{setup\+Card\+From\+Model}!Memory@{Memory}}
+\subsubsection{\texorpdfstring{setup\+Card\+From\+Model()}{setupCardFromModel()}}
+{\footnotesize\ttfamily void Memory\+::setup\+Card\+From\+Model (\begin{DoxyParamCaption}\item[{int}]{ind }\end{DoxyParamCaption})}
 
 
 
-Met à jour l\textquotesingle{}interface. 
+Donner les informations. 
 
-nope, on va plutôt y aller avec des widgets pour les cartes \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000004}{Todo}]vérifier ce que ça fait je pense que c\textquotesingle{}est pour stocker les rectangles dessinés dans le tableau mentionné ça sert peut-\/être à rien ici \end{DoxyRefDesc}
-
+Verifie si la carte est retournée ou non et lui attribue une stylesheet correspondant à cela en se basant pour son image si elle est retournée sur la paire du modele 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

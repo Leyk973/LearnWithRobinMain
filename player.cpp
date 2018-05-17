@@ -2,7 +2,7 @@
 
 Player::Player()
 {
-    name="Jean-Jacques";
+    name="PlayerOne";
 }
 
 void Player::setName(std::string & nam)
