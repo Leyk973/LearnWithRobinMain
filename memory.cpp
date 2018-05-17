@@ -9,6 +9,8 @@ Memory::Memory(QWidget *parent) :
     std::cout << "Creation Memory" << std::endl;
     //ui->setupUi(this);
 
+    modMemo = new ModMemory;
+
     /// \todo ordonner / ranger un peu cette fonction
 
     // Premier layout, score et autres
@@ -37,32 +39,20 @@ Memory::Memory(QWidget *parent) :
         for (int j = 0; j < 4; ++j){
             std::string l = std::to_string(monpetitcompteur);
             cardsVector.push_back(new QPushButton(QString::fromStdString(l)));
-            cardsVector.at(monpetitcompteur)->setFixedSize(100,100);
+            cardsVector.at(monpetitcompteur)->setFixedSize(150,150);
             std::string nameCard = "card_" + l;
             cardsVector.at(monpetitcompteur)->setObjectName(QString::fromStdString(nameCard));
-            cardsVector.at(monpetitcompteur)->setStyleSheet(QString::fromUtf8(
-                                                                "QPushButton {"
-                                                                "border-image:url(:/files/boutonTestNotClicked.png);"
-                                                                "}"
-                                                                "QPushButton::pressed {"
-                                                                "border-image:url(:/files/boutonTestClicked.png);"
-                                                                "}"
-                                                                ));
+
+            setupCardFromModel(monpetitcompteur);
+
             std::cout << "carte créée : " << cardsVector.at(monpetitcompteur)->objectName().toStdString() << std::endl;
             theGrid->addWidget(cardsVector.at(monpetitcompteur),i,j);
+
+            QObject::connect(cardsVector.at(monpetitcompteur),&QPushButton::clicked,this,&Memory::carteClic);
+
             ++monpetitcompteur;
         }
     }
-
-
-    /*boutonDeTestQuiSertARien1 = new QPushButton("1");
-    boutonDeTestQuiSertARien2 = new QPushButton("2");
-    boutonDeTestQuiSertARien3 = new QPushButton("3");
-    boutonDeTestQuiSertARien4 = new QPushButton("4");
-    theGrid->addWidget(boutonDeTestQuiSertARien1,0,0);
-    theGrid->addWidget(boutonDeTestQuiSertARien2,1,0);
-    theGrid->addWidget(boutonDeTestQuiSertARien3,2,0);
-    theGrid->addWidget(boutonDeTestQuiSertARien4,0,1);*/
 
     layoutGlob->addLayout(premierLayoute);
     layoutGlob->addLayout(theGrid);
@@ -79,33 +69,9 @@ Memory::~Memory()
 
     this->emptyAndDeleteVector();
     delete labScore;
-
-    /*delete boutonDeTestQuiSertARien1;
-    delete boutonDeTestQuiSertARien2;
-    delete boutonDeTestQuiSertARien3;
-    delete boutonDeTestQuiSertARien4;*/
-    //delete tabCardRects;
     delete theGrid;
 }
 
-/// nope, on va plutôt y aller avec des widgets pour les cartes
-void Memory::paintEvent(QPaintEvent *)
-{
-    QPainter * myPaint = new QPainter(this);
-
-    myPaint->setBrush(Qt::blue);
-
-    /// \todo vérifier ce que ça fait
-    /// je pense que c'est pour stocker les rectangles dessinés dans le tableau mentionné
-    /// ça sert peut-être à rien ici
-    // myPaint->drawRects(this->tabCardRects,this->nbcards);
-
-
-
-}
-
-/// futures fonctions liées au modèle pour quand il y aura un modèle
-/// \todo faire un modèle
 
 int Memory::getNbCards()
 {
@@ -122,3 +88,107 @@ void Memory::emptyAndDeleteVector()
     cardsVector.clear();
 }
 
+void Memory::setupCardFromModel(int ind)
+{
+    if(modMemo->cardIsOpen(ind))
+    {
+        std::string chemin = this->getCardFromPaire(modMemo->getPaireCarte(ind));
+        /*cardsVector.at(ind)->setStyleSheet(QString::fromUtf8(
+                                               "QPushButton {"
+                                               "border-image:url(:/files/" + chemin +");"
+                                               "}"
+                                               "QPushButton::pressed {"
+                                               "border-image:url(:/files/" + chemin +");"
+                                               "}"
+                                               ));*/
+        QString monStyle (QString::fromStdString("QPushButton {\nborder-image:url(:/files/"
+                                                 + chemin + ");\n}\nQPushButton::pressed {\n"
+                                                 + "border-image:url(:/files/" + chemin +");\n"
+                                                 + "}"));
+
+        cardsVector.at(ind)->setStyleSheet(monStyle);
+
+    } else {
+        cardsVector.at(ind)->setStyleSheet(QString::fromUtf8(
+                                               "QPushButton {"
+                                               "border-image:url(:/files/card_back.png);"
+                                               "}"
+                                               "QPushButton::pressed {"
+                                               "border-image:url(:/files/card_back.png);"
+                                               "}"
+                                               ));
+    }
+}
+
+std::string Memory::getCardFromPaire(int paire)
+{
+    std::string cheminPaire;
+    switch (paire)
+    {
+    case 0:{
+        cheminPaire="bird.jpg";
+        break;
+    }
+    case 1:{
+        cheminPaire="cat.jpg";
+        break;
+    }
+    case 2:{
+        cheminPaire="Cow.jpg";
+        break;
+    }
+    case 3:{
+        cheminPaire="dog.jpg";
+        break;
+    }
+    case 4:{
+        cheminPaire="fish.png";
+        break;
+    }
+    case 5:{
+        cheminPaire="horse.png";
+        break;
+    }
+    case 6:{
+        cheminPaire="rabbit.png";
+        break;
+    }
+    case 7:{
+        cheminPaire="sheep.jpg";
+        break;
+    }
+    default:{
+        cheminPaire="card_back.png";
+        break;
+    }
+    }
+    return cheminPaire;
+}
+
+int Memory::getIndiceFromName(QPushButton *but)
+{
+    std::string nameObj=but->objectName().toStdString();
+
+    std::cout << "nom du bazar : " << nameObj << std::endl;
+
+    nameObj=nameObj.substr(5,2); //indice
+
+    std::cout << "nom du bazar avant deux : " << nameObj << std::endl;
+
+    int indice = std::stoi(nameObj);
+
+    std::cout << "nom du bazar deux : " << indice << std::endl;
+
+    return indice;
+}
+
+void Memory::carteClic()
+{
+    int indice = getIndiceFromName((QPushButton*)sender());
+
+    modMemo->openCard(indice);
+
+    setupCardFromModel(indice);
+
+
+}

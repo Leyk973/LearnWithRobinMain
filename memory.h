@@ -28,25 +28,30 @@ public:
     ~Memory();
 
     /// \brief Met à jour l'interface
-    void paintEvent(QPaintEvent*);
+    /// \obsolete
+    /// void paintEvent(QPaintEvent*);
 
     /// \brief Récupère le nombre de cartes
     int getNbCards(void);
 
-    /// \brief Retourne une carte en changeant sa stylesheet
-    void flipCard(QPushButton*);
+    /// \brief Donner les informations
+    /// \details Verifie si la carte est retournée ou non et lui
+    /// attribue une stylesheet correspondant à cela en se basant
+    /// pour son image si elle est retournée sur la paire du modele
+    void setupCardFromModel(int ind);
+
+    /// \brief Retourne le nom de fichier attendu pour la paire
+    std::string getCardFromPaire(int paire);
+
+    /// \brief Trouver l'indice de la carte depuis son nom
+    int getIndiceFromName(QPushButton*but);
+
+public slots:
+
+    /// \brief Clic sur une carte
+    void carteClic(void);
 
 private:
-    //Ui::Memory *ui;
-    //QRect *tabCardRects;
-
-    // on va plutôt avoir un tableau de boutons (qui seront des cartes à terme)
-
-    // boutons de test
-    /*QPushButton * boutonDeTestQuiSertARien1;
-    QPushButton * boutonDeTestQuiSertARien2;
-    QPushButton * boutonDeTestQuiSertARien3;
-    QPushButton * boutonDeTestQuiSertARien4;*/
 
     /// \brief Vecteur qui contient les pointeurs vers les boutons créés dynanmiquement par le programme
     /// NE PAS OUBLIER DE delete[] dans le destructeur

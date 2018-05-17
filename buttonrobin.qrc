@@ -25,5 +25,14 @@
         <file>files/yellow.mp3</file>
         <file>files/yellow.png</file>
         <file>files/speaker.png</file>
+        <file>files/bird.jpg</file>
+        <file>files/card_back.png</file>
+        <file>files/cat.jpg</file>
+        <file>files/Cow.jpg</file>
+        <file>files/dog.jpg</file>
+        <file>files/fish.png</file>
+        <file>files/horse.png</file>
+        <file>files/rabbit.png</file>
+        <file>files/sheep.jpg</file>
     </qresource>
 </RCC>

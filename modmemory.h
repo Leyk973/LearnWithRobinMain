@@ -14,7 +14,7 @@ public:
     MemoryCard(void);
 
     /// \brief Constructeur par copie
-    MemoryCard(MemoryCard &);
+    MemoryCard(const MemoryCard&);
 
     /// \brief Constructeur complet
     /// \param 1 indice

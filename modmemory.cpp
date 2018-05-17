@@ -6,8 +6,13 @@ ModMemory::ModMemory()
 {
     std::cout << "Creation ModMemory" << std::endl;
 
+    for (int i = 0; i < 16 ; ++ i)
+    {
+        MemoryCard carte;
+        cards.push_back(carte);
+    }
 
-
+    shuffleCards();
 
 
     std::cout << "Fin Creation ModMemory" << std::endl;
@@ -159,7 +164,7 @@ MemoryCard::~MemoryCard()
 }
 
 /// MemoryCard
-MemoryCard::MemoryCard(MemoryCard & memCop)
+MemoryCard::MemoryCard(const MemoryCard &memCop)
 {
     indice=memCop.indice;
     paire=memCop.paire;
