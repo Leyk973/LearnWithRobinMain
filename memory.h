@@ -46,6 +46,9 @@ public:
     /// \brief Trouver l'indice de la carte depuis son nom
     int getIndiceFromName(QPushButton*but);
 
+    /// \brief  retourner toutes les cartes non appairées
+    void closeAllCards(void);
+
 public slots:
 
     /// \brief Clic sur une carte

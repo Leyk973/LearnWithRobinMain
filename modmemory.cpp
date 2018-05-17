@@ -57,19 +57,33 @@ void ModMemory::openCard(int & ind)
     if (nbCartesRetournees>1)
     {
         closeCards();
-    }
 
-    ++score;
+        ++score;
 
-    if(!cards.at(ind).isRetournee())
-    {
-        cards.at(ind).flipCard();
-    }
-    ++nbCartesRetournees;
+        if(!cards.at(ind).isRetournee())
+        {
+            cards.at(ind).flipCard();
+        }
+        ++nbCartesRetournees;
 
-    if (nbCartesRetournees>1)
-    {
-        checkFlippedCards();
+        flippedCards.first = ind;
+
+    } else { // si pas rempli
+        ++score;
+
+        if(!cards.at(ind).isRetournee())
+        {
+            cards.at(ind).flipCard();
+        }
+        ++nbCartesRetournees;
+
+        if (nbCartesRetournees>1)
+        {
+            flippedCards.second=ind;
+            checkFlippedCards();
+        } else {
+            flippedCards.first=ind;
+        }
     }
 
 }
@@ -85,7 +99,8 @@ void ModMemory::closeCards()
     }
 
     nbCartesRetournees = 0;
-
+    flippedCards.first=-1;
+    flippedCards.second=-1;
 
     /// \todo
     /// COMPLETER en retournant les trucs de flipped card
@@ -120,8 +135,11 @@ int ModMemory::getNbCartesRestantes()
 
 bool ModMemory::checkCards(int & ind1, int & ind2)
 {
+    std::cout << "test asso :" << ind1 << " ET " << ind2 << std::endl;
     int pai1 = cards.at(ind1).getPaire();
     int pai2 = cards.at(ind2).getPaire();
+
+    std::cout << "les paires sont :" << pai1 << " ET " << pai2 << std::endl;
 
     if (pai1 == pai2)
     {

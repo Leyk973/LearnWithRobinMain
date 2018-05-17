@@ -182,8 +182,32 @@ int Memory::getIndiceFromName(QPushButton *but)
     return indice;
 }
 
+void Memory::closeAllCards()
+{
+    for(int i = 0; i<16; ++i)
+    {
+        if(!modMemo->cardIsPaired(i)){
+            cardsVector.at(i)->setStyleSheet(QString::fromUtf8(
+                                                 "QPushButton {"
+                                                 "border-image:url(:/files/card_back.png);"
+                                                 "}"
+                                                 "QPushButton::pressed {"
+                                                 "border-image:url(:/files/card_back.png);"
+                                                 "}"
+                                                 ));
+        }
+    }
+}
+
 void Memory::carteClic()
 {
+    // verification nbCartes
+    if (modMemo->getNbCartesRetournees()+1>2)
+    {
+        modMemo->checkFlippedCards();
+        closeAllCards();
+    }
+
     int indice = getIndiceFromName((QPushButton*)sender());
 
     modMemo->openCard(indice);
