@@ -26,8 +26,6 @@ SuperSimon::SuperSimon(QWidget *parent) :
                                    "}"
                                    ));
 
-
-
     // TEST BOUTON PERSO
     ui->butSim1->setFixedSize(200,200);
     ui->butSim1->setStyleSheet(QString::fromUtf8(
@@ -69,23 +67,13 @@ SuperSimon::SuperSimon(QWidget *parent) :
                                    "}"
                                    ));
 
-
-
-
     modele=new ModSimon;
 
     // longueur attendue
     this->expectedLength = modele->getSeqLen();
 
-    std::cout << "Debut construction DEUX" << std::endl;
-//    QObject::connect(ui->butResScore, SIGNAL(clicked(bool)),this,SLOT(resetScoreClicked()));
-    std::cout << "Debut construction TROIS" << std::endl;
-//    QObject::connect(ui->butSeqEdit, SIGNAL(clicked(bool)),this,SLOT(editSequenceClicked()));
-    std::cout << "Debut construction QUATRE" << std::endl;
     QObject::connect(ui->butLireSeq, SIGNAL(clicked(bool)),this,SLOT(readSequenceClicked()));
-    // lives-related buttons
-//    QObject::connect(ui->butAddLife, SIGNAL(clicked(bool)),this,SLOT(addLifeClicked()));
-//    QObject::connect(ui->butRemLife, SIGNAL(clicked(bool)),this,SLOT(remLifeClicked()));
+
     // simon-related buttons
     QObject::connect(ui->butSim1, SIGNAL(clicked(bool)),this,SLOT(simonClickedRedirect()));
     QObject::connect(ui->butSim2, SIGNAL(clicked(bool)),this,SLOT(simonClickedRedirect()));
@@ -329,7 +317,13 @@ void SuperSimon::sendEndOfGame(void)
     int leScore = this->expectedLength - 1 + modele->getLives();
     paireALancer.first=jeu;
     paireALancer.second=leScore;
-    std::cout << "SIGNAL DE FIN LANCE" << std::endl;
+    std::cout << "SIGNAL DE FIN LANCE::Reinitialisation" << std::endl;
+    ModSimon * nouveauMod = new ModSimon;
+    delete this->modele;
+    this->modele = nouveauMod;
+    this->expectedLength = modele->getSeqLen();
+    this->updateViewSimon();
+
     emit endOfGame(paireALancer);
 }
 

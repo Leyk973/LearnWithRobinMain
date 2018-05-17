@@ -76,6 +76,9 @@ RobinMainWindow::RobinMainWindow(QWidget *parent) :
     QObject::connect(ui->ButtonMenu, &QPushButton::clicked,this,&RobinMainWindow::backToMenu);
     this->atMenu=true;
 
+    // player
+    QObject::connect(ui->butPlayer, &QPushButton::clicked, this, &RobinMainWindow::changePlayer);
+
     /// \test changer la fenetre
     /// on peut tenter vu que QWidget hérite de QObject
     QObject::connect(menuPrincipal,&MainMenu::clickedCalcul,this,&RobinMainWindow::openCalcul);
@@ -163,6 +166,8 @@ void RobinMainWindow::gameEnded(std::pair<std::string, int> asso)
     std::string message;
     message = "Fin du jeu " + asso.first + " avec un score de " + std::to_string(asso.second);
 
+    Tools::SavePlayerScoreForGame(joueurSession->getName(),asso.second,asso.first);
+
     msgBox.setText(QString::fromStdString(message));
     msgBox.exec();
     this->backToMenu();
@@ -219,10 +224,16 @@ void RobinMainWindow::openMemory()
     this->atMenu=false;
     this->widStack->setCurrentIndex(3);
     std::cout << "openMemory centralWidget : " << RobinMainWindow::centralWidget() << std::endl;
-
 }
 
-void RobinMainWindow::saveScoreTest()
+void RobinMainWindow::saveScoreTest(void)
 {
-    Tools::SavePlayerScoreForGame(joueurSession->getName(),42,"LOG4LOG");
+    //Tools::SavePlayerScoreForGame(joueurSession->getName(),42,"LOG4LOG");
+}
+
+void RobinMainWindow::changePlayer(void)
+{
+    std::string newName = ui->textPlayer->text().toStdString();
+    joueurSession->setName(newName);
+    Tools::SavePlayerScoreForGame(joueurSession->getName(),0,"LOGIN");
 }

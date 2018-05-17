@@ -46,7 +46,10 @@ public slots:
     void openMemory(void);
 
     /// \brief Sauvegarde de score de test
-    void saveScoreTest();
+    void saveScoreTest(void);
+
+    /// \brief Changement de joueur
+    void changePlayer(void);
 private:
     /// \brief Interface utilisateur
     Ui::RobinMainWindow *ui;
