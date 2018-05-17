@@ -203,6 +203,8 @@ void Memory::carteClic()
 {
     int indice = getIndiceFromName((QPushButton*)sender());
 
+    std::cout << "juste crartes retournees " << modMemo->getNbCartesRetournees() << std::endl;
+
     // verif si retournee
     if (modMemo->cardIsOpen(indice))
     {

@@ -6,6 +6,9 @@ ModMemory::ModMemory()
 {
     std::cout << "Creation ModMemory" << std::endl;
 
+    this->nbCartesRestantes=16;
+    this->nbCartesRetournees=0;
+
     for (int i = 0; i < 16 ; ++ i)
     {
         MemoryCard carte;
