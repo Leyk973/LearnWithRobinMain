@@ -201,18 +201,23 @@ void Memory::closeAllCards()
 
 void Memory::carteClic()
 {
-    // verification nbCartes
-    if (modMemo->getNbCartesRetournees()+1>2)
-    {
-        modMemo->checkFlippedCards();
-        closeAllCards();
-    }
-
     int indice = getIndiceFromName((QPushButton*)sender());
 
-    modMemo->openCard(indice);
+    // verif si retournee
+    if (modMemo->cardIsOpen(indice))
+    {
+        // nothing
+    } else {
+        // verification nbCartes
+        if (modMemo->getNbCartesRetournees()+1>2)
+        {
+            modMemo->checkFlippedCards();
+            closeAllCards();
+        }
 
-    setupCardFromModel(indice);
+        modMemo->openCard(indice);
 
+        setupCardFromModel(indice);
+    }
 
 }
