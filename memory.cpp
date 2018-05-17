@@ -211,6 +211,7 @@ void Memory::carteClic()
         // verification nbCartes
         if (modMemo->getNbCartesRetournees()+1>2)
         {
+            std::cout << "je lance un test modmeme crartes retournees " << modMemo->getNbCartesRetournees() << std::endl;
             modMemo->checkFlippedCards();
             closeAllCards();
         }
