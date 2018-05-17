@@ -57,6 +57,16 @@ public:
     /// \brief Attend sec secondes
     void delay(int & sec);
 
+    /// \brief Declencher fin du jeu
+    void sendEndOfGame(void);
+
+    /// \brief Verifier si fin du jeu
+    bool checkEndOfGame(void);
+
+signals:
+    /// \brief fin du jeu
+    void endOfGame(std::pair<std::string,int> asso);
+
 
 public slots:
     /// \brief Appui sur bouton du simon

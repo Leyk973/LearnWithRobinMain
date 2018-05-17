@@ -58,6 +58,17 @@ RobinMainWindow::RobinMainWindow(QWidget *parent) :
                                       ));
     ui->ButtonHelp->setText("");
 
+    ui->butPlayer->setFixedSize(300,50);
+    ui->butPlayer->setFont(QFont("Helvetica",26));
+    ui->butPlayer->setStyleSheet(QString::fromUtf8(
+                           "QPushButton {"
+                           "border-image:url(:/files/fondBouton.png);"
+                           "}"
+                           "QPushButton::pressed {"
+                           "border-image:url(:/files/fondBoutonClicked.png);"
+                           "}"
+                           ));
+
 
     std::cout << "Debut construction MAIN 2" << std::endl;
 
@@ -93,6 +104,14 @@ RobinMainWindow::RobinMainWindow(QWidget *parent) :
     this->widStack->addWidget(theCalcul);
     this->widStack->addWidget(theSimon);
     this->widStack->addWidget(theMemory);
+
+
+
+    // connexion des fins de jeu
+    QObject::connect(theSimon,&SuperSimon::endOfGame,this,&RobinMainWindow::gameEnded);
+
+
+
 
 
 
@@ -138,6 +157,17 @@ bool RobinMainWindow::getAtMenu()
     return this->atMenu;
 }
 
+void RobinMainWindow::gameEnded(std::pair<std::string, int> asso)
+{
+    QMessageBox msgBox;
+    std::string message;
+    message = "Fin du jeu " + asso.first + " avec un score de " + std::to_string(asso.second);
+
+    msgBox.setText(QString::fromStdString(message));
+    msgBox.exec();
+    this->backToMenu();
+}
+
 
 /// ------------------------------------------------------------------
 /// SLOTS
@@ -152,11 +182,6 @@ void RobinMainWindow::backToMenu()
     {
         //deleteCentralWidget();
         std::cout << "DEBUT backToMenu centralWidget : " << RobinMainWindow::centralWidget() << std::endl;
-        //MainMenu *menuPrincipal = new MainMenu();
-        //RobinMainWindow::setCentralWidget(menuPrincipal);
-        //QObject::connect(menuPrincipal,&MainMenu::clickedCalcul,this,&RobinMainWindow::openCalcul);
-        //QObject::connect(menuPrincipal,&MainMenu::clickedSimon,this,&RobinMainWindow::openSimon);
-        //QObject::connect(menuPrincipal,&MainMenu::clickedMemory,this,&RobinMainWindow::openMemory);
         this->widStack->setCurrentIndex(0);
         this->atMenu=true;
         std::cout << "FIN backToMenu centralWidget : " << RobinMainWindow::centralWidget() << std::endl;
@@ -173,9 +198,6 @@ void RobinMainWindow::openCalcul()
     /// \todo completer
     std::cout << "On a cliqué sur calcul" << std::endl;
     this->atMenu=false;
-    //deleteCentralWidget();
-    //CalculMental * calcul = new CalculMental();
-    //RobinMainWindow::setCentralWidget(calcul);
     this->widStack->setCurrentIndex(1);
     std::cout << "openCalcul centralWidget : " << RobinMainWindow::centralWidget() << std::endl;
 }
@@ -185,9 +207,6 @@ void RobinMainWindow::openSimon()
     /// \todo completer
     std::cout << "On a cliqué sur calcul" << std::endl;
     this->atMenu=false;
-    //deleteCentralWidget();
-    //SuperSimon * simon = new SuperSimon();
-    //RobinMainWindow::setCentralWidget(simon);
     this->widStack->setCurrentIndex(2);
     std::cout << "openSimon centralWidget : " << RobinMainWindow::centralWidget() << std::endl;
 
@@ -198,9 +217,6 @@ void RobinMainWindow::openMemory()
     /// \todo completer
     std::cout << "On a cliqué sur memory" << std::endl;
     this->atMenu=false;
-    //deleteCentralWidget();
-    //Memory * memus = new Memory();
-    //RobinMainWindow::setCentralWidget(memus);
     this->widStack->setCurrentIndex(3);
     std::cout << "openMemory centralWidget : " << RobinMainWindow::centralWidget() << std::endl;
 

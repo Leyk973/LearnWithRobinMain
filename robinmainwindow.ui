@@ -49,6 +49,29 @@
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QLineEdit" name="textPlayer">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="baseSize">
+        <size>
+         <width>130</width>
+         <height>22</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="butPlayer">
+       <property name="text">
+        <string>Change Player</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
   </widget>

@@ -16,5 +16,14 @@
         <file>files/boutonHelp.png</file>
         <file>files/boutonHelpClicked.png</file>
         <file>files/robin.png</file>
+        <file>files/blue.mp3</file>
+        <file>files/blue.png</file>
+        <file>files/green.mp3</file>
+        <file>files/green.png</file>
+        <file>files/red.mp3</file>
+        <file>files/red.png</file>
+        <file>files/yellow.mp3</file>
+        <file>files/yellow.png</file>
+        <file>files/speaker.png</file>
     </qresource>
 </RCC>

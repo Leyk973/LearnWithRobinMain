@@ -44,6 +44,9 @@ public:
 
     int giveRandom(int,int);
 
+    /// \brief Donne le scoreToReach
+    int getScoreToReach(void);
+
 private:
 
     /// \brief Difficulté

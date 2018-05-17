@@ -29,6 +29,10 @@ public:
     bool getAtMenu(void);
 
 public slots:
+    /// \brief Slot d'attente de fin de jeu
+    /// \details Fait apparaitre une popup de récapitulation
+    void gameEnded(std::pair<std::string,int> asso);
+
     /// \brief Signal pour retourner au menu principal
     void backToMenu(void);
 

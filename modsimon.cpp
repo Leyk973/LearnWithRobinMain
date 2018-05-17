@@ -51,7 +51,7 @@ void ModSimon::remLife()
     }
     else
     {
-        std::cout << "nan mais t'as plus de vies frere" << std::endl;
+        std::cout << "Plus de vies" << std::endl;
     }
 }
 
@@ -105,6 +105,11 @@ int ModSimon::giveRandom(int min, int max)
     }
 
     return res;
+}
+
+int ModSimon::getScoreToReach()
+{
+    return this->scoreToReach;
 }
 
 
